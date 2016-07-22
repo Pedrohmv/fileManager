@@ -1,0 +1,83 @@
+2016-07-22 12:14:20,773 [INFO] from play.core.server.NettyServer in play-fork-run-akka.actor.default-dispatcher-2 - Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+2016-07-22 12:15:14,297 [INFO] from application in ForkJoinPool-1-worker-1 - ApplicationTimer demo: Starting application at 2016-07-22T15:15:14.296Z
+2016-07-22 12:15:14,690 [INFO] from play.api.Play in ForkJoinPool-1-worker-1 - Application started (Dev)
+2016-07-22 12:19:02,634 [ERROR] from application in netty-event-loop-3 - 
+
+! @70npk31cn - Internal server error, for (GET) [/] ->
+ 
+play.forkrun.protocol.Serializers$playExceptionPickler$$anon$1: Compilation error[cannot find symbol
+  symbol:   variable sobre
+  location: class controllers.HomeController]
+	at play.forkrun.protocol.Serializers$playExceptionPickler$.unpickle(Serializers.scala:159)
+	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileFailureUnpickler$macro$56$2$.unpickle(Serializers.scala:175)
+	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickle(Serializers.scala:181)
+	at scala.pickling.Unpickler$class.unpickleEntry(Pickler.scala:79)
+	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickleEntry(Serializers.scala:181)
+	at scala.pickling.functions$.unpickle(functions.scala:11)
+	at sbt.serialization.JsonValue$$anonfun$parse$1.apply(SerializedValue.scala:104)
+	at scala.util.Try$.apply(Try.scala:192)
+	at sbt.serialization.JsonValue.parse(SerializedValue.scala:104)
+	at sbt.protocol.BuildValue.value(Values.scala:11)
+	at sbt.protocol.TaskSuccess.resultWithCustomThrowable(Values.scala:65)
+	at sbt.protocol.TaskResult$class.result(Values.scala:56)
+	at sbt.protocol.TaskSuccess.result(Values.scala:62)
+	at play.forkrun.ForkRun$$anonfun$reloading$1.applyOrElse(ForkRun.scala:198)
+	at akka.actor.Actor$class.aroundReceive(Actor.scala:465)
+	at play.forkrun.ForkRun.aroundReceive(ForkRun.scala:153)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:487)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:221)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:231)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.pollAndExecAll(ForkJoinPool.java:1253)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1346)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+2016-07-22 12:19:30,103 [INFO] from application in application-akka.actor.default-dispatcher-63 - ApplicationTimer demo: Stopping application at 2016-07-22T15:19:30.103Z after 256s.
+2016-07-22 12:19:30,277 [INFO] from application in application-akka.actor.default-dispatcher-63 - ApplicationTimer demo: Starting application at 2016-07-22T15:19:30.277Z
+2016-07-22 12:19:30,358 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-63 - Application started (Dev)
+2016-07-22 12:19:47,916 [ERROR] from application in netty-event-loop-3 - 
+
+! @70npk5gg1 - Internal server error, for (GET) [/] ->
+ 
+play.forkrun.protocol.Serializers$playExceptionPickler$$anon$1: Compilation error[value signup is not a member of controllers.HomeController]
+	at play.forkrun.protocol.Serializers$playExceptionPickler$.unpickle(Serializers.scala:159)
+	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileFailureUnpickler$macro$56$2$.unpickle(Serializers.scala:175)
+	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickle(Serializers.scala:181)
+	at scala.pickling.Unpickler$class.unpickleEntry(Pickler.scala:79)
+	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickleEntry(Serializers.scala:181)
+	at scala.pickling.functions$.unpickle(functions.scala:11)
+	at sbt.serialization.JsonValue$$anonfun$parse$1.apply(SerializedValue.scala:104)
+	at scala.util.Try$.apply(Try.scala:192)
+	at sbt.serialization.JsonValue.parse(SerializedValue.scala:104)
+	at sbt.protocol.BuildValue.value(Values.scala:11)
+	at sbt.protocol.TaskSuccess.resultWithCustomThrowable(Values.scala:65)
+	at sbt.protocol.TaskResult$class.result(Values.scala:56)
+	at sbt.protocol.TaskSuccess.result(Values.scala:62)
+	at play.forkrun.ForkRun$$anonfun$reloading$1.applyOrElse(ForkRun.scala:198)
+	at akka.actor.Actor$class.aroundReceive(Actor.scala:465)
+	at play.forkrun.ForkRun.aroundReceive(ForkRun.scala:153)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:487)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:221)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:231)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.pollAndExecAll(ForkJoinPool.java:1253)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1346)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+2016-07-22 12:20:04,982 [INFO] from application in application-akka.actor.default-dispatcher-6 - ApplicationTimer demo: Stopping application at 2016-07-22T15:20:04.982Z after 34s.
+2016-07-22 12:20:05,130 [INFO] from application in application-akka.actor.default-dispatcher-6 - ApplicationTimer demo: Starting application at 2016-07-22T15:20:05.130Z
+2016-07-22 12:20:05,205 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-6 - Application started (Dev)
+2016-07-22 12:20:49,639 [INFO] from application in application-akka.actor.default-dispatcher-2 - ApplicationTimer demo: Stopping application at 2016-07-22T15:20:49.639Z after 44s.
+2016-07-22 12:20:49,881 [INFO] from application in application-akka.actor.default-dispatcher-2 - ApplicationTimer demo: Starting application at 2016-07-22T15:20:49.880Z
+2016-07-22 12:20:49,981 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-2 - Application started (Dev)
+2016-07-22 12:21:15,211 [INFO] from application in application-akka.actor.default-dispatcher-2 - ApplicationTimer demo: Stopping application at 2016-07-22T15:21:15.211Z after 26s.
+2016-07-22 12:21:15,389 [INFO] from application in application-akka.actor.default-dispatcher-2 - ApplicationTimer demo: Starting application at 2016-07-22T15:21:15.389Z
+2016-07-22 12:21:15,453 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-2 - Application started (Dev)
+2016-07-22 12:23:08,362 [INFO] from application in application-akka.actor.default-dispatcher-2 - ApplicationTimer demo: Stopping application at 2016-07-22T15:23:08.362Z after 113s.
+2016-07-22 12:23:08,506 [INFO] from application in application-akka.actor.default-dispatcher-2 - ApplicationTimer demo: Starting application at 2016-07-22T15:23:08.505Z
+2016-07-22 12:23:08,570 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-2 - Application started (Dev)
+2016-07-22 20:53:33,370 [INFO] from application in play-fork-run-akka.actor.default-dispatcher-25 - ApplicationTimer demo: Stopping application at 2016-07-22T23:53:33.369Z after 30625s.

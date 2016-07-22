@@ -1,0 +1,91 @@
+@*
+ * This template takes a single argument, a String containing a
+ * message to display.
+ *@
+@(message: String)
+
+@*
+ * Call the `main` template with two arguments. The first
+ * argument is a `String` with the title of the page, the second
+ * argument is an `Html` object containing the body of the page.
+ *@
+@main("File Manager SI1") {
+
+    <style>
+body {
+padding-top: 50px;
+}
+.starter-template {
+padding: 40px 15px;
+text-align: center;
+}
+
+  .modal-header, h4, .close {
+      background-color: #e6e6e6;
+      color:#000000 !important;
+      text-align: center;
+      font-size: 30px;
+  }
+  .modal-footer {
+      background-color: #f9f9f9;
+  }
+
+</style>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="/">File Manager SI1</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="/play">Sobre O PlayFrameWork</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/signup"><button type="button" class="btn btn-link"><span class="glyphicon glyphicon-user"></span> Sign Up</button></a></li>
+        <li><a href="#"><button type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-in"></span> Login</button></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+
+<div class="container">
+<div class="starter-template">
+<h1>File Manager SI1</h1>
+<p class="lead">Guarde e edite seus arquivos de texto!</p>
+</div>
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog" style="padding:80px 85px;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Login</h4>
+        </div>
+        <div class="modal-body" style="padding:20px 35px;">
+  <form role="form">
+  <div class="form-group">
+    <label for="email">Email address:</label>
+    <input type="email" class="form-control" id="email" placeholder="Email">
+  </div>
+  <div class="form-group">
+    <label for="pwd">Password:</label>
+    <input type="password" class="form-control" id="pwd" placeholder="Password">
+  </div>
+  <div class="checkbox">
+    <label><input type="checkbox"> Remember me</label>
+  </div>
+  <button type="submit" class="btn btn-default btn-primary">Submit</button>
+  </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+}
