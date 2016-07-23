@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/pedro/Documentos/filemanager-si1/conf/routes
-// @DATE:Fri Jul 22 12:19:45 BRT 2016
+// @SOURCE:/home/pedro/Documentos/fileManager/conf/routes
+// @DATE:Fri Jul 22 21:45:35 BRT 2016
 
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
 import play.core.routing.{ HandlerDef, ReverseRouteContext, queryString, dynamicString }

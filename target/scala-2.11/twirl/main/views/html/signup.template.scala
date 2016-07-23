@@ -47,7 +47,7 @@ Seq[Any](format.raw/*1.17*/("""
   <div class="checkbox">
     <label><input type="checkbox"> Remember me</label>
   </div>
-  <a href="#"><button type="submit" class="btn btn-default">Submit</button></a>
+    ><button type="submit" class="btn btn-default">Submit</button>
   </form>
   </div>
   
@@ -71,9 +71,9 @@ Seq[Any](format.raw/*1.17*/("""
 object signup extends signup_Scope0.signup
               /*
                   -- GENERATED --
-                  DATE: Fri Jul 22 12:23:06 BRT 2016
-                  SOURCE: /home/pedro/Documentos/filemanager-si1/app/views/signup.scala.html
-                  HASH: 1ad77d6f8209e604670ae66a1ce1d580f5edc271
+                  DATE: Fri Jul 22 21:45:36 BRT 2016
+                  SOURCE: /home/pedro/Documentos/fileManager/app/views/signup.scala.html
+                  HASH: 1a5a662b8989b0eaa6da56593b384653b25fb9d4
                   MATRIX: 747->1|857->16|885->19|904->30|942->31|977->40
                   LINES: 27->1|32->1|34->3|34->3|34->3|37->6
                   -- GENERATED --
