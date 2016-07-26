@@ -1,7 +1,5 @@
-[0m[[31merror[0m] [0m/home/pedro/Documentos/fileManager/app/views/main.scala.html:15: value at is not a member of controllers.ReverseAssets[0m
-[0m[[31merror[0m] [0m        <link rel="stylesheet" media="screen" href="@routes.Assets.at("css/bootstrap.css")">[0m
-[0m[[31merror[0m] [0m                                                                   ^[0m
-[0m[[31merror[0m] [0m/home/pedro/Documentos/fileManager/app/views/main.scala.html:18: value at is not a member of controllers.ReverseAssets[0m
-[0m[[31merror[0m] [0m        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">[0m
-[0m[[31merror[0m] [0m                                                                        ^[0m
-[0m[[31merror[0m] [0mtwo errors found[0m
+[0m[[31merror[0m] [0m/home/pedro/Documentos/fileManager/app/views/signup.scala.html:23: not enough arguments for method postUser: (username: String, email: String, password: String)play.api.mvc.Call.[0m
+[0m[[31merror[0m] [0mUnspecified value parameters username, email, password.[0m
+[0m[[31merror[0m] [0m    <button type="submit" form="signUpForm" formaction="@routes.UserController.postUser()" formmethod="post" value="Submit">Submit</button>[0m
+[0m[[31merror[0m] [0m                                                                                       ^[0m
+[0m[[31merror[0m] [0mone error found[0m

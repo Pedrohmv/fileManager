@@ -35,23 +35,29 @@ Seq[Any](format.raw/*1.17*/("""
   
   
   """),format.raw/*6.3*/("""<div class="container col-xs-4">
-  <form role="form-horizontal">
+  <form role="form-horizontal" Content-Type="application/json" id="signUpForm" >
   <div class="form-group">
-    <label for="email">Email address:</label>
-    <input type="email" class="form-control" id="email">
+    <label for="username">Username:</label>
+    <input type="text" class="form-control" name="username">
   </div>
   <div class="form-group">
-    <label for="pwd">Password:</label>
-    <input type="password" class="form-control" id="pwd">
+    <label for="email">Email address:</label>
+    <input type="email" class="form-control" name="email">
+  </div>
+  <div class="form-group">
+    <label for="password">Password:</label>
+    <input type="password" class="form-control" name="password">
   </div>
   <div class="checkbox">
     <label><input type="checkbox"> Remember me</label>
   </div>
-    ><button type="submit" class="btn btn-default">Submit</button>
+    <button type="submit" form="signUpForm" formaction="/api/user" formmethod="post" value="Submit">Submit</button>
   </form>
   </div>
   
-""")))}))
+""")))}),format.raw/*27.2*/("""
+
+"""))
       }
     }
   }
@@ -71,11 +77,11 @@ Seq[Any](format.raw/*1.17*/("""
 object signup extends signup_Scope0.signup
               /*
                   -- GENERATED --
-                  DATE: Sat Jul 23 13:02:06 BRT 2016
-                  SOURCE: /home/vhugo/apps/fileManager/app/views/signup.scala.html
-                  HASH: 1a5a662b8989b0eaa6da56593b384653b25fb9d4
-                  MATRIX: 747->1|857->16|885->19|904->30|942->31|977->40
-                  LINES: 27->1|32->1|34->3|34->3|34->3|37->6
+                  DATE: Tue Jul 26 15:23:16 BRT 2016
+                  SOURCE: /home/pedro/Documentos/fileManager/app/views/signup.scala.html
+                  HASH: 322ac6ff12696b9215a7c0421aa5463c1cbc0622
+                  MATRIX: 747->1|857->16|885->19|904->30|942->31|977->40|1776->809
+                  LINES: 27->1|32->1|34->3|34->3|34->3|37->6|58->27
                   -- GENERATED --
               */
           
