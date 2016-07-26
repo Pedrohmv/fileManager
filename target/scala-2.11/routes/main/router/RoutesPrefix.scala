@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/vhugo/apps/fileManager/conf/routes
-// @DATE:Sat Jul 23 13:02:06 BRT 2016
+// @DATE:Mon Jul 25 22:26:20 BRT 2016
 
 
 package router {

@@ -29,4 +29,7 @@ public class HomeController extends Controller {
         return ok(signup.render("Cadastrar"));
     }
 
+    public Result teste(){
+        return ok(signup.render("Cadastrar"));
+    }
 }

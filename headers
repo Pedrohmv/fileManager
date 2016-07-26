@@ -1,0 +1,6 @@
+HTTP/1.1 400 Bad Request
+X-ExampleFilter: foo
+Content-Length: 2148
+Content-Type: text/html; charset=utf-8
+Date: Tue, 26 Jul 2016 00:40:25 GMT
+
