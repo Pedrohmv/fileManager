@@ -14,9 +14,15 @@ GET     /signup                      controllers.HomeController.signup
 GET     /play                       controllers.HomeController.index
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
 
+
+#---------------------------------- API --------------------------------------------------
 #Usuarios
 GET     /api/users              controllers.UserController.getUsers
 GET     /api/users/:username    controllers.UserController.getUser(username: String)
 POST    /api/user               controllers.UserController.postUser(username: String, email: String, password: String)
+
+#--------------------------------- APP -----------------------------------------------------
+
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+GET     /login                  controllers.Assets.at(path="/public/html", file="login.html")

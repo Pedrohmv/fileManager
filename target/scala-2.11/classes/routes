@@ -20,3 +20,5 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 GET     /api/users              controllers.UserController.getUsers
 GET     /api/users/:username    controllers.UserController.getUser(username: String)
 POST    /api/user               controllers.UserController.postUser(username: String, email: String, password: String)
+
+GET     /login                  controllers.Assets.at(path="/public/html", file="login.html")

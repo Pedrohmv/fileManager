@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/vhugo/apps/fileManager/conf/routes
-// @DATE:Mon Jul 25 22:26:20 BRT 2016
+// @DATE:Tue Jul 26 09:51:53 BRT 2016
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -15,7 +15,7 @@ import _root_.play.libs.F
 package controllers.javascript {
   import ReverseRouteContext.empty
 
-  // @LINE:17
+  // @LINE:27
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -23,7 +23,17 @@ package controllers.javascript {
     }
 
   
-    // @LINE:17
+    // @LINE:28
+    def at: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.Assets.at",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "login"})
+        }
+      """
+    )
+  
+    // @LINE:27
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
@@ -55,7 +65,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:20
+  // @LINE:21
   class ReverseUserController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -63,7 +73,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:22
+    // @LINE:23
     def postUser: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.postUser",
       """
@@ -73,7 +83,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:20
+    // @LINE:21
     def getUsers: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.getUsers",
       """
@@ -83,7 +93,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:21
+    // @LINE:22
     def getUser: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.getUser",
       """
