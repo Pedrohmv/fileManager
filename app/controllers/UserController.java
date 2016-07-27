@@ -1,6 +1,8 @@
 package controllers;
 
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import play.data.DynamicForm;
+import play.data.Form;
 import play.libs.Json;
 import play.mvc.*;
 import java.util.ArrayList;
@@ -20,13 +22,15 @@ public class UserController extends Controller {
         return ok(Json.toJson(user));
     }
 
-    public Result postUser(String username, String email, String password){
+    public Result postUser(){
         ObjectNode newUser = Json.newObject();
-        newUser.put("username", username);
-        newUser.put("email", email);
-        newUser.put("senha", password);
+        DynamicForm form = Form.form().bindFromRequest();
+        newUser.put("username",form.get("username"));
+        newUser.put("email",form.get("email"));
+        newUser.put("password",form.get("password"));
         users.add(newUser);
         return ok("200");
+
     }
 
     private ObjectNode searchUser(String username){

@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/pedro/Documentos/fileManager/conf/routes
-// @DATE:Tue Jul 26 15:00:40 BRT 2016
+// @SOURCE:/home/pedro/Documentos/projetosi1/conf/routes
+// @DATE:Tue Jul 26 21:18:32 BRT 2016
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -73,16 +73,6 @@ package controllers.javascript {
     }
 
   
-    // @LINE:23
-    def postUser: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.UserController.postUser",
-      """
-        function(username0,email1,password2) {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "api/user" + _qS([(""" + implicitly[QueryStringBindable[String]].javascriptUnbind + """)("username", username0), (""" + implicitly[QueryStringBindable[String]].javascriptUnbind + """)("email", email1), (""" + implicitly[QueryStringBindable[String]].javascriptUnbind + """)("password", password2)])})
-        }
-      """
-    )
-  
     // @LINE:21
     def getUsers: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.getUsers",
@@ -99,6 +89,16 @@ package controllers.javascript {
       """
         function(username0) {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "api/users/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("username", encodeURIComponent(username0))})
+        }
+      """
+    )
+  
+    // @LINE:23
+    def postUser: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.UserController.postUser",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "api/user"})
         }
       """
     )

@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/pedro/Documentos/fileManager/conf/routes
-// @DATE:Tue Jul 26 15:00:40 BRT 2016
+// @SOURCE:/home/pedro/Documentos/projetosi1/conf/routes
+// @DATE:Tue Jul 26 21:18:32 BRT 2016
 
 package router
 
@@ -62,7 +62,7 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """play""", """controllers.HomeController.index"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/users""", """controllers.UserController.getUsers"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/users/""" + "$" + """username<[^/]+>""", """controllers.UserController.getUser(username:String)"""),
-    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/user""", """controllers.UserController.postUser(username:String, email:String, password:String)"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/user""", """controllers.UserController.postUser"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """login""", """controllers.Assets.at(path:String = "/public/html", file:String = "login.html")"""),
     Nil
@@ -197,12 +197,12 @@ Usuarios""",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/user")))
   )
   private[this] lazy val controllers_UserController_postUser7_invoker = createInvoker(
-    UserController_3.postUser(fakeValue[String], fakeValue[String], fakeValue[String]),
+    UserController_3.postUser,
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.UserController",
       "postUser",
-      Seq(classOf[String], classOf[String], classOf[String]),
+      Nil,
       "POST",
       """""",
       this.prefix + """api/user"""
@@ -290,8 +290,8 @@ Usuarios""",
   
     // @LINE:23
     case controllers_UserController_postUser7_route(params) =>
-      call(params.fromQuery[String]("username", None), params.fromQuery[String]("email", None), params.fromQuery[String]("password", None)) { (username, email, password) =>
-        controllers_UserController_postUser7_invoker.call(UserController_3.postUser(username, email, password))
+      call { 
+        controllers_UserController_postUser7_invoker.call(UserController_3.postUser)
       }
   
     // @LINE:27

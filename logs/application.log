@@ -1,627 +1,123 @@
-2016-07-26 14:17:07,009 [INFO] from play.core.server.NettyServer in play-fork-run-akka.actor.default-dispatcher-2 - Listening for HTTP on /0:0:0:0:0:0:0:0:9000
-2016-07-26 14:18:57,831 [INFO] from application in ForkJoinPool-1-worker-1 - ApplicationTimer demo: Starting application at 2016-07-26T17:18:57.829Z
-2016-07-26 14:18:58,487 [INFO] from play.api.Play in ForkJoinPool-1-worker-1 - Application started (Dev)
-2016-07-26 14:22:34,499 [INFO] from application in application-akka.actor.default-dispatcher-3 - ApplicationTimer demo: Stopping application at 2016-07-26T17:22:34.499Z after 217s.
-2016-07-26 14:22:34,845 [INFO] from application in application-akka.actor.default-dispatcher-3 - ApplicationTimer demo: Starting application at 2016-07-26T17:22:34.845Z
-2016-07-26 14:22:35,093 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-3 - Application started (Dev)
-2016-07-26 14:25:51,118 [INFO] from application in application-akka.actor.default-dispatcher-17 - ApplicationTimer demo: Stopping application at 2016-07-26T17:25:51.118Z after 197s.
-2016-07-26 14:25:51,599 [INFO] from application in application-akka.actor.default-dispatcher-17 - ApplicationTimer demo: Starting application at 2016-07-26T17:25:51.599Z
-2016-07-26 14:25:51,855 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-17 - Application started (Dev)
-2016-07-26 14:30:28,862 [INFO] from application in application-akka.actor.default-dispatcher-6 - ApplicationTimer demo: Stopping application at 2016-07-26T17:30:28.862Z after 277s.
-2016-07-26 14:30:29,388 [INFO] from application in application-akka.actor.default-dispatcher-6 - ApplicationTimer demo: Starting application at 2016-07-26T17:30:29.386Z
-2016-07-26 14:30:29,689 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-6 - Application started (Dev)
-2016-07-26 14:31:49,134 [INFO] from application in application-akka.actor.default-dispatcher-5 - ApplicationTimer demo: Stopping application at 2016-07-26T17:31:49.134Z after 80s.
-2016-07-26 14:31:49,538 [INFO] from application in application-akka.actor.default-dispatcher-5 - ApplicationTimer demo: Starting application at 2016-07-26T17:31:49.538Z
-2016-07-26 14:31:49,778 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-5 - Application started (Dev)
-2016-07-26 14:34:01,646 [INFO] from application in application-akka.actor.default-dispatcher-5 - ApplicationTimer demo: Stopping application at 2016-07-26T17:34:01.646Z after 132s.
-2016-07-26 14:34:01,946 [INFO] from application in application-akka.actor.default-dispatcher-5 - ApplicationTimer demo: Starting application at 2016-07-26T17:34:01.946Z
-2016-07-26 14:34:02,078 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-5 - Application started (Dev)
-2016-07-26 14:34:50,177 [INFO] from application in application-akka.actor.default-dispatcher-7 - ApplicationTimer demo: Stopping application at 2016-07-26T17:34:50.177Z after 49s.
-2016-07-26 14:34:50,485 [INFO] from application in application-akka.actor.default-dispatcher-7 - ApplicationTimer demo: Starting application at 2016-07-26T17:34:50.485Z
-2016-07-26 14:34:50,626 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-7 - Application started (Dev)
-2016-07-26 14:35:39,854 [INFO] from application in application-akka.actor.default-dispatcher-4 - ApplicationTimer demo: Stopping application at 2016-07-26T17:35:39.854Z after 49s.
-2016-07-26 14:35:40,079 [INFO] from application in application-akka.actor.default-dispatcher-4 - ApplicationTimer demo: Starting application at 2016-07-26T17:35:40.079Z
-2016-07-26 14:35:40,198 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-4 - Application started (Dev)
-2016-07-26 14:36:07,525 [INFO] from application in application-akka.actor.default-dispatcher-2 - ApplicationTimer demo: Stopping application at 2016-07-26T17:36:07.525Z after 27s.
-2016-07-26 14:36:07,926 [INFO] from application in application-akka.actor.default-dispatcher-2 - ApplicationTimer demo: Starting application at 2016-07-26T17:36:07.925Z
-2016-07-26 14:36:08,030 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-2 - Application started (Dev)
-2016-07-26 14:38:07,558 [INFO] from application in application-akka.actor.default-dispatcher-5 - ApplicationTimer demo: Stopping application at 2016-07-26T17:38:07.558Z after 120s.
-2016-07-26 14:38:07,711 [INFO] from application in application-akka.actor.default-dispatcher-5 - ApplicationTimer demo: Starting application at 2016-07-26T17:38:07.711Z
-2016-07-26 14:38:07,861 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-5 - Application started (Dev)
-2016-07-26 14:39:00,015 [INFO] from application in application-akka.actor.default-dispatcher-2 - ApplicationTimer demo: Stopping application at 2016-07-26T17:39:00.015Z after 53s.
-2016-07-26 14:39:00,173 [INFO] from application in application-akka.actor.default-dispatcher-2 - ApplicationTimer demo: Starting application at 2016-07-26T17:39:00.173Z
-2016-07-26 14:39:00,278 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-2 - Application started (Dev)
-2016-07-26 14:42:15,723 [INFO] from application in application-akka.actor.default-dispatcher-3 - ApplicationTimer demo: Stopping application at 2016-07-26T17:42:15.723Z after 195s.
-2016-07-26 14:42:15,853 [INFO] from application in application-akka.actor.default-dispatcher-3 - ApplicationTimer demo: Starting application at 2016-07-26T17:42:15.853Z
-2016-07-26 14:42:15,935 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-3 - Application started (Dev)
-2016-07-26 14:43:59,505 [INFO] from application in application-akka.actor.default-dispatcher-7 - ApplicationTimer demo: Stopping application at 2016-07-26T17:43:59.505Z after 104s.
-2016-07-26 14:43:59,724 [INFO] from application in application-akka.actor.default-dispatcher-7 - ApplicationTimer demo: Starting application at 2016-07-26T17:43:59.724Z
-2016-07-26 14:43:59,895 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-7 - Application started (Dev)
-2016-07-26 14:46:51,590 [INFO] from application in application-akka.actor.default-dispatcher-2 - ApplicationTimer demo: Stopping application at 2016-07-26T17:46:51.590Z after 172s.
-2016-07-26 14:46:51,827 [INFO] from application in application-akka.actor.default-dispatcher-2 - ApplicationTimer demo: Starting application at 2016-07-26T17:46:51.827Z
-2016-07-26 14:46:51,949 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-2 - Application started (Dev)
-2016-07-26 14:47:39,769 [INFO] from application in application-akka.actor.default-dispatcher-4 - ApplicationTimer demo: Stopping application at 2016-07-26T17:47:39.769Z after 48s.
-2016-07-26 14:47:39,985 [INFO] from application in application-akka.actor.default-dispatcher-4 - ApplicationTimer demo: Starting application at 2016-07-26T17:47:39.985Z
-2016-07-26 14:47:40,089 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-4 - Application started (Dev)
-2016-07-26 14:49:54,062 [INFO] from application in application-akka.actor.default-dispatcher-5 - ApplicationTimer demo: Stopping application at 2016-07-26T17:49:54.062Z after 135s.
-2016-07-26 14:49:54,208 [INFO] from application in application-akka.actor.default-dispatcher-5 - ApplicationTimer demo: Starting application at 2016-07-26T17:49:54.208Z
-2016-07-26 14:49:54,286 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-5 - Application started (Dev)
-2016-07-26 14:49:58,745 [INFO] from application in application-akka.actor.default-dispatcher-2 - ApplicationTimer demo: Stopping application at 2016-07-26T17:49:58.745Z after 4s.
-2016-07-26 14:49:58,904 [INFO] from application in application-akka.actor.default-dispatcher-2 - ApplicationTimer demo: Starting application at 2016-07-26T17:49:58.904Z
-2016-07-26 14:49:59,012 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-2 - Application started (Dev)
-2016-07-26 14:52:23,841 [INFO] from application in application-akka.actor.default-dispatcher-4 - ApplicationTimer demo: Stopping application at 2016-07-26T17:52:23.841Z after 145s.
-2016-07-26 14:52:23,954 [INFO] from application in application-akka.actor.default-dispatcher-4 - ApplicationTimer demo: Starting application at 2016-07-26T17:52:23.954Z
-2016-07-26 14:52:24,049 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-4 - Application started (Dev)
-2016-07-26 14:56:22,611 [INFO] from application in application-akka.actor.default-dispatcher-8 - ApplicationTimer demo: Stopping application at 2016-07-26T17:56:22.611Z after 239s.
-2016-07-26 14:56:22,812 [INFO] from application in application-akka.actor.default-dispatcher-8 - ApplicationTimer demo: Starting application at 2016-07-26T17:56:22.812Z
-2016-07-26 14:56:22,927 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-8 - Application started (Dev)
-2016-07-26 14:57:01,434 [INFO] from application in application-akka.actor.default-dispatcher-4 - ApplicationTimer demo: Stopping application at 2016-07-26T17:57:01.434Z after 39s.
-2016-07-26 14:57:01,633 [INFO] from application in application-akka.actor.default-dispatcher-4 - ApplicationTimer demo: Starting application at 2016-07-26T17:57:01.633Z
-2016-07-26 14:57:01,743 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-4 - Application started (Dev)
-2016-07-26 14:58:06,618 [ERROR] from application in netty-event-loop-6 - 
+2016-07-26 21:44:16,034 [INFO] from play.core.server.NettyServer in play-fork-run-akka.actor.default-dispatcher-4 - Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+2016-07-26 21:44:24,249 [INFO] from application in ForkJoinPool-1-worker-1 - ApplicationTimer demo: Starting application at 2016-07-27T00:44:24.247Z
+2016-07-26 21:44:25,293 [ERROR] from application in netty-event-loop-3 - 
 
-! @70p3h764n - Internal server error, for (GET) [/signup] ->
+! @70p5ig78f - Internal server error, for (GET) [/] ->
  
-play.forkrun.protocol.Serializers$playExceptionPickler$$anon$1: Compilation error[missing arguments for method postUser in class ReverseUserController;
-follow this method with `_' if you want to treat it as a partially applied function]
-	at play.forkrun.protocol.Serializers$playExceptionPickler$.unpickle(Serializers.scala:159)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileFailureUnpickler$macro$56$2$.unpickle(Serializers.scala:175)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickle(Serializers.scala:181)
-	at scala.pickling.Unpickler$class.unpickleEntry(Pickler.scala:79)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickleEntry(Serializers.scala:181)
-	at scala.pickling.functions$.unpickle(functions.scala:11)
-	at sbt.serialization.JsonValue$$anonfun$parse$1.apply(SerializedValue.scala:104)
-	at scala.util.Try$.apply(Try.scala:192)
-	at sbt.serialization.JsonValue.parse(SerializedValue.scala:104)
-	at sbt.protocol.BuildValue.value(Values.scala:11)
-	at sbt.protocol.TaskSuccess.resultWithCustomThrowable(Values.scala:65)
-	at sbt.protocol.TaskResult$class.result(Values.scala:56)
-	at sbt.protocol.TaskSuccess.result(Values.scala:62)
-	at play.forkrun.ForkRun$$anonfun$reloading$1.applyOrElse(ForkRun.scala:198)
-	at akka.actor.Actor$class.aroundReceive(Actor.scala:465)
-	at play.forkrun.ForkRun.aroundReceive(ForkRun.scala:153)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:487)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:221)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:231)
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-2016-07-26 14:58:34,413 [ERROR] from application in netty-event-loop-6 - 
+play.api.UnexpectedException: Unexpected exception[ProvisionException: Unable to provision, see the following errors:
 
-! @70p3h8lh8 - Internal server error, for (GET) [/signup] ->
- 
-play.forkrun.protocol.Serializers$playExceptionPickler$$anon$1: Compilation error[value postUser_ is not a member of controllers.ReverseUserController]
-	at play.forkrun.protocol.Serializers$playExceptionPickler$.unpickle(Serializers.scala:159)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileFailureUnpickler$macro$56$2$.unpickle(Serializers.scala:175)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickle(Serializers.scala:181)
-	at scala.pickling.Unpickler$class.unpickleEntry(Pickler.scala:79)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickleEntry(Serializers.scala:181)
-	at scala.pickling.functions$.unpickle(functions.scala:11)
-	at sbt.serialization.JsonValue$$anonfun$parse$1.apply(SerializedValue.scala:104)
-	at scala.util.Try$.apply(Try.scala:192)
-	at sbt.serialization.JsonValue.parse(SerializedValue.scala:104)
-	at sbt.protocol.BuildValue.value(Values.scala:11)
-	at sbt.protocol.TaskSuccess.resultWithCustomThrowable(Values.scala:65)
-	at sbt.protocol.TaskResult$class.result(Values.scala:56)
-	at sbt.protocol.TaskSuccess.result(Values.scala:62)
-	at play.forkrun.ForkRun$$anonfun$reloading$1.applyOrElse(ForkRun.scala:198)
-	at akka.actor.Actor$class.aroundReceive(Actor.scala:465)
-	at play.forkrun.ForkRun.aroundReceive(ForkRun.scala:153)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:487)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:221)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:231)
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.pollAndExecAll(ForkJoinPool.java:1253)
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1346)
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-2016-07-26 14:58:44,377 [ERROR] from application in netty-event-loop-6 - 
+1) Error injecting constructor, java.lang.NullPointerException
+  at controllers.UserController.<init>(UserController.java:13)
+  while locating controllers.UserController
+    for parameter 4 at router.Routes.<init>(Routes.scala:44)
+  while locating router.Routes
+  while locating play.api.inject.RoutesProvider
+  while locating play.api.routing.Router
+    for parameter 0 at play.api.http.JavaCompatibleHttpRequestHandler.<init>(HttpRequestHandler.scala:200)
+  while locating play.api.http.JavaCompatibleHttpRequestHandler
+  while locating play.api.http.HttpRequestHandler
+    for parameter 4 at play.api.DefaultApplication.<init>(Application.scala:221)
+  at play.api.DefaultApplication.class(Application.scala:221)
+  while locating play.api.DefaultApplication
+  while locating play.api.Application
 
-! @70p3h9aa8 - Internal server error, for (GET) [/signup] ->
- 
-play.forkrun.protocol.Serializers$playExceptionPickler$$anon$1: Compilation error[not enough arguments for method postUser: (username: String, email: String, password: String)play.api.mvc.Call.
-Unspecified value parameters username, email, password.]
-	at play.forkrun.protocol.Serializers$playExceptionPickler$.unpickle(Serializers.scala:159)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileFailureUnpickler$macro$56$2$.unpickle(Serializers.scala:175)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickle(Serializers.scala:181)
-	at scala.pickling.Unpickler$class.unpickleEntry(Pickler.scala:79)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickleEntry(Serializers.scala:181)
-	at scala.pickling.functions$.unpickle(functions.scala:11)
-	at sbt.serialization.JsonValue$$anonfun$parse$1.apply(SerializedValue.scala:104)
-	at scala.util.Try$.apply(Try.scala:192)
-	at sbt.serialization.JsonValue.parse(SerializedValue.scala:104)
-	at sbt.protocol.BuildValue.value(Values.scala:11)
-	at sbt.protocol.TaskSuccess.resultWithCustomThrowable(Values.scala:65)
-	at sbt.protocol.TaskResult$class.result(Values.scala:56)
-	at sbt.protocol.TaskSuccess.result(Values.scala:62)
-	at play.forkrun.ForkRun$$anonfun$reloading$1.applyOrElse(ForkRun.scala:198)
-	at akka.actor.Actor$class.aroundReceive(Actor.scala:465)
-	at play.forkrun.ForkRun.aroundReceive(ForkRun.scala:153)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:487)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:221)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:231)
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.pollAndExecAll(ForkJoinPool.java:1253)
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1346)
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-2016-07-26 14:59:23,193 [ERROR] from application in netty-event-loop-6 - 
+1 error]
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(DevServerStart.scala:170)
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(DevServerStart.scala:126)
+	at scala.Option.map(Option.scala:146)
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1$$anonfun$apply$1.apply(DevServerStart.scala:126)
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1$$anonfun$apply$1.apply(DevServerStart.scala:124)
+	at scala.util.Success.flatMap(Try.scala:231)
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1.apply(DevServerStart.scala:124)
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1.apply(DevServerStart.scala:116)
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)
+	at java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1402)
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
+	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
+Caused by: com.google.inject.ProvisionException: Unable to provision, see the following errors:
 
-! @70p3hbfle - Internal server error, for (GET) [/signup] ->
- 
-play.forkrun.protocol.Serializers$playExceptionPickler$$anon$1: Compilation error[missing arguments for method postUser in class UserController;
-follow this method with `_' if you want to treat it as a partially applied function]
-	at play.forkrun.protocol.Serializers$playExceptionPickler$.unpickle(Serializers.scala:159)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileFailureUnpickler$macro$56$2$.unpickle(Serializers.scala:175)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickle(Serializers.scala:181)
-	at scala.pickling.Unpickler$class.unpickleEntry(Pickler.scala:79)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickleEntry(Serializers.scala:181)
-	at scala.pickling.functions$.unpickle(functions.scala:11)
-	at sbt.serialization.JsonValue$$anonfun$parse$1.apply(SerializedValue.scala:104)
-	at scala.util.Try$.apply(Try.scala:192)
-	at sbt.serialization.JsonValue.parse(SerializedValue.scala:104)
-	at sbt.protocol.BuildValue.value(Values.scala:11)
-	at sbt.protocol.TaskSuccess.resultWithCustomThrowable(Values.scala:65)
-	at sbt.protocol.TaskResult$class.result(Values.scala:56)
-	at sbt.protocol.TaskSuccess.result(Values.scala:62)
-	at play.forkrun.ForkRun$$anonfun$reloading$1.applyOrElse(ForkRun.scala:198)
-	at akka.actor.Actor$class.aroundReceive(Actor.scala:465)
-	at play.forkrun.ForkRun.aroundReceive(ForkRun.scala:153)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:487)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:221)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:231)
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-2016-07-26 15:00:00,891 [ERROR] from application in netty-event-loop-6 - 
+1) Error injecting constructor, java.lang.NullPointerException
+  at controllers.UserController.<init>(UserController.java:13)
+  while locating controllers.UserController
+    for parameter 4 at router.Routes.<init>(Routes.scala:44)
+  while locating router.Routes
+  while locating play.api.inject.RoutesProvider
+  while locating play.api.routing.Router
+    for parameter 0 at play.api.http.JavaCompatibleHttpRequestHandler.<init>(HttpRequestHandler.scala:200)
+  while locating play.api.http.JavaCompatibleHttpRequestHandler
+  while locating play.api.http.HttpRequestHandler
+    for parameter 4 at play.api.DefaultApplication.<init>(Application.scala:221)
+  at play.api.DefaultApplication.class(Application.scala:221)
+  while locating play.api.DefaultApplication
+  while locating play.api.Application
 
-! @70p3hdjfe - Internal server error, for (GET) [/signup] ->
- 
-play.forkrun.protocol.Serializers$playExceptionPickler$$anon$1: Compilation error[missing arguments for method postUser in class UserController;
-follow this method with `_' if you want to treat it as a partially applied function]
-	at play.forkrun.protocol.Serializers$playExceptionPickler$.unpickle(Serializers.scala:159)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileFailureUnpickler$macro$56$2$.unpickle(Serializers.scala:175)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickle(Serializers.scala:181)
-	at scala.pickling.Unpickler$class.unpickleEntry(Pickler.scala:79)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickleEntry(Serializers.scala:181)
-	at scala.pickling.functions$.unpickle(functions.scala:11)
-	at sbt.serialization.JsonValue$$anonfun$parse$1.apply(SerializedValue.scala:104)
-	at scala.util.Try$.apply(Try.scala:192)
-	at sbt.serialization.JsonValue.parse(SerializedValue.scala:104)
-	at sbt.protocol.BuildValue.value(Values.scala:11)
-	at sbt.protocol.TaskSuccess.resultWithCustomThrowable(Values.scala:65)
-	at sbt.protocol.TaskResult$class.result(Values.scala:56)
-	at sbt.protocol.TaskSuccess.result(Values.scala:62)
-	at play.forkrun.ForkRun$$anonfun$reloading$1.applyOrElse(ForkRun.scala:198)
-	at akka.actor.Actor$class.aroundReceive(Actor.scala:465)
-	at play.forkrun.ForkRun.aroundReceive(ForkRun.scala:153)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:487)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:221)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:231)
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-2016-07-26 15:00:41,867 [ERROR] from application in netty-event-loop-6 - 
-
-! @70p3hg25e - Internal server error, for (GET) [/signup] ->
- 
-play.forkrun.protocol.Serializers$playExceptionPickler$$anon$1: Compilation error[not found: value username]
-	at play.forkrun.protocol.Serializers$playExceptionPickler$.unpickle(Serializers.scala:159)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileFailureUnpickler$macro$56$2$.unpickle(Serializers.scala:175)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickle(Serializers.scala:181)
-	at scala.pickling.Unpickler$class.unpickleEntry(Pickler.scala:79)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickleEntry(Serializers.scala:181)
-	at scala.pickling.functions$.unpickle(functions.scala:11)
-	at sbt.serialization.JsonValue$$anonfun$parse$1.apply(SerializedValue.scala:104)
-	at scala.util.Try$.apply(Try.scala:192)
-	at sbt.serialization.JsonValue.parse(SerializedValue.scala:104)
-	at sbt.protocol.BuildValue.value(Values.scala:11)
-	at sbt.protocol.TaskSuccess.resultWithCustomThrowable(Values.scala:65)
-	at sbt.protocol.TaskResult$class.result(Values.scala:56)
-	at sbt.protocol.TaskSuccess.result(Values.scala:62)
-	at play.forkrun.ForkRun$$anonfun$reloading$1.applyOrElse(ForkRun.scala:198)
-	at akka.actor.Actor$class.aroundReceive(Actor.scala:465)
-	at play.forkrun.ForkRun.aroundReceive(ForkRun.scala:153)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:487)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:221)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:231)
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.pollAndExecAll(ForkJoinPool.java:1253)
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1346)
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-2016-07-26 15:01:08,338 [ERROR] from application in netty-event-loop-6 - 
-
-! @70p3hhf8d - Internal server error, for (GET) [/signup] ->
- 
-play.forkrun.protocol.Serializers$playExceptionPickler$$anon$1: Compilation error[not found: value username]
-	at play.forkrun.protocol.Serializers$playExceptionPickler$.unpickle(Serializers.scala:159)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileFailureUnpickler$macro$56$2$.unpickle(Serializers.scala:175)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickle(Serializers.scala:181)
-	at scala.pickling.Unpickler$class.unpickleEntry(Pickler.scala:79)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickleEntry(Serializers.scala:181)
-	at scala.pickling.functions$.unpickle(functions.scala:11)
-	at sbt.serialization.JsonValue$$anonfun$parse$1.apply(SerializedValue.scala:104)
-	at scala.util.Try$.apply(Try.scala:192)
-	at sbt.serialization.JsonValue.parse(SerializedValue.scala:104)
-	at sbt.protocol.BuildValue.value(Values.scala:11)
-	at sbt.protocol.TaskSuccess.resultWithCustomThrowable(Values.scala:65)
-	at sbt.protocol.TaskResult$class.result(Values.scala:56)
-	at sbt.protocol.TaskSuccess.result(Values.scala:62)
-	at play.forkrun.ForkRun$$anonfun$reloading$1.applyOrElse(ForkRun.scala:198)
-	at akka.actor.Actor$class.aroundReceive(Actor.scala:465)
-	at play.forkrun.ForkRun.aroundReceive(ForkRun.scala:153)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:487)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:221)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:231)
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-2016-07-26 15:01:29,982 [ERROR] from application in netty-event-loop-6 - 
-
-! @70p3hila2 - Internal server error, for (GET) [/signup] ->
- 
-play.forkrun.protocol.Serializers$playExceptionPickler$$anon$1: Compilation error[not found: value email]
-	at play.forkrun.protocol.Serializers$playExceptionPickler$.unpickle(Serializers.scala:159)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileFailureUnpickler$macro$56$2$.unpickle(Serializers.scala:175)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickle(Serializers.scala:181)
-	at scala.pickling.Unpickler$class.unpickleEntry(Pickler.scala:79)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickleEntry(Serializers.scala:181)
-	at scala.pickling.functions$.unpickle(functions.scala:11)
-	at sbt.serialization.JsonValue$$anonfun$parse$1.apply(SerializedValue.scala:104)
-	at scala.util.Try$.apply(Try.scala:192)
-	at sbt.serialization.JsonValue.parse(SerializedValue.scala:104)
-	at sbt.protocol.BuildValue.value(Values.scala:11)
-	at sbt.protocol.TaskSuccess.resultWithCustomThrowable(Values.scala:65)
-	at sbt.protocol.TaskResult$class.result(Values.scala:56)
-	at sbt.protocol.TaskSuccess.result(Values.scala:62)
-	at play.forkrun.ForkRun$$anonfun$reloading$1.applyOrElse(ForkRun.scala:198)
-	at akka.actor.Actor$class.aroundReceive(Actor.scala:465)
-	at play.forkrun.ForkRun.aroundReceive(ForkRun.scala:153)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:487)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:221)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:231)
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.pollAndExecAll(ForkJoinPool.java:1253)
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1346)
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-2016-07-26 15:01:47,084 [INFO] from application in application-akka.actor.default-dispatcher-3 - ApplicationTimer demo: Stopping application at 2016-07-26T18:01:47.084Z after 286s.
-2016-07-26 15:01:47,253 [INFO] from application in application-akka.actor.default-dispatcher-3 - ApplicationTimer demo: Starting application at 2016-07-26T18:01:47.253Z
-2016-07-26 15:01:47,308 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-3 - Application started (Dev)
-2016-07-26 15:10:42,050 [INFO] from application in application-akka.actor.default-dispatcher-6 - ApplicationTimer demo: Stopping application at 2016-07-26T18:10:42.050Z after 535s.
-2016-07-26 15:10:42,166 [INFO] from application in application-akka.actor.default-dispatcher-6 - ApplicationTimer demo: Starting application at 2016-07-26T18:10:42.166Z
-2016-07-26 15:10:42,240 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-6 - Application started (Dev)
-2016-07-26 15:11:20,297 [ERROR] from application in netty-event-loop-2 - 
-
-! @70p3j0age - Internal server error, for (GET) [/assets/images/favicon.png] ->
- 
-play.forkrun.protocol.Serializers$playExceptionPickler$$anon$1: Compilation error[not found: value username]
-	at play.forkrun.protocol.Serializers$playExceptionPickler$.unpickle(Serializers.scala:159)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileFailureUnpickler$macro$56$2$.unpickle(Serializers.scala:175)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickle(Serializers.scala:181)
-	at scala.pickling.Unpickler$class.unpickleEntry(Pickler.scala:79)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickleEntry(Serializers.scala:181)
-	at scala.pickling.functions$.unpickle(functions.scala:11)
-	at sbt.serialization.JsonValue$$anonfun$parse$1.apply(SerializedValue.scala:104)
-	at scala.util.Try$.apply(Try.scala:192)
-	at sbt.serialization.JsonValue.parse(SerializedValue.scala:104)
-	at sbt.protocol.BuildValue.value(Values.scala:11)
-	at sbt.protocol.TaskSuccess.resultWithCustomThrowable(Values.scala:65)
-	at sbt.protocol.TaskResult$class.result(Values.scala:56)
-	at sbt.protocol.TaskSuccess.result(Values.scala:62)
-	at play.forkrun.ForkRun$$anonfun$reloading$1.applyOrElse(ForkRun.scala:198)
-	at akka.actor.Actor$class.aroundReceive(Actor.scala:465)
-	at play.forkrun.ForkRun.aroundReceive(ForkRun.scala:153)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:487)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:221)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:231)
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.pollAndExecAll(ForkJoinPool.java:1253)
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1346)
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-2016-07-26 15:11:21,772 [ERROR] from application in netty-event-loop-2 - 
-
-! @70p3j0cl9 - Internal server error, for (GET) [/assets/images/favicon.png] ->
- 
-play.forkrun.protocol.Serializers$playExceptionPickler$$anon$1: Compilation error[not found: value username]
-	at play.forkrun.protocol.Serializers$playExceptionPickler$.unpickle(Serializers.scala:159)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileFailureUnpickler$macro$56$2$.unpickle(Serializers.scala:175)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickle(Serializers.scala:181)
-	at scala.pickling.Unpickler$class.unpickleEntry(Pickler.scala:79)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickleEntry(Serializers.scala:181)
-	at scala.pickling.functions$.unpickle(functions.scala:11)
-	at sbt.serialization.JsonValue$$anonfun$parse$1.apply(SerializedValue.scala:104)
-	at scala.util.Try$.apply(Try.scala:192)
-	at sbt.serialization.JsonValue.parse(SerializedValue.scala:104)
-	at sbt.protocol.BuildValue.value(Values.scala:11)
-	at sbt.protocol.TaskSuccess.resultWithCustomThrowable(Values.scala:65)
-	at sbt.protocol.TaskResult$class.result(Values.scala:56)
-	at sbt.protocol.TaskSuccess.result(Values.scala:62)
-	at play.forkrun.ForkRun$$anonfun$reloading$1.applyOrElse(ForkRun.scala:198)
-	at akka.actor.Actor$class.aroundReceive(Actor.scala:465)
-	at play.forkrun.ForkRun.aroundReceive(ForkRun.scala:153)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:487)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:221)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:231)
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-2016-07-26 15:11:22,868 [ERROR] from application in netty-event-loop-2 - 
-
-! @70p3j0ea3 - Internal server error, for (GET) [/] ->
- 
-play.forkrun.protocol.Serializers$playExceptionPickler$$anon$1: Compilation error[not found: value username]
-	at play.forkrun.protocol.Serializers$playExceptionPickler$.unpickle(Serializers.scala:159)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileFailureUnpickler$macro$56$2$.unpickle(Serializers.scala:175)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickle(Serializers.scala:181)
-	at scala.pickling.Unpickler$class.unpickleEntry(Pickler.scala:79)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickleEntry(Serializers.scala:181)
-	at scala.pickling.functions$.unpickle(functions.scala:11)
-	at sbt.serialization.JsonValue$$anonfun$parse$1.apply(SerializedValue.scala:104)
-	at scala.util.Try$.apply(Try.scala:192)
-	at sbt.serialization.JsonValue.parse(SerializedValue.scala:104)
-	at sbt.protocol.BuildValue.value(Values.scala:11)
-	at sbt.protocol.TaskSuccess.resultWithCustomThrowable(Values.scala:65)
-	at sbt.protocol.TaskResult$class.result(Values.scala:56)
-	at sbt.protocol.TaskSuccess.result(Values.scala:62)
-	at play.forkrun.ForkRun$$anonfun$reloading$1.applyOrElse(ForkRun.scala:198)
-	at akka.actor.Actor$class.aroundReceive(Actor.scala:465)
-	at play.forkrun.ForkRun.aroundReceive(ForkRun.scala:153)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:487)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:221)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:231)
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.pollAndExecAll(ForkJoinPool.java:1253)
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1346)
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-2016-07-26 15:11:54,643 [ERROR] from application in netty-event-loop-2 - 
-
-! @70p3j29be - Internal server error, for (GET) [/users] ->
- 
-play.forkrun.protocol.Serializers$playExceptionPickler$$anon$1: Compilation error[not found: value username]
-	at play.forkrun.protocol.Serializers$playExceptionPickler$.unpickle(Serializers.scala:159)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileFailureUnpickler$macro$56$2$.unpickle(Serializers.scala:175)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickle(Serializers.scala:181)
-	at scala.pickling.Unpickler$class.unpickleEntry(Pickler.scala:79)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickleEntry(Serializers.scala:181)
-	at scala.pickling.functions$.unpickle(functions.scala:11)
-	at sbt.serialization.JsonValue$$anonfun$parse$1.apply(SerializedValue.scala:104)
-	at scala.util.Try$.apply(Try.scala:192)
-	at sbt.serialization.JsonValue.parse(SerializedValue.scala:104)
-	at sbt.protocol.BuildValue.value(Values.scala:11)
-	at sbt.protocol.TaskSuccess.resultWithCustomThrowable(Values.scala:65)
-	at sbt.protocol.TaskResult$class.result(Values.scala:56)
-	at sbt.protocol.TaskSuccess.result(Values.scala:62)
-	at play.forkrun.ForkRun$$anonfun$reloading$1.applyOrElse(ForkRun.scala:198)
-	at akka.actor.Actor$class.aroundReceive(Actor.scala:465)
-	at play.forkrun.ForkRun.aroundReceive(ForkRun.scala:153)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:487)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:221)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:231)
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-2016-07-26 15:11:58,410 [ERROR] from application in netty-event-loop-2 - 
-
-! @70p3j2f0a - Internal server error, for (GET) [/] ->
- 
-play.forkrun.protocol.Serializers$playExceptionPickler$$anon$1: Compilation error[not found: value username]
-	at play.forkrun.protocol.Serializers$playExceptionPickler$.unpickle(Serializers.scala:159)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileFailureUnpickler$macro$56$2$.unpickle(Serializers.scala:175)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickle(Serializers.scala:181)
-	at scala.pickling.Unpickler$class.unpickleEntry(Pickler.scala:79)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickleEntry(Serializers.scala:181)
-	at scala.pickling.functions$.unpickle(functions.scala:11)
-	at sbt.serialization.JsonValue$$anonfun$parse$1.apply(SerializedValue.scala:104)
-	at scala.util.Try$.apply(Try.scala:192)
-	at sbt.serialization.JsonValue.parse(SerializedValue.scala:104)
-	at sbt.protocol.BuildValue.value(Values.scala:11)
-	at sbt.protocol.TaskSuccess.resultWithCustomThrowable(Values.scala:65)
-	at sbt.protocol.TaskResult$class.result(Values.scala:56)
-	at sbt.protocol.TaskSuccess.result(Values.scala:62)
-	at play.forkrun.ForkRun$$anonfun$reloading$1.applyOrElse(ForkRun.scala:198)
-	at akka.actor.Actor$class.aroundReceive(Actor.scala:465)
-	at play.forkrun.ForkRun.aroundReceive(ForkRun.scala:153)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:487)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:221)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:231)
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-2016-07-26 15:12:03,952 [ERROR] from application in netty-event-loop-2 - 
-
-! @70p3j2n50 - Internal server error, for (GET) [/] ->
- 
-play.forkrun.protocol.Serializers$playExceptionPickler$$anon$1: Compilation error[not found: value username]
-	at play.forkrun.protocol.Serializers$playExceptionPickler$.unpickle(Serializers.scala:159)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileFailureUnpickler$macro$56$2$.unpickle(Serializers.scala:175)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickle(Serializers.scala:181)
-	at scala.pickling.Unpickler$class.unpickleEntry(Pickler.scala:79)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickleEntry(Serializers.scala:181)
-	at scala.pickling.functions$.unpickle(functions.scala:11)
-	at sbt.serialization.JsonValue$$anonfun$parse$1.apply(SerializedValue.scala:104)
-	at scala.util.Try$.apply(Try.scala:192)
-	at sbt.serialization.JsonValue.parse(SerializedValue.scala:104)
-	at sbt.protocol.BuildValue.value(Values.scala:11)
-	at sbt.protocol.TaskSuccess.resultWithCustomThrowable(Values.scala:65)
-	at sbt.protocol.TaskResult$class.result(Values.scala:56)
-	at sbt.protocol.TaskSuccess.result(Values.scala:62)
-	at play.forkrun.ForkRun$$anonfun$reloading$1.applyOrElse(ForkRun.scala:198)
-	at akka.actor.Actor$class.aroundReceive(Actor.scala:465)
-	at play.forkrun.ForkRun.aroundReceive(ForkRun.scala:153)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:487)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:221)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:231)
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-2016-07-26 15:16:00,904 [INFO] from application in application-akka.actor.default-dispatcher-2 - ApplicationTimer demo: Stopping application at 2016-07-26T18:16:00.904Z after 318s.
-2016-07-26 15:16:00,972 [INFO] from application in application-akka.actor.default-dispatcher-2 - ApplicationTimer demo: Starting application at 2016-07-26T18:16:00.972Z
-2016-07-26 15:16:01,019 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-2 - Application started (Dev)
-2016-07-26 15:17:08,291 [INFO] from application in application-akka.actor.default-dispatcher-6 - ApplicationTimer demo: Stopping application at 2016-07-26T18:17:08.291Z after 68s.
-2016-07-26 15:17:08,365 [INFO] from application in application-akka.actor.default-dispatcher-6 - ApplicationTimer demo: Starting application at 2016-07-26T18:17:08.365Z
-2016-07-26 15:17:08,423 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-6 - Application started (Dev)
-2016-07-26 15:17:47,695 [ERROR] from application in netty-event-loop-3 - 
-
-! @70p3jmbic - Internal server error, for (GET) [/] ->
- 
-play.forkrun.protocol.Serializers$playExceptionPickler$$anon$1: Compilation error[not found: value username]
-	at play.forkrun.protocol.Serializers$playExceptionPickler$.unpickle(Serializers.scala:159)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileFailureUnpickler$macro$56$2$.unpickle(Serializers.scala:175)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickle(Serializers.scala:181)
-	at scala.pickling.Unpickler$class.unpickleEntry(Pickler.scala:79)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickleEntry(Serializers.scala:181)
-	at scala.pickling.functions$.unpickle(functions.scala:11)
-	at sbt.serialization.JsonValue$$anonfun$parse$1.apply(SerializedValue.scala:104)
-	at scala.util.Try$.apply(Try.scala:192)
-	at sbt.serialization.JsonValue.parse(SerializedValue.scala:104)
-	at sbt.protocol.BuildValue.value(Values.scala:11)
-	at sbt.protocol.TaskSuccess.resultWithCustomThrowable(Values.scala:65)
-	at sbt.protocol.TaskResult$class.result(Values.scala:56)
-	at sbt.protocol.TaskSuccess.result(Values.scala:62)
-	at play.forkrun.ForkRun$$anonfun$reloading$1.applyOrElse(ForkRun.scala:198)
-	at akka.actor.Actor$class.aroundReceive(Actor.scala:465)
-	at play.forkrun.ForkRun.aroundReceive(ForkRun.scala:153)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:487)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:221)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:231)
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-2016-07-26 15:18:21,438 [ERROR] from application in netty-event-loop-3 - 
-
-! @70p3jo9g8 - Internal server error, for (GET) [/] ->
- 
-play.forkrun.protocol.Serializers$playExceptionPickler$$anon$1: Compilation error[not found: value username]
-	at play.forkrun.protocol.Serializers$playExceptionPickler$.unpickle(Serializers.scala:159)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileFailureUnpickler$macro$56$2$.unpickle(Serializers.scala:175)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickle(Serializers.scala:181)
-	at scala.pickling.Unpickler$class.unpickleEntry(Pickler.scala:79)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickleEntry(Serializers.scala:181)
-	at scala.pickling.functions$.unpickle(functions.scala:11)
-	at sbt.serialization.JsonValue$$anonfun$parse$1.apply(SerializedValue.scala:104)
-	at scala.util.Try$.apply(Try.scala:192)
-	at sbt.serialization.JsonValue.parse(SerializedValue.scala:104)
-	at sbt.protocol.BuildValue.value(Values.scala:11)
-	at sbt.protocol.TaskSuccess.resultWithCustomThrowable(Values.scala:65)
-	at sbt.protocol.TaskResult$class.result(Values.scala:56)
-	at sbt.protocol.TaskSuccess.result(Values.scala:62)
-	at play.forkrun.ForkRun$$anonfun$reloading$1.applyOrElse(ForkRun.scala:198)
-	at akka.actor.Actor$class.aroundReceive(Actor.scala:465)
-	at play.forkrun.ForkRun.aroundReceive(ForkRun.scala:153)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:487)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:221)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:231)
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-2016-07-26 15:21:31,878 [ERROR] from application in netty-event-loop-5 - 
-
-! @70p3k958l - Internal server error, for (GET) [/] ->
- 
-play.forkrun.protocol.Serializers$playExceptionPickler$$anon$1: Compilation error[not found: value username]
-	at play.forkrun.protocol.Serializers$playExceptionPickler$.unpickle(Serializers.scala:159)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileFailureUnpickler$macro$56$2$.unpickle(Serializers.scala:175)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickle(Serializers.scala:181)
-	at scala.pickling.Unpickler$class.unpickleEntry(Pickler.scala:79)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickleEntry(Serializers.scala:181)
-	at scala.pickling.functions$.unpickle(functions.scala:11)
-	at sbt.serialization.JsonValue$$anonfun$parse$1.apply(SerializedValue.scala:104)
-	at scala.util.Try$.apply(Try.scala:192)
-	at sbt.serialization.JsonValue.parse(SerializedValue.scala:104)
-	at sbt.protocol.BuildValue.value(Values.scala:11)
-	at sbt.protocol.TaskSuccess.resultWithCustomThrowable(Values.scala:65)
-	at sbt.protocol.TaskResult$class.result(Values.scala:56)
-	at sbt.protocol.TaskSuccess.result(Values.scala:62)
-	at play.forkrun.ForkRun$$anonfun$reloading$1.applyOrElse(ForkRun.scala:198)
-	at akka.actor.Actor$class.aroundReceive(Actor.scala:465)
-	at play.forkrun.ForkRun.aroundReceive(ForkRun.scala:153)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:487)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:221)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:231)
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-2016-07-26 15:22:49,117 [ERROR] from application in netty-event-loop-5 - 
-
-! @70p3kdffi - Internal server error, for (GET) [/] ->
- 
-play.forkrun.protocol.Serializers$playExceptionPickler$$anon$1: Compilation error[not enough arguments for method postUser: (username: String, email: String, password: String)play.api.mvc.Call.
-Unspecified value parameters username, email, password.]
-	at play.forkrun.protocol.Serializers$playExceptionPickler$.unpickle(Serializers.scala:159)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileFailureUnpickler$macro$56$2$.unpickle(Serializers.scala:175)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickle(Serializers.scala:181)
-	at scala.pickling.Unpickler$class.unpickleEntry(Pickler.scala:79)
-	at play.forkrun.protocol.Serializers$PlayRunsupportReloaderCompileResultUnpickler$macro$66$2$.unpickleEntry(Serializers.scala:181)
-	at scala.pickling.functions$.unpickle(functions.scala:11)
-	at sbt.serialization.JsonValue$$anonfun$parse$1.apply(SerializedValue.scala:104)
-	at scala.util.Try$.apply(Try.scala:192)
-	at sbt.serialization.JsonValue.parse(SerializedValue.scala:104)
-	at sbt.protocol.BuildValue.value(Values.scala:11)
-	at sbt.protocol.TaskSuccess.resultWithCustomThrowable(Values.scala:65)
-	at sbt.protocol.TaskResult$class.result(Values.scala:56)
-	at sbt.protocol.TaskSuccess.result(Values.scala:62)
-	at play.forkrun.ForkRun$$anonfun$reloading$1.applyOrElse(ForkRun.scala:198)
-	at akka.actor.Actor$class.aroundReceive(Actor.scala:465)
-	at play.forkrun.ForkRun.aroundReceive(ForkRun.scala:153)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:487)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:221)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:231)
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.pollAndExecAll(ForkJoinPool.java:1253)
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1346)
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-2016-07-26 15:23:16,946 [INFO] from application in application-akka.actor.default-dispatcher-4 - ApplicationTimer demo: Stopping application at 2016-07-26T18:23:16.946Z after 368s.
-2016-07-26 15:23:17,010 [INFO] from application in application-akka.actor.default-dispatcher-4 - ApplicationTimer demo: Starting application at 2016-07-26T18:23:17.010Z
-2016-07-26 15:23:17,072 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-4 - Application started (Dev)
+1 error
+	at com.google.inject.internal.InjectorImpl$2.get(InjectorImpl.java:1025)
+	at com.google.inject.internal.InjectorImpl.getInstance(InjectorImpl.java:1051)
+	at play.api.inject.guice.GuiceInjector.instanceOf(GuiceInjectorBuilder.scala:405)
+	at play.api.inject.guice.GuiceInjector.instanceOf(GuiceInjectorBuilder.scala:400)
+	at play.api.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.scala:123)
+	at play.api.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.scala:21)
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1$$anonfun$apply$1$$anonfun$1$$anonfun$2.apply(DevServerStart.scala:158)
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1$$anonfun$apply$1$$anonfun$1$$anonfun$2.apply(DevServerStart.scala:155)
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:21)
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(DevServerStart.scala:155)
+	... 14 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at controllers.UserController.<init>(UserController.java:17)
+	at controllers.UserController$$FastClassByGuice$$d38d645e.newInstance(<generated>)
+	at com.google.inject.internal.cglib.reflect.$FastConstructor.newInstance(FastConstructor.java:40)
+	at com.google.inject.internal.DefaultConstructionProxyFactory$1.newInstance(DefaultConstructionProxyFactory.java:61)
+	at com.google.inject.internal.ConstructorInjector.provision(ConstructorInjector.java:105)
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:85)
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:267)
+	at com.google.inject.internal.SingleParameterInjector.inject(SingleParameterInjector.java:38)
+	at com.google.inject.internal.SingleParameterInjector.getAll(SingleParameterInjector.java:62)
+	at com.google.inject.internal.ConstructorInjector.provision(ConstructorInjector.java:104)
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:85)
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:267)
+	at com.google.inject.internal.InjectorImpl$2$1.call(InjectorImpl.java:1016)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1103)
+	at com.google.inject.internal.InjectorImpl$2.get(InjectorImpl.java:1012)
+	at com.google.inject.internal.InjectorImpl.getInstance(InjectorImpl.java:1051)
+	at play.api.inject.guice.GuiceInjector.instanceOf(GuiceInjectorBuilder.scala:405)
+	at play.api.inject.RoutesProvider$$anonfun$2.apply(BuiltinModule.scala:82)
+	at play.api.inject.RoutesProvider$$anonfun$2.apply(BuiltinModule.scala:82)
+	at scala.Option.fold(Option.scala:158)
+	at play.api.inject.RoutesProvider.get$lzycompute(BuiltinModule.scala:82)
+	at play.api.inject.RoutesProvider.get(BuiltinModule.scala:78)
+	at play.api.inject.RoutesProvider.get(BuiltinModule.scala:77)
+	at com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:81)
+	at com.google.inject.internal.BoundProviderFactory.provision(BoundProviderFactory.java:72)
+	at com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:61)
+	at com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:62)
+	at com.google.inject.internal.SingleParameterInjector.inject(SingleParameterInjector.java:38)
+	at com.google.inject.internal.SingleParameterInjector.getAll(SingleParameterInjector.java:62)
+	at com.google.inject.internal.ConstructorInjector.provision(ConstructorInjector.java:104)
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:85)
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:267)
+	at com.google.inject.internal.FactoryProxy.get(FactoryProxy.java:56)
+	at com.google.inject.internal.SingleParameterInjector.inject(SingleParameterInjector.java:38)
+	at com.google.inject.internal.SingleParameterInjector.getAll(SingleParameterInjector.java:62)
+	at com.google.inject.internal.ConstructorInjector.provision(ConstructorInjector.java:104)
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:85)
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:267)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1103)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+	at com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:145)
+	at com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+	at com.google.inject.internal.FactoryProxy.get(FactoryProxy.java:56)
+	at com.google.inject.internal.InjectorImpl$2$1.call(InjectorImpl.java:1016)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092)
+	at com.google.inject.internal.InjectorImpl$2.get(InjectorImpl.java:1012)
+	... 23 common frames omitted
+2016-07-26 21:45:40,562 [INFO] from application in ForkJoinPool-1-worker-2 - ApplicationTimer demo: Starting application at 2016-07-27T00:45:40.562Z
+2016-07-26 21:45:40,797 [INFO] from play.api.Play in ForkJoinPool-1-worker-2 - Application started (Dev)
+2016-07-26 21:47:33,081 [INFO] from application in application-akka.actor.default-dispatcher-4 - ApplicationTimer demo: Stopping application at 2016-07-27T00:47:33.081Z after 113s.
+2016-07-26 21:47:33,259 [INFO] from application in application-akka.actor.default-dispatcher-4 - ApplicationTimer demo: Starting application at 2016-07-27T00:47:33.258Z
+2016-07-26 21:47:33,354 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-4 - Application started (Dev)
+2016-07-26 21:48:07,775 [INFO] from application in play-fork-run-akka.actor.default-dispatcher-8 - ApplicationTimer demo: Stopping application at 2016-07-27T00:48:07.775Z after 34s.
