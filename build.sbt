@@ -1,4 +1,4 @@
-name := """hello"""
+name := """FileManager"""
 
 version := "1.0-SNAPSHOT"
 

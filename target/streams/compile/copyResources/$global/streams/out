@@ -1,4 +1,4 @@
 [0m[[0mdebug[0m] [0mCopy resource mappings: [0m
-[0m[[0mdebug[0m] [0m	(/home/pedro/Documentos/projetosi1/conf/logback.xml,/home/pedro/Documentos/projetosi1/target/scala-2.11/classes/logback.xml)[0m
-[0m[[0mdebug[0m] [0m	(/home/pedro/Documentos/projetosi1/conf/routes,/home/pedro/Documentos/projetosi1/target/scala-2.11/classes/routes)[0m
-[0m[[0mdebug[0m] [0m	(/home/pedro/Documentos/projetosi1/conf/application.conf,/home/pedro/Documentos/projetosi1/target/scala-2.11/classes/application.conf)[0m
+[0m[[0mdebug[0m] [0m	(/home/pedro/Documentos/fileManager/conf/logback.xml,/home/pedro/Documentos/fileManager/target/scala-2.11/classes/logback.xml)[0m
+[0m[[0mdebug[0m] [0m	(/home/pedro/Documentos/fileManager/conf/routes,/home/pedro/Documentos/fileManager/target/scala-2.11/classes/routes)[0m
+[0m[[0mdebug[0m] [0m	(/home/pedro/Documentos/fileManager/conf/application.conf,/home/pedro/Documentos/fileManager/target/scala-2.11/classes/application.conf)[0m

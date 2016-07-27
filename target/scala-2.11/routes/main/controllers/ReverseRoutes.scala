@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/pedro/Documentos/projetosi1/conf/routes
-// @DATE:Tue Jul 26 21:18:32 BRT 2016
+// @SOURCE:/home/pedro/Documentos/fileManager/conf/routes
+// @DATE:Tue Jul 26 23:10:25 BRT 2016
 
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
 import play.core.routing.{ HandlerDef, ReverseRouteContext, queryString, dynamicString }
@@ -13,20 +13,20 @@ import _root_.play.libs.F
 // @LINE:6
 package controllers {
 
-  // @LINE:27
+  // @LINE:28
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:28
+    // @LINE:29
     def at(): Call = {
       implicit val _rrc = new ReverseRouteContext(Map(("path", "/public/html"), ("file", "login.html")))
       Call("GET", _prefix + { _defaultPrefix } + "login")
     }
   
-    // @LINE:27
+    // @LINE:28
     def versioned(file:Asset): Call = {
       implicit val _rrc = new ReverseRouteContext(Map(("path", "/public")))
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[Asset]].unbind("file", file))
@@ -72,6 +72,12 @@ package controllers {
     def postUser(): Call = {
       import ReverseRouteContext.empty
       Call("POST", _prefix + { _defaultPrefix } + "api/user")
+    }
+  
+    // @LINE:24
+    def autent(): Call = {
+      import ReverseRouteContext.empty
+      Call("POST", _prefix + { _defaultPrefix } + "autent")
     }
   
   }

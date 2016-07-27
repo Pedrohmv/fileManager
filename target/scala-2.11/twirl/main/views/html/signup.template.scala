@@ -77,8 +77,8 @@ Seq[Any](format.raw/*1.17*/("""
 object signup extends signup_Scope0.signup
               /*
                   -- GENERATED --
-                  DATE: Tue Jul 26 20:47:01 BRT 2016
-                  SOURCE: /home/pedro/Documentos/projetosi1/app/views/signup.scala.html
+                  DATE: Tue Jul 26 23:02:19 BRT 2016
+                  SOURCE: /home/pedro/Documentos/fileManager/app/views/signup.scala.html
                   HASH: 322ac6ff12696b9215a7c0421aa5463c1cbc0622
                   MATRIX: 747->1|857->16|885->19|904->30|942->31|977->40|1776->809
                   LINES: 27->1|32->1|34->3|34->3|34->3|37->6|58->27

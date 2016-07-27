@@ -96,19 +96,19 @@ text-align: center;
           <h4 class="modal-title">Login</h4>
         </div>
         <div class="modal-body" style="padding:20px 35px;">
-  <form role="form">
+  <form role="form" id="loginForm">
   <div class="form-group">
     <label for="email">Email address:</label>
-    <input type="email" class="form-control" id="email" placeholder="Email">
+    <input type="email" class="form-control" name="email" placeholder="Email">
   </div>
   <div class="form-group">
-    <label for="pwd">Password:</label>
-    <input type="password" class="form-control" id="pwd" placeholder="Password">
+    <label for="password">Password:</label>
+    <input type="password" class="form-control" name="password" placeholder="Password">
   </div>
   <div class="checkbox">
     <label><input type="checkbox"> Remember me</label>
   </div>
-  <button type="submit" class="btn btn-default btn-primary">Submit</button>
+  <button type="submit" form="loginForm" formaction="/autent" formmethod="post" value="Submit">Login</button>
   </form>
         </div>
       </div>
@@ -140,10 +140,10 @@ text-align: center;
 object inicio extends inicio_Scope0.inicio
               /*
                   -- GENERATED --
-                  DATE: Tue Jul 26 14:14:33 BRT 2016
+                  DATE: Tue Jul 26 23:10:25 BRT 2016
                   SOURCE: /home/pedro/Documentos/fileManager/app/views/inicio.scala.html
-                  HASH: 7179cbf3aac44c608d56aa327e091f671bce71ad
-                  MATRIX: 836->95|948->112|977->308|1005->310|1038->334|1078->336|1111->342|1151->355|1179->356|1207->357|1253->376|1281->377|1309->378|1355->396|1384->397|1412->398|1479->438|1507->439|1538->443|1592->469|1621->470|1655->477|1792->587|1820->588|1850->591|1892->605|1921->606|1955->613|2011->642|2039->643|2068->645|4295->2842
+                  HASH: 719d39ef2f700042670155c4a69a8a5ef740a6ae
+                  MATRIX: 836->95|948->112|977->308|1005->310|1038->334|1078->336|1111->342|1151->355|1179->356|1207->357|1253->376|1281->377|1309->378|1355->396|1384->397|1412->398|1479->438|1507->439|1538->443|1592->469|1621->470|1655->477|1792->587|1820->588|1850->591|1892->605|1921->606|1955->613|2011->642|2039->643|2068->645|4358->2905
                   LINES: 30->5|35->5|37->11|38->12|38->12|38->12|40->14|41->15|41->15|42->16|43->17|43->17|44->18|44->18|44->18|45->19|47->21|47->21|49->23|49->23|49->23|50->24|54->28|54->28|55->29|55->29|55->29|56->30|57->31|57->31|59->33|119->93
                   -- GENERATED --
               */
