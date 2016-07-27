@@ -13479,3 +13479,6 @@ Sending msg to client play-fork-run-63062bfa-e1d5-4195-9932-951cba6c1837: Backgr
 Sending msg to client play-fork-run-63062bfa-e1d5-4195-9932-951cba6c1837: BackgroundJobLogEvent(1,LogMessage(info,application - ApplicationTimer demo: Stopping application at 2016-07-27T02:22:43.769Z after 64s.))
 Sending msg to client play-fork-run-63062bfa-e1d5-4195-9932-951cba6c1837: BackgroundJobLogEvent(1,LogMessage(info,application - ApplicationTimer demo: Starting application at 2016-07-27T02:22:43.859Z))
 Sending msg to client play-fork-run-63062bfa-e1d5-4195-9932-951cba6c1837: BackgroundJobLogEvent(1,LogMessage(info,play.api.Play - Application started (Dev)))
+Client play-fork-run-63062bfa-e1d5-4195-9932-951cba6c1837 closed, java.net.SocketException: Socket closed, shutting down
+Client play-fork-run-63062bfa-e1d5-4195-9932-951cba6c1837 thread exiting.
+Closing the 7754@pedro-Vostro-3550 logs at Tue Jul 26 23:30:38 BRT 2016, goodbye.

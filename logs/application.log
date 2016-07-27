@@ -383,3 +383,4 @@ Caused by: java.lang.NullPointerException: null
 2016-07-26 23:22:43,769 [INFO] from application in application-akka.actor.default-dispatcher-6 - ApplicationTimer demo: Stopping application at 2016-07-27T02:22:43.769Z after 64s.
 2016-07-26 23:22:43,859 [INFO] from application in application-akka.actor.default-dispatcher-6 - ApplicationTimer demo: Starting application at 2016-07-27T02:22:43.859Z
 2016-07-26 23:22:43,922 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-6 - Application started (Dev)
+2016-07-26 23:30:38,328 [INFO] from application in play-fork-run-akka.actor.default-dispatcher-59 - ApplicationTimer demo: Stopping application at 2016-07-27T02:30:38.328Z after 475s.
