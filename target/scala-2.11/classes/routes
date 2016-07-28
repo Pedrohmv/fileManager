@@ -26,4 +26,6 @@ POST    /autent                 controllers.UserController.autent
 #--------------------------------- APP -----------------------------------------------------
 
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
-GET     /login                  controllers.Assets.at(path="/public/html", file="login.html")
+GET     /home                           controllers.Assets.at(path="/public/html", file="home.html")
+GET     /login                      controllers.Assets.at(path="/public/html", file="login.html")
+

@@ -1,20 +1,10 @@
-java.io.EOFException
-	at java.io.DataInputStream.readInt(DataInputStream.java:392)
-	at javassist.bytecode.ClassFile.read(ClassFile.java:777)
-	at javassist.bytecode.ClassFile.<init>(ClassFile.java:124)
-	at javassist.CtClassType.<init>(CtClassType.java:96)
-	at javassist.ClassPool.makeClass(ClassPool.java:728)
-	at javassist.ClassPool.makeClass(ClassPool.java:706)
-	at play.core.enhancers.PropertiesEnhancer.rewriteAccess(PropertiesEnhancer.java:147)
-	at com.typesafe.play.sbt.enhancer.PlayEnhancer$$anonfun$scopedSettings$4.apply(PlayEnhancer.scala:44)
-	at com.typesafe.play.sbt.enhancer.PlayEnhancer$$anonfun$scopedSettings$4.apply(PlayEnhancer.scala:44)
-	at scala.Function2$$anonfun$curried$1$$anonfun$apply$1.apply(Function2.scala:45)
-	at scala.collection.TraversableLike$$anonfun$filter$1.apply(TraversableLike.scala:264)
-	at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)
-	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:47)
-	at scala.collection.TraversableLike$class.filter(TraversableLike.scala:263)
-	at scala.collection.AbstractTraversable.filter(Traversable.scala:105)
-	at com.typesafe.play.sbt.enhancer.PlayEnhancer$$anonfun$bytecodeEnhance$1$$anonfun$apply$2.apply(PlayEnhancer.scala:71)
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Long.parseLong(Long.java:601)
+	at java.lang.Long.parseLong(Long.java:631)
+	at scala.collection.immutable.StringLike$class.toLong(StringLike.scala:230)
+	at scala.collection.immutable.StringOps.toLong(StringOps.scala:31)
+	at com.typesafe.play.sbt.enhancer.PlayEnhancer$$anonfun$bytecodeEnhance$1$$anonfun$apply$2.apply(PlayEnhancer.scala:58)
 	at com.typesafe.play.sbt.enhancer.PlayEnhancer$$anonfun$bytecodeEnhance$1$$anonfun$apply$2.apply(PlayEnhancer.scala:48)
 	at com.typesafe.play.sbt.enhancer.PlayEnhancer$$anonfun$scopedSettings$2.apply(PlayEnhancer.scala:38)
 	at com.typesafe.play.sbt.enhancer.PlayEnhancer$$anonfun$scopedSettings$2.apply(PlayEnhancer.scala:34)
@@ -35,4 +25,4 @@ java.io.EOFException
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
-[error] (compile:manipulateBytecode) java.io.EOFException
+[error] (compile:manipulateBytecode) java.lang.NumberFormatException: For input string: ""

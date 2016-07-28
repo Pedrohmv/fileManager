@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/pedro/Documentos/fileManager/conf/routes
-// @DATE:Tue Jul 26 23:10:25 BRT 2016
+// @SOURCE:/home/vhugo/apps/fileManager/conf/routes
+// @DATE:Thu Jul 28 06:57:15 BRT 2016
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -27,8 +27,16 @@ package controllers.javascript {
     def at: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.at",
       """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "login"})
+        function(file1) {
+        
+          if (file1 == """ + implicitly[JavascriptLiteral[String]].to("home.html") + """) {
+            return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "home"})
+          }
+        
+          if (file1 == """ + implicitly[JavascriptLiteral[String]].to("login.html") + """) {
+            return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "login"})
+          }
+        
         }
       """
     )

@@ -1,15 +1,30 @@
-[0m[[0mdebug[0m] [0m[0m
-[0m[[0mdebug[0m] [0mInitial source changes: [0m
-[0m[[0mdebug[0m] [0m	removed:Set()[0m
-[0m[[0mdebug[0m] [0m	added: Set()[0m
-[0m[[0mdebug[0m] [0m	modified: Set()[0m
-[0m[[0mdebug[0m] [0mRemoved products: Set()[0m
-[0m[[0mdebug[0m] [0mExternal API changes: API Changes: Set()[0m
-[0m[[0mdebug[0m] [0mModified binary dependencies: Set()[0m
-[0m[[0mdebug[0m] [0mInitial directly invalidated sources: Set()[0m
-[0m[[0mdebug[0m] [0m[0m
-[0m[[0mdebug[0m] [0mSources indirectly invalidated by:[0m
-[0m[[0mdebug[0m] [0m	product: Set()[0m
-[0m[[0mdebug[0m] [0m	binary dep: Set()[0m
-[0m[[0mdebug[0m] [0m	external source: Set()[0m
-[0m[[0mdebug[0m] [0mAll initially invalidated sources: Set()[0m
+[debug] [naha] 
+[debug] [naha] Initial source changes: 
+[debug] [naha] 	removed:Set()
+[debug] [naha] 	added: Set()
+[debug] [naha] 	modified: Set(/home/vhugo/apps/fileManager/app/controllers/UserController.java)
+[debug] [naha] Invalidated products: Set()
+[debug] [naha] External API changes: API Changes: Set()
+[debug] [naha] Modified binary dependencies: Set()
+[debug] [naha] Initial directly invalidated sources: Set(/home/vhugo/apps/fileManager/app/controllers/UserController.java)
+[debug] [naha] 
+[debug] [naha] Sources indirectly invalidated by:
+[debug] [naha] 	product: Set()
+[debug] [naha] 	binary dep: Set()
+[debug] [naha] 	external source: Set()
+[debug] All initially invalidated sources: Set(/home/vhugo/apps/fileManager/app/controllers/UserController.java)
+[info] Compiling 1 Java source to /home/vhugo/apps/fileManager/target/scala-2.11/classes...
+[debug] Attempting to call com.sun.tools.javac.api.JavacTool@587fa783 directly...
+[info] /home/vhugo/apps/fileManager/app/controllers/UserController.java: /home/vhugo/apps/fileManager/app/controllers/UserController.java uses or overrides a deprecated API.
+[info] /home/vhugo/apps/fileManager/app/controllers/UserController.java: Recompile with -Xlint:deprecation for details.
+[info] /home/vhugo/apps/fileManager/app/controllers/UserController.java: /home/vhugo/apps/fileManager/app/controllers/UserController.java uses unchecked or unsafe operations.
+[info] /home/vhugo/apps/fileManager/app/controllers/UserController.java: Recompile with -Xlint:unchecked for details.
+[debug] Java compilation took 0.11277408 s
+[debug] Java analysis took 0.001448115 s
+[debug] Java compile + analysis took 0.116496532 s
+[debug] [naha] New invalidations:
+[debug] [naha] 	Set()
+[debug] [naha] Initial set of included nodes: Set()
+[debug] [naha] Previously invalidated, but (transitively) depend on new invalidations:
+[debug] [naha] 	Set()
+[debug] [naha] All newly invalidated sources after taking into account (previously) recompiled sources:Set()

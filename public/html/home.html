@@ -1,0 +1,50 @@
+<html ng-app="filemanager">
+<head>
+    <meta charset="UTF-8">
+    <title>FileManager</title>
+    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/custom-style.css">
+    <script type="text/javascript" src="/assets/js/angular/angular.js"></script>
+    <script type="text/javascript" src="/assets/js/angular/angular-route.js"></script>
+    <script>
+        angular.module("filemanager", ["ngRoute"]);
+
+        angular.module("filemanager").config(function($routeProvider){
+
+            $routeProvider.when("/login", {
+                templateUrl: "/assets//html/login.html"
+            });
+
+            $routeProvider.when("/signup", {
+                templateUrl: "/assets//html/signup.html"
+            });
+
+
+        });
+
+        angular.module("filemanager").controller("main", function($scope){
+
+        });
+
+        angular.module("filemanager").controller("login", function($scope){
+
+        });
+
+        angular.module("filemanager").controller("signup", function($scope, $http){
+
+            $scope.addUser = function(user){
+                $http.post("/api/user", user).success(function (data){
+                    console.log("sucesso!")
+                });
+            }
+        });
+    </script>
+</head>
+<body ng-controller="main">
+    <div ng-include="'/assets/html/menu.html'"></div>
+    <div class="container">
+        <div ng-view></div>        
+    </div>
+    </div>
+</body>
+</html>

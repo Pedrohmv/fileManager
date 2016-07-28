@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/pedro/Documentos/fileManager/conf/routes
-// @DATE:Tue Jul 26 23:10:25 BRT 2016
+// @SOURCE:/home/vhugo/apps/fileManager/conf/routes
+// @DATE:Thu Jul 28 06:57:15 BRT 2016
 
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
 import play.core.routing.{ HandlerDef, ReverseRouteContext, queryString, dynamicString }
@@ -21,9 +21,22 @@ package controllers {
 
   
     // @LINE:29
-    def at(): Call = {
-      implicit val _rrc = new ReverseRouteContext(Map(("path", "/public/html"), ("file", "login.html")))
-      Call("GET", _prefix + { _defaultPrefix } + "login")
+    def at(file:String): Call = {
+    
+      (file: @unchecked) match {
+      
+        // @LINE:29
+        case (file) if file == "home.html" =>
+          implicit val _rrc = new ReverseRouteContext(Map(("path", "/public/html"), ("file", "home.html")))
+          Call("GET", _prefix + { _defaultPrefix } + "home")
+      
+        // @LINE:30
+        case (file) if file == "login.html" =>
+          implicit val _rrc = new ReverseRouteContext(Map(("path", "/public/html"), ("file", "login.html")))
+          Call("GET", _prefix + { _defaultPrefix } + "login")
+      
+      }
+    
     }
   
     // @LINE:28

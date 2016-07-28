@@ -1,5 +1,6 @@
 package controllers;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import play.data.DynamicForm;
 import play.data.Form;
@@ -24,11 +25,13 @@ public class UserController extends Controller {
     }
 
     public Result postUser(){
-        ObjectNode newUser = Json.newObject();
-        DynamicForm form = Form.form().bindFromRequest();
+        //ObjectNode newUser = Json.newObject();
+        ObjectNode newUser = (ObjectNode) request().body().asJson();
+
+        /*DynamicForm form = Form.form().bindFromRequest();
         newUser.put("username",form.get("username"));
         newUser.put("email",form.get("email"));
-        newUser.put("password",form.get("password"));
+        newUser.put("password",form.get("password"));*/
         users.add(newUser);
         return ok("200");
 
