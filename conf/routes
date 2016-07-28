@@ -18,14 +18,17 @@ GET     /play                       controllers.HomeController.index
 
 #---------------------------------- API --------------------------------------------------
 #Usuarios
-GET     /api/users              controllers.UserController.getUsers
-GET     /api/users/:username    controllers.UserController.getUser(username: String)
-POST    /api/user               controllers.UserController.postUser
-POST    /autent                 controllers.UserController.autent
+GET     /api/users               controllers.UserController.getUsers
+GET     /api/users/:username     controllers.UserController.getUser(username: String)
+POST    /api/user                controllers.UserController.postUser
+POST    /api/login               controllers.UserController.login
+POST    /api/logout              controllers.UserController.logout
+GET     /api/auth                controllers.UserController.auth
+
 
 #--------------------------------- APP -----------------------------------------------------
 
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
-GET     /home                           controllers.Assets.at(path="/public/html", file="home.html")
+GET     /home                           controllers.Assets.at(path="/public/html", file="index.html")
 GET     /login                      controllers.Assets.at(path="/public/html", file="login.html")
 

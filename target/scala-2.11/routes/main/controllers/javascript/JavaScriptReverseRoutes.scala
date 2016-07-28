@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/vhugo/apps/fileManager/conf/routes
-// @DATE:Thu Jul 28 06:57:15 BRT 2016
+// @DATE:Thu Jul 28 11:33:58 BRT 2016
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -15,7 +15,7 @@ import _root_.play.libs.F
 package controllers.javascript {
   import ReverseRouteContext.empty
 
-  // @LINE:28
+  // @LINE:31
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -23,13 +23,13 @@ package controllers.javascript {
     }
 
   
-    // @LINE:29
+    // @LINE:32
     def at: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.at",
       """
         function(file1) {
         
-          if (file1 == """ + implicitly[JavascriptLiteral[String]].to("home.html") + """) {
+          if (file1 == """ + implicitly[JavascriptLiteral[String]].to("index.html") + """) {
             return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "home"})
           }
         
@@ -41,7 +41,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:28
+    // @LINE:31
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
@@ -81,6 +81,16 @@ package controllers.javascript {
     }
 
   
+    // @LINE:26
+    def auth: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.UserController.auth",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "api/auth"})
+        }
+      """
+    )
+  
     // @LINE:21
     def getUsers: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.getUsers",
@@ -101,6 +111,16 @@ package controllers.javascript {
       """
     )
   
+    // @LINE:25
+    def logout: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.UserController.logout",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "api/logout"})
+        }
+      """
+    )
+  
     // @LINE:23
     def postUser: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.postUser",
@@ -112,11 +132,11 @@ package controllers.javascript {
     )
   
     // @LINE:24
-    def autent: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.UserController.autent",
+    def login: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.UserController.login",
       """
         function() {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "autent"})
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "api/login"})
         }
       """
     )

@@ -1,15 +1,22 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="/home" ng-click="menu.login">File Manager</a>
+      <a class="navbar-brand" href="/home#/" ng-click="menu.login">File Manager</a>
     </div>
 
     <div class="nav navbar-nav navbar-right">
-      <a class="navbar-brand btn btn-menu" href="/home#signup">
+      <a class="navbar-brand btn btn-menu" href="/home#signup" ng-show="!logado">
           <span class="glyphicon glyphicon-user"></span> Sign Up
       </a>
-      <a class="navbar-brand btn  btn-menu" href="/home#login">
+      <a class="navbar-brand btn  btn-menu" href="/home#login" ng-show="!logado">
           <span class="glyphicon glyphicon-log-in"></span> Login
+      </a>
+
+      <a class="navbar-brand btn btn-menu" href="/home#profile" ng-show="logado">
+          <span class="glyphicon glyphicon-user"></span> Usuario
+      </a>
+      <a class="navbar-brand btn  btn-menu" ng-click="logout()" ng-show="logado">
+          <span class="glyphicon glyphicon-log-in"></span> Logout
       </a>
     </div>
   </div>

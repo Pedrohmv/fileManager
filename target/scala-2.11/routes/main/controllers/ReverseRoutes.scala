@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/vhugo/apps/fileManager/conf/routes
-// @DATE:Thu Jul 28 06:57:15 BRT 2016
+// @DATE:Thu Jul 28 11:33:58 BRT 2016
 
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
 import play.core.routing.{ HandlerDef, ReverseRouteContext, queryString, dynamicString }
@@ -13,24 +13,24 @@ import _root_.play.libs.F
 // @LINE:6
 package controllers {
 
-  // @LINE:28
+  // @LINE:31
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:29
+    // @LINE:32
     def at(file:String): Call = {
     
       (file: @unchecked) match {
       
-        // @LINE:29
-        case (file) if file == "home.html" =>
-          implicit val _rrc = new ReverseRouteContext(Map(("path", "/public/html"), ("file", "home.html")))
+        // @LINE:32
+        case (file) if file == "index.html" =>
+          implicit val _rrc = new ReverseRouteContext(Map(("path", "/public/html"), ("file", "index.html")))
           Call("GET", _prefix + { _defaultPrefix } + "home")
       
-        // @LINE:30
+        // @LINE:33
         case (file) if file == "login.html" =>
           implicit val _rrc = new ReverseRouteContext(Map(("path", "/public/html"), ("file", "login.html")))
           Call("GET", _prefix + { _defaultPrefix } + "login")
@@ -39,7 +39,7 @@ package controllers {
     
     }
   
-    // @LINE:28
+    // @LINE:31
     def versioned(file:Asset): Call = {
       implicit val _rrc = new ReverseRouteContext(Map(("path", "/public")))
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[Asset]].unbind("file", file))
@@ -69,6 +69,12 @@ package controllers {
     }
 
   
+    // @LINE:26
+    def auth(): Call = {
+      import ReverseRouteContext.empty
+      Call("GET", _prefix + { _defaultPrefix } + "api/auth")
+    }
+  
     // @LINE:21
     def getUsers(): Call = {
       import ReverseRouteContext.empty
@@ -81,6 +87,12 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "api/users/" + implicitly[PathBindable[String]].unbind("username", dynamicString(username)))
     }
   
+    // @LINE:25
+    def logout(): Call = {
+      import ReverseRouteContext.empty
+      Call("POST", _prefix + { _defaultPrefix } + "api/logout")
+    }
+  
     // @LINE:23
     def postUser(): Call = {
       import ReverseRouteContext.empty
@@ -88,9 +100,9 @@ package controllers {
     }
   
     // @LINE:24
-    def autent(): Call = {
+    def login(): Call = {
       import ReverseRouteContext.empty
-      Call("POST", _prefix + { _defaultPrefix } + "autent")
+      Call("POST", _prefix + { _defaultPrefix } + "api/login")
     }
   
   }

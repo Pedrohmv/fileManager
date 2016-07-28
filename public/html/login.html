@@ -1,12 +1,12 @@
-<div class="custom-modal">
+<div class="custom-modal" ng-controller="main">
     <form class="form-signin">
     <div class="custom-modal-title">
         <h2 class="form-signin-heading">Login</h2>
     </div>
     <div class="custom-modal-content">
-         <input class="form-control" type="text" placeholder="Usuário" />
-         <input class="form-control" type="password" " placeholder="Senha" />
-         <button class="btn-login btn btn-primary btn-block" >Entrar</button>
+         <input class="form-control" type="email" placeholder="E-mail" ng-model="user.email"/>
+         <input class="form-control" type="password" " placeholder="Senha" ng-model="user.password"/>
+         <button class="btn-login btn btn-primary btn-block" ng-click="login(user)">Entrar</button>
     </div>
         
   </form>

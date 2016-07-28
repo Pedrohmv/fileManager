@@ -12,7 +12,8 @@ import views.html.*;
 
 public class UserController extends Controller {
 
-    private List<ObjectNode> users = new ArrayList();
+    private List<JsonNode> users = new ArrayList();
+    private JsonNode userLogin = Json.newObject();
 
 
     public Result getUsers() {
@@ -20,13 +21,13 @@ public class UserController extends Controller {
     }
 
     public Result getUser(String username) {
-        ObjectNode user = searchUser(username);
-        return ok(Json.toJson(user));
+        JsonNode user = searchUser(username);
+        return ok(user);
     }
 
     public Result postUser(){
         //ObjectNode newUser = Json.newObject();
-        ObjectNode newUser = (ObjectNode) request().body().asJson();
+         JsonNode newUser = request().body().asJson();
 
         /*DynamicForm form = Form.form().bindFromRequest();
         newUser.put("username",form.get("username"));
@@ -36,34 +37,51 @@ public class UserController extends Controller {
         return ok("200");
 
     }
-    
-    public Result autent(){
-        DynamicForm form = Form.form().bindFromRequest();
-        ObjectNode user = searchUser(form.get("email"),form.get("password"));
-        if(user.get("username") == null)
-            return ok(logged.render("não"));
-        return ok(logged.render(user.get("username").asText()));
+
+    public Result login(){
+        JsonNode user = request().body().asJson();
+        String email = user.get("email").textValue();
+        String password = user.get("password").textValue();
+        userLogin = searchUser(email, password);
+        return ok(userLogin);
     }
 
-    private ObjectNode searchUser(String username){
-        for (ObjectNode u : users) {
+    public Result logout(){
+        JsonNode nullUser = Json.newObject();
+        userLogin = nullUser;
+        return ok("200");
+    }
+
+
+    public Result auth(){
+        JsonNode nullUser = Json.newObject();
+        if(userLogin.equals(nullUser))
+            return ok("false");
+        else
+            return ok("true");
+    }
+
+
+
+    private JsonNode searchUser(String username){
+        for (JsonNode u : users) {
             String name = u.get("username").asText();
             if(name.equals(username))
                 return u;
         }
-        ObjectNode nullUser = Json.newObject();
+        JsonNode nullUser = Json.newObject();
         return nullUser;
     }
     
-    private ObjectNode searchUser(String email, String password){
-        for (ObjectNode u : users) {
+    private JsonNode searchUser(String email, String password){
+        for (JsonNode u : users) {
             String em = u.get("email").asText();
             String pwd = u.get("password").asText();
             
             if(em.equals(email) && pwd.equals(password))
                 return u;
         }
-        ObjectNode nullUser = Json.newObject();
+        JsonNode nullUser = Json.newObject();
         return nullUser;
     }
 
