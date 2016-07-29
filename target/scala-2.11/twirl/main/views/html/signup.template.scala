@@ -38,7 +38,7 @@ Seq[Any](format.raw/*1.17*/("""
   <form role="form-horizontal" Content-Type="application/json" id="signUpForm" >
   <div class="form-group">
     <label for="username">Username:</label>
-    <input type="text" class="form-control" name="username">
+    <input type="text" class="form-control" name="username" required>
   </div>
   <div class="form-group">
     <label for="email">Email address:</label>
@@ -77,10 +77,10 @@ Seq[Any](format.raw/*1.17*/("""
 object signup extends signup_Scope0.signup
               /*
                   -- GENERATED --
-                  DATE: Wed Jul 27 07:00:55 BRT 2016
+                  DATE: Fri Jul 29 16:29:10 BRT 2016
                   SOURCE: /home/vhugo/apps/fileManager/app/views/signup.scala.html
-                  HASH: 322ac6ff12696b9215a7c0421aa5463c1cbc0622
-                  MATRIX: 747->1|857->16|885->19|904->30|942->31|977->40|1776->809
+                  HASH: 415948a337916b3936afc40be7248cece6f7692e
+                  MATRIX: 747->1|857->16|885->19|904->30|942->31|977->40|1785->818
                   LINES: 27->1|32->1|34->3|34->3|34->3|37->6|58->27
                   -- GENERATED --
               */

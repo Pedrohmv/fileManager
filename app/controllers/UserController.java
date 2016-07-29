@@ -2,6 +2,7 @@ package controllers;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import models.User;
 import play.data.DynamicForm;
 import play.data.Form;
 import play.libs.Json;
@@ -12,8 +13,8 @@ import views.html.*;
 
 public class UserController extends Controller {
 
-    private List<JsonNode> users = new ArrayList();
-    private JsonNode userLogin = Json.newObject();
+    private List<User> users = new ArrayList();
+    private User userLogin;
 
 
     public Result getUsers() {
@@ -21,19 +22,17 @@ public class UserController extends Controller {
     }
 
     public Result getUser(String username) {
-        JsonNode user = searchUser(username);
-        return ok(user);
+        User user = searchUser(username);
+        return ok(Json.toJson(user));
     }
 
     public Result postUser(){
-        //ObjectNode newUser = Json.newObject();
-         JsonNode newUser = request().body().asJson();
+        JsonNode payload = request().body().asJson();
 
-        /*DynamicForm form = Form.form().bindFromRequest();
-        newUser.put("username",form.get("username"));
-        newUser.put("email",form.get("email"));
-        newUser.put("password",form.get("password"));*/
-        users.add(newUser);
+        String name = payload.get("username").asText();
+        String email = payload.get("email").asText();
+        String password = payload.get("password").asText();
+        users.add(new User(name,email,password));
         return ok("200");
 
     }
@@ -43,11 +42,11 @@ public class UserController extends Controller {
         String email = user.get("email").textValue();
         String password = user.get("password").textValue();
         userLogin = searchUser(email, password);
-        return ok(userLogin);
+        return ok(Json.toJson(userLogin));
     }
 
     public Result logout(){
-        JsonNode nullUser = Json.newObject();
+        User nullUser = null;
         userLogin = nullUser;
         return ok("200");
     }
@@ -63,25 +62,25 @@ public class UserController extends Controller {
 
 
 
-    private JsonNode searchUser(String username){
-        for (JsonNode u : users) {
-            String name = u.get("username").asText();
+    private User searchUser(String username){
+        for (User u : users) {
+            String name = u.getUsername();
             if(name.equals(username))
                 return u;
         }
-        JsonNode nullUser = Json.newObject();
+        User nullUser = null;
         return nullUser;
     }
     
-    private JsonNode searchUser(String email, String password){
-        for (JsonNode u : users) {
-            String em = u.get("email").asText();
-            String pwd = u.get("password").asText();
+    private User searchUser(String email, String password){
+        for (User u : users) {
+            String em = u.getEmail();
+            String pwd = u.getPassword();
             
             if(em.equals(email) && pwd.equals(password))
                 return u;
         }
-        JsonNode nullUser = Json.newObject();
+        User nullUser = null;
         return nullUser;
     }
 

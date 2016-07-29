@@ -1,5 +1,6 @@
 angular.module("filemanager").controller("main", function($scope, $http, $window){            
     $scope.logado = false;
+
     var isLogado = function(){
         $http.get("/api/auth").success(function (data){
             $scope.logado = JSON.parse(data);
@@ -13,7 +14,9 @@ angular.module("filemanager").controller("main", function($scope, $http, $window
     }
     $scope.login = function(user){
         $http.post("/api/login", user).success(function (data){
-            $window.location.href = "/home";
+            console.log(data);
+            $scope.usuario = data;
+           // $window.location.href = "/home";
         });
     }
 
@@ -24,7 +27,6 @@ angular.module("filemanager").controller("main", function($scope, $http, $window
     }
 
     $scope.logout = function(){
-        console.log("ta aqui");
         $http.post("/api/logout").success(function (data){
             $window.location.href = "/home";
         });
