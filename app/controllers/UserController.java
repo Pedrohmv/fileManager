@@ -1,15 +1,11 @@
 package controllers;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.node.ObjectNode;
 import models.User;
-import play.data.DynamicForm;
-import play.data.Form;
 import play.libs.Json;
 import play.mvc.*;
 import java.util.ArrayList;
 import java.util.List;
-import views.html.*;
 
 public class UserController extends Controller {
 
