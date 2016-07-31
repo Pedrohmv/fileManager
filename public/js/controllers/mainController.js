@@ -16,7 +16,7 @@ angular.module("filemanager").controller("main", function($scope, $http, $window
         $http.post("/api/login", user).success(function (data){
             console.log(data);
             $scope.usuario = data;
-           // $window.location.href = "/home";
+           $window.location.href = "/home";
         });
     }
 

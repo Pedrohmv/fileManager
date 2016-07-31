@@ -1,16 +1,23 @@
 package controllers;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import models.User;
 import play.libs.Json;
-import play.mvc.*;
+import play.mvc.Controller;
+import play.mvc.Result;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class UserController extends Controller {
 
     private List<User> users = new ArrayList();
     private User userLogin;
+    private final int N_PARAMS = 3;
+    private final Pattern VALID_EMAIL_ADDRESS_REGEX = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
 
 
     public Result getUsers() {
@@ -25,12 +32,40 @@ public class UserController extends Controller {
     public Result postUser(){
         JsonNode payload = request().body().asJson();
 
+        if(!validateUser(payload))
+            return badRequest("400");
+
         String name = payload.get("username").asText();
         String email = payload.get("email").asText();
         String password = payload.get("password").asText();
         users.add(new User(name,email,password));
-        return ok("200");
+        return created("201");
 
+
+    }
+
+    private boolean validateUser(JsonNode payload) {
+        ObjectNode nullUser = Json.newObject();
+        if (payload == null)
+            return false;
+        else if (payload.equals(nullUser))
+            return false;
+        else if (payload.size() != N_PARAMS)
+            return  false;
+
+        JsonNode param1 = payload.get("username");
+        JsonNode param2 = payload.get("email");
+        JsonNode param3 = payload.get("password");
+
+        if (param1 == null || param2 == null || param3 == null)
+            return false;
+
+        String email = payload.get("email").asText();
+        Matcher matcher = VALID_EMAIL_ADDRESS_REGEX.matcher(email);
+        if(!matcher.find())
+            return false;
+
+        return true;
     }
 
     public Result login(){
@@ -49,8 +84,7 @@ public class UserController extends Controller {
 
 
     public Result auth(){
-        JsonNode nullUser = Json.newObject();
-        if(userLogin.equals(nullUser))
+        if(userLogin == null)
             return ok("false");
         else
             return ok("true");

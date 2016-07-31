@@ -3,18 +3,14 @@
 # ~~~~
 
 # An example controller showing a sample home page
-GET     /                           controllers.HomeController.inicio
+#GET     /                           controllers.HomeController.inicio
 # An example controller showing how to use dependency injection
-GET     /count                      controllers.CountController.count
+#GET     /count                      controllers.CountController.count
 # An example controller showing how to write asynchronous code
-GET     /message                    controllers.AsyncController.message
-
-GET     /signup                      controllers.HomeController.signup
-
-GET     /play                       controllers.HomeController.index
-
-# Map static resources from the /public folder to the /assets URL path
-
+#GET     /message                    controllers.AsyncController.message
+#GET     /signup                      controllers.HomeController.signup
+#GET     /play                       controllers.HomeController.index
+# Map static resources from the /public folder to the /assets URL pat
 
 #---------------------------------- API --------------------------------------------------
 #Usuarios
@@ -29,6 +25,5 @@ GET     /api/auth                controllers.UserController.auth
 #--------------------------------- APP -----------------------------------------------------
 
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
-GET     /home                           controllers.Assets.at(path="/public/html", file="index.html")
-GET     /login                      controllers.Assets.at(path="/public/html", file="login.html")
+GET     /                          controllers.Assets.at(path="/public/html", file="index.html")
 

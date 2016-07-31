@@ -1,15 +1,17 @@
 import com.fasterxml.jackson.databind.JsonNode;
-
-import models.User;
-import org.junit.*;
+import com.fasterxml.jackson.databind.node.ObjectNode;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 import play.Application;
-import play.GlobalSettings;
-import play.test.*;
 import play.libs.Json;
-import play.mvc.*;
-import play.mvc.Http.*;
-import static org.junit.Assert.*;
-import static play.test.Helpers.*;
+import play.mvc.Http.RequestBuilder;
+import play.mvc.Http.Status;
+import play.mvc.Result;
+import play.test.Helpers;
+
+import static org.junit.Assert.assertEquals;
+import static play.test.Helpers.route;
 
 public class UserControllerTest {
 
@@ -25,24 +27,87 @@ public class UserControllerTest {
         Helpers.stop(fakeApp);
     }
 
+    //Post recebendo um objeto correto
     @Test
-    public void postUserTest(){
-        User userOk = new User("victor", "email@email.com", "123");
-        User userBad1 = new User(null, null, null);
-        User userBad2 = null;
+    public void postTest(){
+        ObjectNode userOk = Json.newObject();
+        userOk.put("username", "user");
+        userOk.put("email", "email@email.com");
+        userOk.put("password", "123");
 
-        JsonNode payloadBad1 = Json.toJson(userBad1);
-        JsonNode payloadBad2 = Json.toJson(userBad2);
-        JsonNode payloadOk = Json.toJson(userOk);
+        int codeRequest = requestCode("POST", userOk, "/api/user");
 
-        int codeOk = requestCode("POST", payloadOk, "/api/user");
-        int codeBad1 = requestCode("POST", payloadBad1, "/api/user");
-        int codeBad2 = requestCode("POST", payloadBad2, "/api/user");
-
-        assertEquals(Status.OK, codeOk);
-        assertEquals(Status.BAD_REQUEST, codeBad1);
-        assertEquals(Status.BAD_REQUEST, codeBad2);
+        assertEquals(Status.CREATED, codeRequest);
     }
+
+    //Post recebendo um objeto Json vazio
+    @Test
+    public void postTest2(){
+        ObjectNode userBad = Json.newObject();
+        int codeRequest = requestCode("POST", userBad, "/api/user");
+        assertEquals(Status.BAD_REQUEST, codeRequest);
+    }
+
+    //Post recebendo um parametro
+    @Test
+    public void postTest3(){
+        ObjectNode userBad1 = Json.newObject();
+        userBad1.put("username", "user");
+
+        ObjectNode userBad2 = Json.newObject();
+        userBad2.put("email", "email@email.com");
+
+        ObjectNode userBad3 = Json.newObject();
+        userBad3.put("password", "123");
+
+        int codeRequest1 = requestCode("POST", userBad1, "/api/user");
+        int codeRequest2 = requestCode("POST", userBad2, "/api/user");
+        int codeRequest3 = requestCode("POST", userBad3, "/api/user");
+
+        assertEquals(Status.BAD_REQUEST, codeRequest1);
+        assertEquals(Status.BAD_REQUEST, codeRequest2);
+        assertEquals(Status.BAD_REQUEST, codeRequest3);
+    }
+
+    //Post recebendo dois parametros
+    @Test
+    public void postTest4(){
+
+        ObjectNode userBad1 = Json.newObject();
+        userBad1.put("username", "user");
+        userBad1.put("password", "123");
+
+        ObjectNode userBad2 = Json.newObject();
+        userBad2.put("username", "user");
+        userBad2.put("email", "email@email.com");
+
+        ObjectNode userBad3 = Json.newObject();
+        userBad3.put("password", "123");
+        userBad3.put("email", "email@email.com");
+
+        int codeRequest1 = requestCode("POST", userBad1, "/api/user");
+        int codeRequest2 = requestCode("POST", userBad2, "/api/user");
+        int codeRequest3 = requestCode("POST", userBad3, "/api/user");
+
+        assertEquals(Status.BAD_REQUEST, codeRequest1);
+        assertEquals(Status.BAD_REQUEST, codeRequest2);
+        assertEquals(Status.BAD_REQUEST, codeRequest3);
+    }
+
+    //Post com email fora do padrao
+    @Test
+    public void postTest5(){
+        ObjectNode userBad1 = Json.newObject();
+        userBad1.put("username", "user");
+        userBad1.put("email", "emailemail.com");
+        userBad1.put("password", "123");
+
+        int codeRequest = requestCode("POST", userBad1, "/api/user");
+
+        assertEquals(Status.BAD_REQUEST, codeRequest);
+
+    }
+
 
     private int requestCode(String method, JsonNode payload, String uri){
 
