@@ -108,6 +108,34 @@ public class UserControllerTest {
 
     }
 
+    //Post com email ou username já cadastrado
+    @Test
+    public void postTest6(){
+        ObjectNode user1 = Json.newObject();
+        user1.put("username", "user1");
+        user1.put("email", "email@gmail.com");
+        user1.put("password", "123asd");
+
+        ObjectNode user2 = Json.newObject();
+        user2.put("username", "user2");
+        user2.put("email", "email@gmail.com");
+        user2.put("password", "123asd");
+
+        ObjectNode user3 = Json.newObject();
+        user3.put("username", "user1");
+        user3.put("email", "email@hotmail.com");
+        user3.put("password", "123asd");
+
+        int codeRequest1 = requestCode("POST", user1, "/api/user");
+        int codeRequest2 = requestCode("POST", user2, "/api/user");
+        int codeRequest3 = requestCode("POST", user3, "/api/user");
+
+        assertEquals(Status.CREATED, codeRequest1);
+        assertEquals(Status.CONFLICT, codeRequest2);
+        assertEquals(Status.CONFLICT, codeRequest3);
+
+    }
+
 
     private int requestCode(String method, JsonNode payload, String uri){
 

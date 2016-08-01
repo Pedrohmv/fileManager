@@ -12,6 +12,8 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static mylib.MyResults.conflict;
+
 public class UserController extends Controller {
 
     private List<User> users = new ArrayList();
@@ -25,7 +27,7 @@ public class UserController extends Controller {
     }
 
     public Result getUser(String username) {
-        User user = searchUser(username);
+        User user = searchUserByUsername(username);
         return ok(Json.toJson(user));
     }
 
@@ -35,14 +37,20 @@ public class UserController extends Controller {
         if(!validateUser(payload))
             return badRequest("400");
 
+
         String name = payload.get("username").asText();
         String email = payload.get("email").asText();
         String password = payload.get("password").asText();
+
+        if  (isRegistered(name) || isRegistered(email))
+            return conflict("209");
+
         users.add(new User(name,email,password));
         return created("201");
 
 
     }
+
 
     private boolean validateUser(JsonNode payload) {
         ObjectNode nullUser = Json.newObject();
@@ -90,12 +98,36 @@ public class UserController extends Controller {
             return ok("true");
     }
 
+    private boolean isRegistered(String key) {
+        User user;
+
+        user = searchUserByUsername(key);
+        if (user != null)
+            return true;
+
+        user = searchUserByEmail(key);
+        if (user != null)
+            return  true;
+
+        return false;
+    }
 
 
-    private User searchUser(String username){
+
+    private User searchUserByUsername(String username){
         for (User u : users) {
             String name = u.getUsername();
             if(name.equals(username))
+                return u;
+        }
+        User nullUser = null;
+        return nullUser;
+    }
+
+    private User searchUserByEmail(String email){
+        for (User u : users) {
+            String name = u.getEmail();
+            if(name.equals(email))
                 return u;
         }
         User nullUser = null;
