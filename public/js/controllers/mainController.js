@@ -16,19 +16,19 @@ angular.module("filemanager").controller("main", function($scope, $http, $window
         $http.post("/api/login", user).success(function (data){
             console.log(data);
             $scope.usuario = data;
-           $window.location.href = "/home";
+           $window.location.href = "/";
         });
     }
 
     $scope.addUser = function(user){
         $http.post("/api/user", user).success(function (data){
-            $window.location.href = "/home#login";
+            $window.location.href = "/#login";
         });
     }
 
     $scope.logout = function(){
         $http.post("/api/logout").success(function (data){
-            $window.location.href = "/home";
+            $window.location.href = "/";
         });
     }
 
