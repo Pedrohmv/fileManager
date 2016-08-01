@@ -20,6 +20,7 @@ POST    /api/user                controllers.UserController.postUser
 POST    /api/login               controllers.UserController.login
 POST    /api/logout              controllers.UserController.logout
 GET     /api/auth                controllers.UserController.auth
+GET     /api/archive             models.Archive.getUrl
 
 
 #--------------------------------- APP -----------------------------------------------------
