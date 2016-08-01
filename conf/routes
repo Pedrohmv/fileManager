@@ -20,9 +20,10 @@ POST    /api/user                                           controllers.UserCont
 POST    /api/login                                          controllers.UserController.login
 POST    /api/logout                                         controllers.UserController.logout
 GET     /api/auth                                           controllers.UserController.auth
-GET     /api/folder/:files                                  models.Folder.getFiles
-GET     /api/folder/:inFolder                               models.Folder.getInFolder
-POST    /api/archive                                        controllers.ArchiveController.postFile
+GET     /api/users/:username/folders                        controllers.FolderController.getFolders(username: String)
+GET     /api/users/:username/root                           controllers.FolderController.getRoot(username: String)
+#GET     /api/folder/:inFolder                               models.Folder.getInFolder
+#POST    /api/archive                                        controllers.ArchiveController.postFile
 
 
 
