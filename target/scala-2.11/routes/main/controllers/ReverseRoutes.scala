@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/vhugo/apps/fileManager/conf/routes
-// @DATE:Tue Aug 02 10:36:09 BRT 2016
+// @DATE:Tue Aug 02 15:26:52 BRT 2016
 
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
 import play.core.routing.{ HandlerDef, ReverseRouteContext, queryString, dynamicString }
@@ -79,6 +79,21 @@ package controllers {
   
   }
 
+  // @LINE:28
+  class ReverseArchiveController(_prefix: => String) {
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:28
+    def postArchive(username:String, id:Integer, name:String): Call = {
+      import ReverseRouteContext.empty
+      Call("GET", _prefix + { _defaultPrefix } + "api/users/" + implicitly[PathBindable[String]].unbind("username", dynamicString(username)) + "/root/" + implicitly[PathBindable[Integer]].unbind("id", id) + "/" + implicitly[PathBindable[String]].unbind("name", dynamicString(name)))
+    }
+  
+  }
+
   // @LINE:25
   class ReverseFolderController(_prefix: => String) {
     def _defaultPrefix: String = {
@@ -90,12 +105,6 @@ package controllers {
     def getFolder(username:String, id:Integer): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "api/users/" + implicitly[PathBindable[String]].unbind("username", dynamicString(username)) + "/root/" + implicitly[PathBindable[Integer]].unbind("id", id))
-    }
-  
-    // @LINE:27
-    def postFolder(username:String, id:Integer, name:String): Call = {
-      import ReverseRouteContext.empty
-      Call("GET", _prefix + { _defaultPrefix } + "api/users/" + implicitly[PathBindable[String]].unbind("username", dynamicString(username)) + "/root/" + implicitly[PathBindable[Integer]].unbind("id", id) + "/" + implicitly[PathBindable[String]].unbind("name", dynamicString(name)))
     }
   
     // @LINE:26

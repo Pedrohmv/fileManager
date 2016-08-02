@@ -4,7 +4,7 @@
 		module="filemanager-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20160801090254"
+		publication="20160802152631"
 		e:sbtVersion="0.13" e:scalaVersion="2.10"
 	>
 		<description>

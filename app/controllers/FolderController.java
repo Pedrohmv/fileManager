@@ -42,7 +42,7 @@ public class FolderController extends Controller {
         return notFound("404");
     }
 
-    private Folder searchFolder(Folder root, int id) {
+    protected static Folder searchFolder(Folder root, int id) {
         if(root.getId() == id)
             return  root;
         else if(root.getInFolder().size() == 0)

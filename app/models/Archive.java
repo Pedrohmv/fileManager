@@ -2,12 +2,13 @@ package models;
 
 public class Archive {
     private String name;
-    private String id;
+    private int id;
     private String url;
 
 
     public Archive(String name){
         this.name = name;
+        this.id = System.identityHashCode(this);
     }
 
     public String getUrl() {
@@ -26,7 +27,7 @@ public class Archive {
         this.name = name;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 }
