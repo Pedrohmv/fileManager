@@ -24,8 +24,8 @@ GET     /api/auth                                           controllers.UserCont
 #Folder
 GET     /api/users/:username/root/:id                       controllers.FolderController.getFolder(username: String, id: Integer)
 GET     /api/users/:username/root                           controllers.FolderController.getRoot(username: String)
-#GET     /api/users/:username/root/:id/:name                 controllers.FolderController.postFolder(username: String, id: Integer, name: String)
-GET     /api/users/:username/root/:id/:name                 controllers.ArchiveController.postArchive(username: String, id: Integer, name: String)
+GET     /api/users/:username/root/:id/folder/:name                 controllers.FolderController.postFolder(username: String, id: Integer, name: String)
+GET     /api/users/:username/root/:id/archive/:name                 controllers.ArchiveController.postArchive(username: String, id: Integer, name: String)
 
 
 

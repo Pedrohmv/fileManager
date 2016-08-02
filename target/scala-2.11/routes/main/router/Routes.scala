@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/vhugo/apps/fileManager/conf/routes
-// @DATE:Tue Aug 02 15:26:52 BRT 2016
+// @DATE:Tue Aug 02 15:35:19 BRT 2016
 
 package router
 
@@ -59,7 +59,8 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/auth""", """controllers.UserController.auth"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/users/""" + "$" + """username<[^/]+>/root/""" + "$" + """id<[^/]+>""", """controllers.FolderController.getFolder(username:String, id:Integer)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/users/""" + "$" + """username<[^/]+>/root""", """controllers.FolderController.getRoot(username:String)"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/users/""" + "$" + """username<[^/]+>/root/""" + "$" + """id<[^/]+>/""" + "$" + """name<[^/]+>""", """controllers.ArchiveController.postArchive(username:String, id:Integer, name:String)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/users/""" + "$" + """username<[^/]+>/root/""" + "$" + """id<[^/]+>/folder/""" + "$" + """name<[^/]+>""", """controllers.FolderController.postFolder(username:String, id:Integer, name:String)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/users/""" + "$" + """username<[^/]+>/root/""" + "$" + """id<[^/]+>/archive/""" + "$" + """name<[^/]+>""", """controllers.ArchiveController.postArchive(username:String, id:Integer, name:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     ("""GET""", this.prefix, """controllers.Assets.at(path:String = "/public/html", file:String = "index.html")"""),
     Nil
@@ -206,11 +207,28 @@ User""",
     )
   )
 
-  // @LINE:28
-  private[this] lazy val controllers_ArchiveController_postArchive8_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/users/"), DynamicPart("username", """[^/]+""",true), StaticPart("/root/"), DynamicPart("id", """[^/]+""",true), StaticPart("/"), DynamicPart("name", """[^/]+""",true)))
+  // @LINE:27
+  private[this] lazy val controllers_FolderController_postFolder8_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/users/"), DynamicPart("username", """[^/]+""",true), StaticPart("/root/"), DynamicPart("id", """[^/]+""",true), StaticPart("/folder/"), DynamicPart("name", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_ArchiveController_postArchive8_invoker = createInvoker(
+  private[this] lazy val controllers_FolderController_postFolder8_invoker = createInvoker(
+    FolderController_3.postFolder(fakeValue[String], fakeValue[Integer], fakeValue[String]),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.FolderController",
+      "postFolder",
+      Seq(classOf[String], classOf[Integer], classOf[String]),
+      "GET",
+      """""",
+      this.prefix + """api/users/""" + "$" + """username<[^/]+>/root/""" + "$" + """id<[^/]+>/folder/""" + "$" + """name<[^/]+>"""
+    )
+  )
+
+  // @LINE:28
+  private[this] lazy val controllers_ArchiveController_postArchive9_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/users/"), DynamicPart("username", """[^/]+""",true), StaticPart("/root/"), DynamicPart("id", """[^/]+""",true), StaticPart("/archive/"), DynamicPart("name", """[^/]+""",true)))
+  )
+  private[this] lazy val controllers_ArchiveController_postArchive9_invoker = createInvoker(
     ArchiveController_2.postArchive(fakeValue[String], fakeValue[Integer], fakeValue[String]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -218,16 +236,16 @@ User""",
       "postArchive",
       Seq(classOf[String], classOf[Integer], classOf[String]),
       "GET",
-      """GET     /api/users/:username/root/:id/:name                 controllers.FolderController.postFolder(username: String, id: Integer, name: String)""",
-      this.prefix + """api/users/""" + "$" + """username<[^/]+>/root/""" + "$" + """id<[^/]+>/""" + "$" + """name<[^/]+>"""
+      """""",
+      this.prefix + """api/users/""" + "$" + """username<[^/]+>/root/""" + "$" + """id<[^/]+>/archive/""" + "$" + """name<[^/]+>"""
     )
   )
 
   // @LINE:35
-  private[this] lazy val controllers_Assets_versioned9_route = Route("GET",
+  private[this] lazy val controllers_Assets_versioned10_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned9_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_versioned10_invoker = createInvoker(
     Assets_1.versioned(fakeValue[String], fakeValue[Asset]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -241,10 +259,10 @@ User""",
   )
 
   // @LINE:36
-  private[this] lazy val controllers_Assets_at10_route = Route("GET",
+  private[this] lazy val controllers_Assets_at11_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix)))
   )
-  private[this] lazy val controllers_Assets_at10_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_at11_invoker = createInvoker(
     Assets_1.at(fakeValue[String], fakeValue[String]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -308,22 +326,28 @@ User""",
         controllers_FolderController_getRoot7_invoker.call(FolderController_3.getRoot(username))
       }
   
-    // @LINE:28
-    case controllers_ArchiveController_postArchive8_route(params) =>
+    // @LINE:27
+    case controllers_FolderController_postFolder8_route(params) =>
       call(params.fromPath[String]("username", None), params.fromPath[Integer]("id", None), params.fromPath[String]("name", None)) { (username, id, name) =>
-        controllers_ArchiveController_postArchive8_invoker.call(ArchiveController_2.postArchive(username, id, name))
+        controllers_FolderController_postFolder8_invoker.call(FolderController_3.postFolder(username, id, name))
+      }
+  
+    // @LINE:28
+    case controllers_ArchiveController_postArchive9_route(params) =>
+      call(params.fromPath[String]("username", None), params.fromPath[Integer]("id", None), params.fromPath[String]("name", None)) { (username, id, name) =>
+        controllers_ArchiveController_postArchive9_invoker.call(ArchiveController_2.postArchive(username, id, name))
       }
   
     // @LINE:35
-    case controllers_Assets_versioned9_route(params) =>
+    case controllers_Assets_versioned10_route(params) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned9_invoker.call(Assets_1.versioned(path, file))
+        controllers_Assets_versioned10_invoker.call(Assets_1.versioned(path, file))
       }
   
     // @LINE:36
-    case controllers_Assets_at10_route(params) =>
+    case controllers_Assets_at11_route(params) =>
       call(Param[String]("path", Right("/public/html")), Param[String]("file", Right("index.html"))) { (path, file) =>
-        controllers_Assets_at10_invoker.call(Assets_1.at(path, file))
+        controllers_Assets_at11_invoker.call(Assets_1.at(path, file))
       }
   }
 }
