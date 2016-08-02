@@ -6,13 +6,19 @@ import java.util.List;
 public class Folder {
     private String name;
     private List<Folder> inFolder;
-    private String id;
+    private int id;
     private List<Archive> files;
+    private int count = 0;
 
     public Folder(String name){
         this.name = name;
+        this.id = System.identityHashCode(this);
         this.inFolder = new ArrayList<>();
         this.files = new ArrayList<>();
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getName() {

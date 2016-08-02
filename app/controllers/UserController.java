@@ -16,10 +16,10 @@ import static mylib.MyResults.conflict;
 
 public class UserController extends Controller {
 
-    private List<User> users = new ArrayList();
-    private User userLogin;
-    private final int N_PARAMS = 3;
-    private final Pattern VALID_EMAIL_ADDRESS_REGEX = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
+    private static List<User> users = new ArrayList();
+    private static User userLogin;
+    private static final int N_PARAMS = 3;
+    private static final Pattern VALID_EMAIL_ADDRESS_REGEX = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
 
 
     public Result getUsers() {
@@ -37,7 +37,6 @@ public class UserController extends Controller {
         if(!validateUser(payload))
             return badRequest("400");
 
-
         String name = payload.get("username").asText();
         String email = payload.get("email").asText();
         String password = payload.get("password").asText();
@@ -47,33 +46,6 @@ public class UserController extends Controller {
 
         users.add(new User(name,email,password));
         return created("201");
-
-
-    }
-
-
-    private boolean validateUser(JsonNode payload) {
-        ObjectNode nullUser = Json.newObject();
-        if (payload == null)
-            return false;
-        else if (payload.equals(nullUser))
-            return false;
-        else if (payload.size() != N_PARAMS)
-            return  false;
-
-        JsonNode param1 = payload.get("username");
-        JsonNode param2 = payload.get("email");
-        JsonNode param3 = payload.get("password");
-
-        if (param1 == null || param2 == null || param3 == null)
-            return false;
-
-        String email = payload.get("email").asText();
-        Matcher matcher = VALID_EMAIL_ADDRESS_REGEX.matcher(email);
-        if(!matcher.find())
-            return false;
-
-        return true;
     }
 
     public Result login(){
@@ -98,7 +70,31 @@ public class UserController extends Controller {
             return ok("true");
     }
 
-    private boolean isRegistered(String key) {
+    protected static boolean validateUser(JsonNode payload) {
+        ObjectNode nullUser = Json.newObject();
+        if (payload == null)
+            return false;
+        else if (payload.equals(nullUser))
+            return false;
+        else if (payload.size() != N_PARAMS)
+            return  false;
+
+        JsonNode param1 = payload.get("username");
+        JsonNode param2 = payload.get("email");
+        JsonNode param3 = payload.get("password");
+
+        if (param1 == null || param2 == null || param3 == null)
+            return false;
+
+        String email = payload.get("email").asText();
+        Matcher matcher = VALID_EMAIL_ADDRESS_REGEX.matcher(email);
+        if(!matcher.find())
+            return false;
+
+        return true;
+    }
+
+    protected static  boolean isRegistered(String key) {
         User user;
 
         user = searchUserByUsername(key);
@@ -114,7 +110,7 @@ public class UserController extends Controller {
 
 
 
-    private User searchUserByUsername(String username){
+    protected static User searchUserByUsername(String username){
         for (User u : users) {
             String name = u.getUsername();
             if(name.equals(username))
@@ -124,7 +120,7 @@ public class UserController extends Controller {
         return nullUser;
     }
 
-    private User searchUserByEmail(String email){
+    protected static User searchUserByEmail(String email){
         for (User u : users) {
             String name = u.getEmail();
             if(name.equals(email))
@@ -134,7 +130,7 @@ public class UserController extends Controller {
         return nullUser;
     }
     
-    private User searchUser(String email, String password){
+    protected static User searchUser(String email, String password){
         for (User u : users) {
             String em = u.getEmail();
             String pwd = u.getPassword();

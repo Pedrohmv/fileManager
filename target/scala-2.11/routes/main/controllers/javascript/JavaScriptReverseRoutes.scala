@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/vhugo/apps/fileManager/conf/routes
-// @DATE:Mon Aug 01 10:34:26 BRT 2016
+// @DATE:Tue Aug 02 10:36:09 BRT 2016
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -15,7 +15,7 @@ import _root_.play.libs.F
 package controllers.javascript {
   import ReverseRouteContext.empty
 
-  // @LINE:32
+  // @LINE:35
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -23,7 +23,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:33
+    // @LINE:36
     def at: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.at",
       """
@@ -33,7 +33,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:32
+    // @LINE:35
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
@@ -115,7 +115,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:23
+  // @LINE:25
   class ReverseFolderController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -123,17 +123,27 @@ package controllers.javascript {
     }
 
   
-    // @LINE:23
-    def getFolders: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.FolderController.getFolders",
+    // @LINE:25
+    def getFolder: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.FolderController.getFolder",
       """
-        function(username0) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "api/users/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("username", encodeURIComponent(username0)) + "/folders"})
+        function(username0,id1) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "api/users/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("username", encodeURIComponent(username0)) + "/root/" + (""" + implicitly[PathBindable[Integer]].javascriptUnbind + """)("id", id1)})
         }
       """
     )
   
-    // @LINE:24
+    // @LINE:27
+    def postFolder: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.FolderController.postFolder",
+      """
+        function(username0,id1,name2) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "api/users/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("username", encodeURIComponent(username0)) + "/root/" + (""" + implicitly[PathBindable[Integer]].javascriptUnbind + """)("id", id1) + "/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("name", encodeURIComponent(name2))})
+        }
+      """
+    )
+  
+    // @LINE:26
     def getRoot: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.FolderController.getRoot",
       """

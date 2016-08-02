@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/vhugo/apps/fileManager/conf/routes
-// @DATE:Mon Aug 01 10:34:26 BRT 2016
+// @DATE:Tue Aug 02 10:36:09 BRT 2016
 
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
 import play.core.routing.{ HandlerDef, ReverseRouteContext, queryString, dynamicString }
@@ -13,20 +13,20 @@ import _root_.play.libs.F
 // @LINE:17
 package controllers {
 
-  // @LINE:32
+  // @LINE:35
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:33
+    // @LINE:36
     def at(): Call = {
       implicit val _rrc = new ReverseRouteContext(Map(("path", "/public/html"), ("file", "index.html")))
       Call("GET", _prefix)
     }
   
-    // @LINE:32
+    // @LINE:35
     def versioned(file:Asset): Call = {
       implicit val _rrc = new ReverseRouteContext(Map(("path", "/public")))
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[Asset]].unbind("file", file))
@@ -79,20 +79,26 @@ package controllers {
   
   }
 
-  // @LINE:23
+  // @LINE:25
   class ReverseFolderController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:23
-    def getFolders(username:String): Call = {
+    // @LINE:25
+    def getFolder(username:String, id:Integer): Call = {
       import ReverseRouteContext.empty
-      Call("GET", _prefix + { _defaultPrefix } + "api/users/" + implicitly[PathBindable[String]].unbind("username", dynamicString(username)) + "/folders")
+      Call("GET", _prefix + { _defaultPrefix } + "api/users/" + implicitly[PathBindable[String]].unbind("username", dynamicString(username)) + "/root/" + implicitly[PathBindable[Integer]].unbind("id", id))
     }
   
-    // @LINE:24
+    // @LINE:27
+    def postFolder(username:String, id:Integer, name:String): Call = {
+      import ReverseRouteContext.empty
+      Call("GET", _prefix + { _defaultPrefix } + "api/users/" + implicitly[PathBindable[String]].unbind("username", dynamicString(username)) + "/root/" + implicitly[PathBindable[Integer]].unbind("id", id) + "/" + implicitly[PathBindable[String]].unbind("name", dynamicString(name)))
+    }
+  
+    // @LINE:26
     def getRoot(username:String): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "api/users/" + implicitly[PathBindable[String]].unbind("username", dynamicString(username)) + "/root")
