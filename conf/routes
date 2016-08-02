@@ -25,8 +25,7 @@ GET     /api/auth                                           controllers.UserCont
 GET     /api/users/:username/root/:id                       controllers.FolderController.getFolder(username: String, id: Integer)
 GET     /api/users/:username/root                           controllers.FolderController.getRoot(username: String)
 GET     /api/users/:username/root/:id/:name                 controllers.FolderController.postFolder(username: String, id: Integer, name: String)
-#GET     /api/folder/:inFolder                               models.Folder.getInFolder
-#POST    /api/archive                                        controllers.ArchiveController.postFile
+
 
 
 
