@@ -12,7 +12,7 @@ angular.module("filemanager").config(function($routeProvider){
         templateUrl: "/assets/html/signup.html"
     });
 
-    $routeProvider.when("/signup", {
+    $routeProvider.when("/settings", {
             templateUrl: "/assets/html/settings.html"
         });
 
