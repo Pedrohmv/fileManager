@@ -16,4 +16,12 @@ angular.module("filemanager").config(function($routeProvider){
             templateUrl: "/assets/html/settings.html"
         });
 
+    $routeProvider.when("/home", {
+                 templateUrl: "/assets/html/home.html"
+             });
+
+    $routeProvider.when("/information", {
+                     templateUrl: "/assets/html/information.html"
+                 });
+
 });
