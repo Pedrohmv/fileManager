@@ -27,9 +27,16 @@ public class UserControllerTest {
         Helpers.stop(fakeApp);
     }
 
+    @Test
+    public  void test1Get1(){
+        int codeRequest1 = requestCode("GET", null, "/api/users/user");
+        assertEquals(Status.NOT_FOUND, codeRequest1);
+
+    }
+
     //Post recebendo um objeto correto
     @Test
-    public void postTest(){
+    public void test2Post1(){
         ObjectNode userOk = Json.newObject();
         userOk.put("username", "user");
         userOk.put("email", "email@email.com");
@@ -40,9 +47,21 @@ public class UserControllerTest {
         assertEquals(Status.CREATED, codeRequest);
     }
 
+    @Test
+    public  void test1Get2(){
+        ObjectNode userOk = Json.newObject();
+        userOk.put("username", "userGet");
+        userOk.put("email", "email@get.com");
+        userOk.put("password", "123");
+
+        int codeRequest = requestCode("POST", userOk, "/api/user");
+        int codeRequest1 = requestCode("GET", null, "/api/users/userGet");
+        assertEquals(Status.OK, codeRequest1);
+
+    }
     //Post recebendo um objeto Json vazio
     @Test
-    public void postTest2(){
+    public void test2Post2(){
         ObjectNode userBad = Json.newObject();
         int codeRequest = requestCode("POST", userBad, "/api/user");
         assertEquals(Status.BAD_REQUEST, codeRequest);
@@ -50,7 +69,7 @@ public class UserControllerTest {
 
     //Post recebendo um parametro
     @Test
-    public void postTest3(){
+    public void test2Post3(){
         ObjectNode userBad1 = Json.newObject();
         userBad1.put("username", "user");
 
@@ -71,7 +90,7 @@ public class UserControllerTest {
 
     //Post recebendo dois parametros
     @Test
-    public void postTest4(){
+    public void test2Post4(){
 
         ObjectNode userBad1 = Json.newObject();
         userBad1.put("username", "user");
@@ -96,7 +115,7 @@ public class UserControllerTest {
 
     //Post com email fora do padrao
     @Test
-    public void postTest5(){
+    public void test2Post5(){
         ObjectNode userBad1 = Json.newObject();
         userBad1.put("username", "user");
         userBad1.put("email", "emailemail.com");
@@ -110,7 +129,7 @@ public class UserControllerTest {
 
     //Post com email ou username já cadastrado
     @Test
-    public void postTest6(){
+    public void test7Post6(){
         ObjectNode user1 = Json.newObject();
         user1.put("username", "user1");
         user1.put("email", "email@gmail.com");
