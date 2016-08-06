@@ -28,6 +28,8 @@ public class UserController extends Controller {
 
     public Result getUser(String username) {
         User user = searchUserByUsername(username);
+        if (user == null)
+            return notFound("404");
         return ok(Json.toJson(user));
     }
 

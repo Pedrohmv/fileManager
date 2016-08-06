@@ -6,8 +6,6 @@ import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
 
-
-
 public class FolderController extends Controller {
 
     public Result getFolder(String username, int id) {
