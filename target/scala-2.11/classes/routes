@@ -1,16 +1,5 @@
 # Routes
 # This file defines all application routes (Higher priority routes first)
-# ~~~~
-
-# An example controller showing a sample home page
-#GET     /                           controllers.HomeController.inicio
-# An example controller showing how to use dependency injection
-#GET     /count                      controllers.CountController.count
-# An example controller showing how to write asynchronous code
-#GET     /message                    controllers.AsyncController.message
-#GET     /signup                      controllers.HomeController.signup
-#GET     /play                       controllers.HomeController.index
-# Map static resources from the /public folder to the /assets URL pat
 
 #---------------------------------- API --------------------------------------------------
 #User
@@ -24,8 +13,8 @@ GET     /api/auth                                           controllers.UserCont
 #Folder
 GET     /api/users/:username/root/:id                       controllers.FolderController.getFolder(username: String, id: Integer)
 GET     /api/users/:username/root                           controllers.FolderController.getRoot(username: String)
-GET     /api/users/:username/root/:id/folder/:name                 controllers.FolderController.postFolder(username: String, id: Integer, name: String)
-GET     /api/users/:username/root/:id/archive/:name                 controllers.ArchiveController.postArchive(username: String, id: Integer, name: String)
+GET     /api/users/:username/root/:id/folder/:name          controllers.FolderController.postFolder(username: String, id: Integer, name: String)
+GET     /api/users/:username/root/:id/archive/:name         controllers.ArchiveController.postArchive(username: String, id: Integer, name: String)
 
 
 

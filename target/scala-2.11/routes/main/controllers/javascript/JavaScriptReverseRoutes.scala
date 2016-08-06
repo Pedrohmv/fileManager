@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/vhugo/apps/fileManager/conf/routes
-// @DATE:Sat Aug 06 15:44:15 BRT 2016
+// @DATE:Sat Aug 06 17:30:20 BRT 2016
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -11,11 +11,11 @@ import play.core.routing.{ HandlerDef, ReverseRouteContext, queryString, dynamic
 import _root_.controllers.Assets.Asset
 import _root_.play.libs.F
 
-// @LINE:17
+// @LINE:6
 package controllers.javascript {
   import ReverseRouteContext.empty
 
-  // @LINE:35
+  // @LINE:24
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -23,7 +23,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:36
+    // @LINE:25
     def at: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.at",
       """
@@ -33,7 +33,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:35
+    // @LINE:24
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
@@ -45,7 +45,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:17
+  // @LINE:6
   class ReverseUserController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -53,7 +53,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:22
+    // @LINE:11
     def auth: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.auth",
       """
@@ -63,7 +63,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:17
+    // @LINE:6
     def getUsers: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.getUsers",
       """
@@ -73,7 +73,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:18
+    // @LINE:7
     def getUser: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.getUser",
       """
@@ -83,7 +83,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:21
+    // @LINE:10
     def logout: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.logout",
       """
@@ -93,7 +93,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:19
+    // @LINE:8
     def postUser: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.postUser",
       """
@@ -103,7 +103,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:20
+    // @LINE:9
     def login: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.login",
       """
@@ -115,7 +115,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:28
+  // @LINE:17
   class ReverseArchiveController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -123,7 +123,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:28
+    // @LINE:17
     def postArchive: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.ArchiveController.postArchive",
       """
@@ -135,7 +135,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:25
+  // @LINE:14
   class ReverseFolderController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -143,7 +143,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:25
+    // @LINE:14
     def getFolder: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.FolderController.getFolder",
       """
@@ -153,7 +153,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:27
+    // @LINE:16
     def postFolder: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.FolderController.postFolder",
       """
@@ -163,7 +163,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:26
+    // @LINE:15
     def getRoot: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.FolderController.getRoot",
       """

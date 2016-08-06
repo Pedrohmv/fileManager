@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/vhugo/apps/fileManager/conf/routes
-// @DATE:Sat Aug 06 15:44:15 BRT 2016
+// @DATE:Sat Aug 06 17:30:20 BRT 2016
 
 package router
 
@@ -16,26 +16,26 @@ import _root_.play.libs.F
 
 class Routes(
   override val errorHandler: play.api.http.HttpErrorHandler, 
-  // @LINE:17
+  // @LINE:6
   UserController_0: controllers.UserController,
-  // @LINE:25
+  // @LINE:14
   FolderController_3: controllers.FolderController,
-  // @LINE:28
+  // @LINE:17
   ArchiveController_2: controllers.ArchiveController,
-  // @LINE:35
+  // @LINE:24
   Assets_1: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
 
    @javax.inject.Inject()
    def this(errorHandler: play.api.http.HttpErrorHandler,
-    // @LINE:17
+    // @LINE:6
     UserController_0: controllers.UserController,
-    // @LINE:25
+    // @LINE:14
     FolderController_3: controllers.FolderController,
-    // @LINE:28
+    // @LINE:17
     ArchiveController_2: controllers.ArchiveController,
-    // @LINE:35
+    // @LINE:24
     Assets_1: controllers.Assets
   ) = this(errorHandler, UserController_0, FolderController_3, ArchiveController_2, Assets_1, "/")
 
@@ -70,7 +70,7 @@ class Routes(
   }}
 
 
-  // @LINE:17
+  // @LINE:6
   private[this] lazy val controllers_UserController_getUsers0_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/users")))
   )
@@ -88,7 +88,7 @@ User""",
     )
   )
 
-  // @LINE:18
+  // @LINE:7
   private[this] lazy val controllers_UserController_getUser1_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/users/"), DynamicPart("username", """[^/]+""",true)))
   )
@@ -105,7 +105,7 @@ User""",
     )
   )
 
-  // @LINE:19
+  // @LINE:8
   private[this] lazy val controllers_UserController_postUser2_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/user")))
   )
@@ -122,7 +122,7 @@ User""",
     )
   )
 
-  // @LINE:20
+  // @LINE:9
   private[this] lazy val controllers_UserController_login3_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/login")))
   )
@@ -139,7 +139,7 @@ User""",
     )
   )
 
-  // @LINE:21
+  // @LINE:10
   private[this] lazy val controllers_UserController_logout4_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/logout")))
   )
@@ -156,7 +156,7 @@ User""",
     )
   )
 
-  // @LINE:22
+  // @LINE:11
   private[this] lazy val controllers_UserController_auth5_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/auth")))
   )
@@ -173,7 +173,7 @@ User""",
     )
   )
 
-  // @LINE:25
+  // @LINE:14
   private[this] lazy val controllers_FolderController_getFolder6_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/users/"), DynamicPart("username", """[^/]+""",true), StaticPart("/root/"), DynamicPart("id", """[^/]+""",true)))
   )
@@ -190,7 +190,7 @@ User""",
     )
   )
 
-  // @LINE:26
+  // @LINE:15
   private[this] lazy val controllers_FolderController_getRoot7_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/users/"), DynamicPart("username", """[^/]+""",true), StaticPart("/root")))
   )
@@ -207,7 +207,7 @@ User""",
     )
   )
 
-  // @LINE:27
+  // @LINE:16
   private[this] lazy val controllers_FolderController_postFolder8_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/users/"), DynamicPart("username", """[^/]+""",true), StaticPart("/root/"), DynamicPart("id", """[^/]+""",true), StaticPart("/folder/"), DynamicPart("name", """[^/]+""",true)))
   )
@@ -224,7 +224,7 @@ User""",
     )
   )
 
-  // @LINE:28
+  // @LINE:17
   private[this] lazy val controllers_ArchiveController_postArchive9_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/users/"), DynamicPart("username", """[^/]+""",true), StaticPart("/root/"), DynamicPart("id", """[^/]+""",true), StaticPart("/archive/"), DynamicPart("name", """[^/]+""",true)))
   )
@@ -241,7 +241,7 @@ User""",
     )
   )
 
-  // @LINE:35
+  // @LINE:24
   private[this] lazy val controllers_Assets_versioned10_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
@@ -258,7 +258,7 @@ User""",
     )
   )
 
-  // @LINE:36
+  // @LINE:25
   private[this] lazy val controllers_Assets_at11_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix)))
   )
@@ -278,73 +278,73 @@ User""",
 
   def routes: PartialFunction[RequestHeader, Handler] = {
   
-    // @LINE:17
+    // @LINE:6
     case controllers_UserController_getUsers0_route(params) =>
       call { 
         controllers_UserController_getUsers0_invoker.call(UserController_0.getUsers)
       }
   
-    // @LINE:18
+    // @LINE:7
     case controllers_UserController_getUser1_route(params) =>
       call(params.fromPath[String]("username", None)) { (username) =>
         controllers_UserController_getUser1_invoker.call(UserController_0.getUser(username))
       }
   
-    // @LINE:19
+    // @LINE:8
     case controllers_UserController_postUser2_route(params) =>
       call { 
         controllers_UserController_postUser2_invoker.call(UserController_0.postUser)
       }
   
-    // @LINE:20
+    // @LINE:9
     case controllers_UserController_login3_route(params) =>
       call { 
         controllers_UserController_login3_invoker.call(UserController_0.login)
       }
   
-    // @LINE:21
+    // @LINE:10
     case controllers_UserController_logout4_route(params) =>
       call { 
         controllers_UserController_logout4_invoker.call(UserController_0.logout)
       }
   
-    // @LINE:22
+    // @LINE:11
     case controllers_UserController_auth5_route(params) =>
       call { 
         controllers_UserController_auth5_invoker.call(UserController_0.auth)
       }
   
-    // @LINE:25
+    // @LINE:14
     case controllers_FolderController_getFolder6_route(params) =>
       call(params.fromPath[String]("username", None), params.fromPath[Integer]("id", None)) { (username, id) =>
         controllers_FolderController_getFolder6_invoker.call(FolderController_3.getFolder(username, id))
       }
   
-    // @LINE:26
+    // @LINE:15
     case controllers_FolderController_getRoot7_route(params) =>
       call(params.fromPath[String]("username", None)) { (username) =>
         controllers_FolderController_getRoot7_invoker.call(FolderController_3.getRoot(username))
       }
   
-    // @LINE:27
+    // @LINE:16
     case controllers_FolderController_postFolder8_route(params) =>
       call(params.fromPath[String]("username", None), params.fromPath[Integer]("id", None), params.fromPath[String]("name", None)) { (username, id, name) =>
         controllers_FolderController_postFolder8_invoker.call(FolderController_3.postFolder(username, id, name))
       }
   
-    // @LINE:28
+    // @LINE:17
     case controllers_ArchiveController_postArchive9_route(params) =>
       call(params.fromPath[String]("username", None), params.fromPath[Integer]("id", None), params.fromPath[String]("name", None)) { (username, id, name) =>
         controllers_ArchiveController_postArchive9_invoker.call(ArchiveController_2.postArchive(username, id, name))
       }
   
-    // @LINE:35
+    // @LINE:24
     case controllers_Assets_versioned10_route(params) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
         controllers_Assets_versioned10_invoker.call(Assets_1.versioned(path, file))
       }
   
-    // @LINE:36
+    // @LINE:25
     case controllers_Assets_at11_route(params) =>
       call(Param[String]("path", Right("/public/html")), Param[String]("file", Right("index.html"))) { (path, file) =>
         controllers_Assets_at11_invoker.call(Assets_1.at(path, file))
