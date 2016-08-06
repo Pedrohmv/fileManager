@@ -6,6 +6,10 @@ import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
 
+import java.util.List;
+
+import static mylib.MyResults.conflict;
+
 public class FolderController extends Controller {
 
     public Result getFolder(String username, int id) {
@@ -33,7 +37,14 @@ public class FolderController extends Controller {
             Folder folder = searchFolder(user.getRoot(), id);
             if (folder == null)
                 return null;
+
             Folder newFolder = new Folder(name);
+            List<Folder> inFolder = folder.getInFolder();
+            for(Folder f : inFolder) {
+                if (f.getName().equals(name))
+                    return conflict("409");
+            }
+
             folder.getInFolder().add(newFolder);
             return ok(Json.toJson(newFolder));
         }

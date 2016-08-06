@@ -6,6 +6,9 @@ import models.User;
 import play.libs.Json;
 import play.mvc.Result;
 
+import java.util.List;
+
+import static mylib.MyResults.conflict;
 import static play.mvc.Results.notFound;
 import static play.mvc.Results.ok;
 
@@ -18,7 +21,13 @@ public class ArchiveController {
             Folder folder = FolderController.searchFolder(user.getRoot(), id);
             if (folder == null)
                 return null;
+
             Archive newArchive = new Archive(name);
+            List<Archive> files = folder.getFiles();
+            for(Archive a : files)
+                if(a.getName().equals(name))
+                    return conflict("409");
+
             folder.getFiles().add(newArchive);
             return ok(Json.toJson(newArchive));
         }
