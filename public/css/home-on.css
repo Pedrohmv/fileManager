@@ -1,0 +1,72 @@
+.home-on{
+	height: 100%; width: 100%;
+	padding-top: 70px;
+	position: relative;
+	background: #fff;
+}
+
+div.title{
+	position: relative;
+	background-color: #e6e6e6;
+	display: block;
+	height: 300px;
+	padding: 50px 300px 50px 300px;
+}
+
+h1.title{
+	font-size: 80px;
+}
+
+img.folder{
+	position: relative;
+	width: 30px;
+	margin-right: 10px;
+}
+
+td:hover{
+	background: #EDEDED;
+}
+
+table{
+	width: 200px;
+}
+
+.create-folder{
+	position: absolute;
+	right: 0px;
+	width: 400px;
+	padding: 30px;
+	top: 60px;
+	background: #E6E6E6;
+	margin-right: 10px;
+	border-radius: 10px;
+	z-index: 2;
+}
+
+.close{
+	margin: 5px;
+}
+
+div.card {
+	position: absolute;
+	background: white;
+	z-index: 2;
+	right: 0;
+	top: 60px;
+	width: 250px;
+	margin-right: 10px;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	text-align: center;
+}
+
+div.header {
+    
+    padding: 5px;
+    font-size: 20px;
+}
+
+div.inner {
+	background-color: #E6E6E6;
+    padding: 10px;
+}
