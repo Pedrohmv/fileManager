@@ -22,6 +22,7 @@ public class UserController extends Controller {
     private static final int N_PARAMS_LOGIN = 2;
     private static final Pattern VALID_EMAIL_ADDRESS_REGEX = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
 
+
     public Result getUsers() {
         return ok(Json.toJson(users));
     }
@@ -69,7 +70,8 @@ public class UserController extends Controller {
     }
 
     public Result auth(){
-        if(userLogin == null)
+        JsonNode payload = request().body().asJson();
+        if(!validateLogin(payload))
             return ok("false");
         else
             return ok("true");

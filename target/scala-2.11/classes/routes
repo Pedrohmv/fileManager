@@ -8,7 +8,7 @@ GET     /api/users/:username                                controllers.UserCont
 POST    /api/user                                           controllers.UserController.postUser
 POST    /api/login                                          controllers.UserController.login
 POST    /api/logout                                         controllers.UserController.logout
-GET     /api/auth                                           controllers.UserController.auth
+POST    /api/auth                                           controllers.UserController.auth
 
 #Folder
 GET     /api/users/:username/root/:id                       controllers.FolderController.getFolder(username: String, id: Integer)

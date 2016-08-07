@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/vhugo/apps/fileManager/conf/routes
-// @DATE:Sat Aug 06 17:30:20 BRT 2016
+// @DATE:Sun Aug 07 10:58:18 BRT 2016
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -58,7 +58,7 @@ package controllers.javascript {
       "controllers.UserController.auth",
       """
         function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "api/auth"})
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "api/auth"})
         }
       """
     )

@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/vhugo/apps/fileManager/conf/routes
-// @DATE:Sat Aug 06 17:30:20 BRT 2016
+// @DATE:Sun Aug 07 10:58:18 BRT 2016
 
 package router
 
@@ -56,7 +56,7 @@ class Routes(
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/user""", """controllers.UserController.postUser"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/login""", """controllers.UserController.login"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/logout""", """controllers.UserController.logout"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/auth""", """controllers.UserController.auth"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/auth""", """controllers.UserController.auth"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/users/""" + "$" + """username<[^/]+>/root/""" + "$" + """id<[^/]+>""", """controllers.FolderController.getFolder(username:String, id:Integer)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/users/""" + "$" + """username<[^/]+>/root""", """controllers.FolderController.getRoot(username:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/users/""" + "$" + """username<[^/]+>/root/""" + "$" + """id<[^/]+>/folder/""" + "$" + """name<[^/]+>""", """controllers.FolderController.postFolder(username:String, id:Integer, name:String)"""),
@@ -157,7 +157,7 @@ User""",
   )
 
   // @LINE:11
-  private[this] lazy val controllers_UserController_auth5_route = Route("GET",
+  private[this] lazy val controllers_UserController_auth5_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/auth")))
   )
   private[this] lazy val controllers_UserController_auth5_invoker = createInvoker(
@@ -167,7 +167,7 @@ User""",
       "controllers.UserController",
       "auth",
       Nil,
-      "GET",
+      "POST",
       """""",
       this.prefix + """api/auth"""
     )
