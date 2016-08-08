@@ -1,71 +1,20 @@
 <div class="home-on" ng-controller="home">
-	<div class="card" ng-show="createFolderModal">
-	  <span class="glyphicon glyphicon-remove-sign close" ng-click="closeFolderWindow()"></span>
-	  <div class="header">
-	    <h3>Create Folder</h3>
-	  </div>
-
-	  <div class="inner">
-	   <form class="form-signin">
-	    <div class="custom-modal-content">
-	         <input class="form-control" type="text" placeholder="Name" ng-model="name"/>
-	         <button class="btn-login btn btn-success btn-block" ng-click="createFolder(name)">Entrar</button>
-	    </div>
-	  </form>
-	  </div>
-	</div>
-
-	<div class="card" ng-show="createFileModal">
-	  <span class="glyphicon glyphicon-remove-sign close" ng-click="closeFileWindow()"></span>
-	  <div class="header">
-	    <h3>Create File</h3>
-	  </div>
-
-	  <div class="inner">
-	   <form class="form-signin">
-	    <div class="custom-modal-content">
-	         <input class="form-control" type="text" placeholder="Name" ng-model="name"/>
-	         <button class="btn-login btn btn-success btn-block" ng-click="createFile(name)">Entrar</button>
-	    </div>
-	  </form>
-	  </div>
-	</div>
-	
-	<nav class="navbar">
-	  <div class="container-fluid">
-	    <div class="navbar-header">
-	      <h3>{{currentFolderName}}</h3>
-
-	    </div>
-
-	    <div class="nav navbar-nav navbar-right">
-	      <a class="navbar-brand btn  btn-menu" ng-click="openFileWindow()">
-	          <span class="glyphicon glyphicon glyphicon-plus-sign"></span> File
-	      </a>
-
-	      <a class="navbar-brand btn  btn-menu" ng-click="openFolderWindow()">
-	          <span class="glyphicon glyphicon glyphicon-plus-sign"></span> Folder
-	      </a>
-	      
-	    </div>
-
-	  </div>
-
-	</nav>
+	<div ng-include="'/assets/html/templates/createFolder.html'"></div>
+	<div ng-include="'/assets/html/templates/createFile.html'"></div>
+	<div ng-include="'/assets/html/templates/menu-folder.html'"></div>
 
 	<table class="table table-striped">
-	<tr ng-repeat="folder in root.inFolder">
+	<tr ng-repeat="folder in currentFolder.inFolder">
 		<td>
 			<img class="folder" src="/assets/images/home-logo.png" />
-			<a href="/#/" >{{folder.name}}</a>
+			<a href="/#/" ng-click="changeFolder(folder.id)">{{folder.name}}</a>
 		</td>
 	</tr>
-	<tr ng-repeat="file in root.files">
+	<tr ng-repeat="file in currentFolder.files">
 		<td>
 			<img class="folder" src="/assets/images/file.png" />
 			<a href="/#/" >{{file.name}}</a>
 		</td>
 	</tr>
-
-
+	</table>
 </div>

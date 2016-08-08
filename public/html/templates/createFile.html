@@ -1,0 +1,15 @@
+<div class="card" ng-show="createFileModal">
+<span class="glyphicon glyphicon-remove-sign close" ng-click="closeFileWindow()"></span>
+<div class="header">
+<h3>Create File</h3>
+</div>
+
+<div class="inner">
+<form class="form-signin">
+<div class="custom-modal-content">
+<input class="form-control" type="text" placeholder="Name" ng-model="name"/>
+<button class="btn-login btn btn-success btn-block" ng-click="createFile(name)">Entrar</button>
+</div>
+</form>
+</div>
+</div>

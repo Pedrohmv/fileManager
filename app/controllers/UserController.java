@@ -151,7 +151,7 @@ public class UserController extends Controller {
         User nullUser = null;
         return nullUser;
     }
-    
+
     protected static User searchUser(String email, String password){
         User user = searchUserByEmail(email);
         if(user.getPassword().equals(password))
