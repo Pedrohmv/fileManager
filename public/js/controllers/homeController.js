@@ -52,6 +52,16 @@ angular.module("filemanager").controller("home", function($scope, $http, $window
 
     }
 
+    $scope.changeFile = function(id){
+        var files = $scope.currentFolder.files
+        for(i in files){
+            if(files[i].id == id){
+                $scope.currentFile = files[i];
+            }
+        }
+        $window.location.href = "/#/file";
+    }
+
     $scope.comeBack = function(){
         stackAccess.pop();
         var username = $scope.userSession.username;
