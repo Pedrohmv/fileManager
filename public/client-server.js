@@ -18,7 +18,7 @@ app.use('/assets/html', express.static(__dirname + '/html/'));
 app.use('/assets/css', express.static(__dirname + '/css/'));
 app.use('/assets/js', express.static(__dirname + '/js/'));
 app.use('/assets/fonts', express.static(__dirname + '/fonts/'));
-app.use('/assets/imgs', express.static(__dirname + '/images/'));
+app.use('/assets/images', express.static(__dirname + '/images/'));
 
 app.use(function(req, res, next) {
 	res.setHeader('Access-Control-Allow-Origin', '*');

@@ -24,4 +24,8 @@ angular.module("filemanager").config(function($routeProvider){
                      templateUrl: "/assets/html/information.html"
                  });
 
+    $routeProvider.when("/file", {
+        templateUrl: "/assets/html/templates/show-file.html"
+    });
+
 });

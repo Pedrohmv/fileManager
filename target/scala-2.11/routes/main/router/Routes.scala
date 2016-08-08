@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/vhugo/apps/fileManager/conf/routes
-// @DATE:Sun Aug 07 10:58:18 BRT 2016
+// @DATE:Mon Aug 08 17:41:34 BRT 2016
 
 package router
 
@@ -60,7 +60,7 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/users/""" + "$" + """username<[^/]+>/root/""" + "$" + """id<[^/]+>""", """controllers.FolderController.getFolder(username:String, id:Integer)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/users/""" + "$" + """username<[^/]+>/root""", """controllers.FolderController.getRoot(username:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/users/""" + "$" + """username<[^/]+>/root/""" + "$" + """id<[^/]+>/folder/""" + "$" + """name<[^/]+>""", """controllers.FolderController.postFolder(username:String, id:Integer, name:String)"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/users/""" + "$" + """username<[^/]+>/root/""" + "$" + """id<[^/]+>/archive/""" + "$" + """name<[^/]+>""", """controllers.ArchiveController.postArchive(username:String, id:Integer, name:String)"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/users/""" + "$" + """username<[^/]+>/root/""" + "$" + """id<[^/]+>/archive""", """controllers.ArchiveController.postArchive(username:String, id:Integer)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     ("""GET""", this.prefix, """controllers.Assets.at(path:String = "/public/html", file:String = "index.html")"""),
     Nil
@@ -225,19 +225,19 @@ User""",
   )
 
   // @LINE:17
-  private[this] lazy val controllers_ArchiveController_postArchive9_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/users/"), DynamicPart("username", """[^/]+""",true), StaticPart("/root/"), DynamicPart("id", """[^/]+""",true), StaticPart("/archive/"), DynamicPart("name", """[^/]+""",true)))
+  private[this] lazy val controllers_ArchiveController_postArchive9_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/users/"), DynamicPart("username", """[^/]+""",true), StaticPart("/root/"), DynamicPart("id", """[^/]+""",true), StaticPart("/archive")))
   )
   private[this] lazy val controllers_ArchiveController_postArchive9_invoker = createInvoker(
-    ArchiveController_2.postArchive(fakeValue[String], fakeValue[Integer], fakeValue[String]),
+    ArchiveController_2.postArchive(fakeValue[String], fakeValue[Integer]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.ArchiveController",
       "postArchive",
-      Seq(classOf[String], classOf[Integer], classOf[String]),
-      "GET",
+      Seq(classOf[String], classOf[Integer]),
+      "POST",
       """""",
-      this.prefix + """api/users/""" + "$" + """username<[^/]+>/root/""" + "$" + """id<[^/]+>/archive/""" + "$" + """name<[^/]+>"""
+      this.prefix + """api/users/""" + "$" + """username<[^/]+>/root/""" + "$" + """id<[^/]+>/archive"""
     )
   )
 
@@ -334,8 +334,8 @@ User""",
   
     // @LINE:17
     case controllers_ArchiveController_postArchive9_route(params) =>
-      call(params.fromPath[String]("username", None), params.fromPath[Integer]("id", None), params.fromPath[String]("name", None)) { (username, id, name) =>
-        controllers_ArchiveController_postArchive9_invoker.call(ArchiveController_2.postArchive(username, id, name))
+      call(params.fromPath[String]("username", None), params.fromPath[Integer]("id", None)) { (username, id) =>
+        controllers_ArchiveController_postArchive9_invoker.call(ArchiveController_2.postArchive(username, id))
       }
   
     // @LINE:24

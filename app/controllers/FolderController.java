@@ -57,15 +57,27 @@ public class FolderController extends Controller {
         else if(root.getInFolder().size() == 0)
             return null;
 
-        for(int i = 0; i < root.getInFolder().size(); i++){
-            if(root.getInFolder().get(i).getId() == id)
-                return root.getInFolder().get(i);
+        for(Folder f : root.getInFolder()){
+            if(f.getId() == id)
+                return f;
         }
 
         Folder auxFolder = null;
+        for(Folder f : root.getInFolder()){
+            auxFolder = searchFolder(f, id);
+            if(auxFolder != null && auxFolder.getId() == id)
+                return auxFolder;
+        }
+
+        /*for(int i = 0; i < root.getInFolder().size(); i++){
+            if(root.getInFolder().get(i).getId() == id)
+                return root.getInFolder().get(i);
+        }*/
+
+        /*Folder auxFolder = null;
         for(int i = 0; i < root.getInFolder().size(); i++){
             auxFolder = searchFolder(root.getInFolder().get(i), id);
-        }
+        }*/
         return auxFolder;
     }
 }

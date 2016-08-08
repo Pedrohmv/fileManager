@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/vhugo/apps/fileManager/conf/routes
-// @DATE:Sun Aug 07 10:58:18 BRT 2016
+// @DATE:Mon Aug 08 17:41:34 BRT 2016
 
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
 import play.core.routing.{ HandlerDef, ReverseRouteContext, queryString, dynamicString }
@@ -87,9 +87,9 @@ package controllers {
 
   
     // @LINE:17
-    def postArchive(username:String, id:Integer, name:String): Call = {
+    def postArchive(username:String, id:Integer): Call = {
       import ReverseRouteContext.empty
-      Call("GET", _prefix + { _defaultPrefix } + "api/users/" + implicitly[PathBindable[String]].unbind("username", dynamicString(username)) + "/root/" + implicitly[PathBindable[Integer]].unbind("id", id) + "/archive/" + implicitly[PathBindable[String]].unbind("name", dynamicString(name)))
+      Call("POST", _prefix + { _defaultPrefix } + "api/users/" + implicitly[PathBindable[String]].unbind("username", dynamicString(username)) + "/root/" + implicitly[PathBindable[Integer]].unbind("id", id) + "/archive")
     }
   
   }

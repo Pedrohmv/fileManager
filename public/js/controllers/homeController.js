@@ -4,6 +4,7 @@ angular.module("filemanager").controller("home", function($scope, $http, $window
     $scope.createFileModal = false;
     $scope.previousFileShow = true;
     var stackAccess = [];
+    $scope.currentFolderName = "/Root";
 
     $scope.openFolderWindow = function(){
         $scope.createFolderModal = true;
@@ -24,17 +25,17 @@ angular.module("filemanager").controller("home", function($scope, $http, $window
 
     $scope.createFolder = function(name){
         var username = $scope.userSession.username
-        uri = "/api/users/" + username + "/root/" + $scope.currentFolder.id + /folder/ + name;
-        $http.get(uri).success(function (data){
-             $scope.createFolderModal = false;
-             updateData();  
+        uri = "/api/users/" + username + "/root/" + $scope.currentFolder.id + "/folder/" + name;
+                $http.get(uri).success(function (data){
+                     $scope.createFolderModal = false;
+                     updateData();  
         });
     }
     
-    $scope.createFile = function(name){
-        var username = $scope.userSession.username
-        uri = "/api/users/" + username + "/root/" + $scope.currentFolder.id + /archive/ + name;
-        $http.get(uri).success(function (data){
+    $scope.createFile = function(file){
+        var username = $scope.userSession.username;
+        uri = "/api/users/" + username + "/root/" + $scope.currentFolder.id + "/archive";
+        $http.post(uri, file).success(function (data){
              $scope.createFileModal = false;
              updateData();  
         });
@@ -42,12 +43,11 @@ angular.module("filemanager").controller("home", function($scope, $http, $window
 
     $scope.changeFolder = function(id){
         stackAccess.push(id);
-        var username = $scope.userSession.username
+        var username = $scope.userSession.username;
         uri = "/api/users/" + username + "/root/" + stackAccess[stackAccess.length -1];
-        console.log(stackAccess);
-        console.log(uri);
          $http.get(uri).success(function (data){
-             updateLocation(data);
+             updateData();
+             $scope.currentFolderName = $scope.currentFolderName + "/" + data.name ;
         }); 
 
     }
@@ -59,20 +59,31 @@ angular.module("filemanager").controller("home", function($scope, $http, $window
         if (id == undefined)
             id = $scope.root.id;
         uri = "/api/users/" + username + "/root/" + id;
-        console.log(stackAccess);
-        console.log(uri);
         $http.get(uri).success(function (data){
-             updateLocation(data);
+             updateData();
+             var folders = $scope.currentFolderName.split('/');
+             if(folders.length > 2){
+                folders.pop();
+                var path = folders.join('/');
+                $scope.currentFolderName = path;
+             }
+             else{
+                $scope.currentFolderName = "/Root";
+             }
+                
         });
     }
 
     var updateData = function(){
-        var username = $scope.userSession.username
-        uri = "/api/users/" + username + "/root";
+        var username = $scope.userSession.username;
+        if (stackAccess.length == 0)
+            uri = "/api/users/" + username + "/root";
+        else
+            uri = "/api/users/" + username + "/root/" + stackAccess[stackAccess.length -1];
         $http.get(uri).success(function (data){
              $scope.root = data;
              $scope.currentFolder = data;
-             $scope.currentFolderName = data.name;
+             
         });
     }
 
@@ -83,6 +94,7 @@ angular.module("filemanager").controller("home", function($scope, $http, $window
             $scope.currentFolderName = folder.name;   
         }
     }
+
 
     updateData();    
     
