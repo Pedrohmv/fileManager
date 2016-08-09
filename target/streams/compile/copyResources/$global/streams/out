@@ -1,4 +1,4 @@
-[debug] Copy resource mappings: 
-[debug] 	(/home/vhugo/apps/fileManager/conf/logback.xml,/home/vhugo/apps/fileManager/target/scala-2.11/classes/logback.xml)
-[debug] 	(/home/vhugo/apps/fileManager/conf/routes,/home/vhugo/apps/fileManager/target/scala-2.11/classes/routes)
-[debug] 	(/home/vhugo/apps/fileManager/conf/application.conf,/home/vhugo/apps/fileManager/target/scala-2.11/classes/application.conf)
+[0m[[0mdebug[0m] [0mCopy resource mappings: [0m
+[0m[[0mdebug[0m] [0m	(/home/pedro/Música/fileManager/conf/logback.xml,/home/pedro/Música/fileManager/target/scala-2.11/classes/logback.xml)[0m
+[0m[[0mdebug[0m] [0m	(/home/pedro/Música/fileManager/conf/routes,/home/pedro/Música/fileManager/target/scala-2.11/classes/routes)[0m
+[0m[[0mdebug[0m] [0m	(/home/pedro/Música/fileManager/conf/application.conf,/home/pedro/Música/fileManager/target/scala-2.11/classes/application.conf)[0m
