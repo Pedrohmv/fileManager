@@ -3,6 +3,7 @@ angular.module("filemanager").controller("home", function($scope, $http, $window
     $scope.createFolderModal = false;
     $scope.createFileModal = false;
     $scope.previousFileShow = true;
+    $scope.fileView = false;
     var stackAccess = [];
     $scope.currentFolderName = "/Root";
 
@@ -20,6 +21,11 @@ angular.module("filemanager").controller("home", function($scope, $http, $window
 
     $scope.closeFileWindow = function(){
         $scope.createFileModal = false;
+    }
+
+    $scope.closeFileView = function(){
+        $scope.fileView = false;
+        console.log($scope.fileView)
     }
 
 
@@ -53,13 +59,15 @@ angular.module("filemanager").controller("home", function($scope, $http, $window
     }
 
     $scope.changeFile = function(id){
-        var files = $scope.currentFolder.files
+        var files = $scope.currentFolder.files;
         for(i in files){
             if(files[i].id == id){
                 $scope.currentFile = files[i];
             }
         }
-        $window.location.href = "/#/file";
+       // $window.location.href = "/#/file";
+         $scope.fileView = true;
+        console.log($scope.currentFile);
     }
 
     $scope.comeBack = function(){

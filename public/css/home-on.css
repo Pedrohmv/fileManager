@@ -5,6 +5,22 @@
 	background: #fff;
 }
 
+.file-view{
+	height: 100%; width: 100%;
+	padding-top: -5px;
+	position: relative;
+}
+
+.btn-file{
+	position: absolute;
+	right: 20px;
+	width: 80px;
+}
+
+span.file-view{
+	width: 300px;
+}
+
 div.title{
 	position: relative;
 	background-color: #e6e6e6;
