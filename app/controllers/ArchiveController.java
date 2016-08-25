@@ -1,5 +1,8 @@
 package controllers;
 
+import DAO.DataBase;
+import DAO.tables.FolderTable;
+import DAO.tables.UserTable;
 import com.fasterxml.jackson.databind.JsonNode;
 import models.Archive;
 import models.Folder;
@@ -17,14 +20,18 @@ import static play.mvc.Results.ok;
 
 public class ArchiveController {
 
+    private DataBase db = DataBase.getDataBase();
+    private UserTable users = db.getUsers();
+    private FolderTable folders = db.getFolders();
+
     public Result postArchive(String username, int id){
         JsonNode payload = request().body().asJson();
         String title = payload.get("title").asText();
         String content = payload.get("content").asText();
 
-        User user = controllers.UserController.searchUserByUsername(username);
+        User user = users.searchUserByUsername(username);
         if (user != null) {
-            Folder folder = FolderController.searchFolder(user.getRoot(), id);
+            Folder folder = folders.searchFolder(user.getRoot(), id);
             if (folder == null)
                 return null;
 

@@ -1,6 +1,9 @@
 package models;
 
+import DAO.DataBase;
+
 public class User {
+    private DataBase dataBase = DataBase.getDataBase();
     private String username;
     private String email;
     private String password;

@@ -1,5 +1,7 @@
 package controllers;
 
+import DAO.DataBase;
+import DAO.tables.UserTable;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import models.User;
@@ -7,8 +9,6 @@ import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -16,19 +16,20 @@ import static mylib.MyResults.conflict;
 
 public class UserController extends Controller {
 
-    private static List<User> users = new ArrayList();
-    private static User userLogin;
-    private static final int N_PARAMS_CREATE_USER = 3;
-    private static final int N_PARAMS_LOGIN = 2;
-    private static final Pattern VALID_EMAIL_ADDRESS_REGEX = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
+    private DataBase db = DataBase.getDataBase();
+    private UserTable users = db.getUsers();
+    private User userLogin;
+    private final int N_PARAMS_CREATE_USER = 3;
+    private final int N_PARAMS_LOGIN = 2;
+    private final Pattern VALID_EMAIL_ADDRESS_REGEX = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
 
 
     public Result getUsers() {
-        return ok(Json.toJson(users));
+        return ok(Json.toJson(users.getAll()));
     }
 
     public Result getUser(String username) {
-        User user = searchUserByUsername(username);
+        User user = users.searchUserByUsername(username);
         if (user == null)
             return notFound("404");
         return ok(Json.toJson(user));
@@ -58,7 +59,7 @@ public class UserController extends Controller {
 
         String email = payload.get("email").textValue();
         String password = payload.get("password").textValue();
-        userLogin = searchUser(email, password);
+        userLogin = users.searchUser(email, password);
 
         return ok(Json.toJson(userLogin));
     }
@@ -77,7 +78,7 @@ public class UserController extends Controller {
             return ok("true");
     }
 
-    protected static boolean validateLogin(JsonNode payload){
+    private boolean validateLogin(JsonNode payload){
         if(!validatePayload(payload, N_PARAMS_LOGIN))
             return false;
 
@@ -89,7 +90,7 @@ public class UserController extends Controller {
         return true;
     }
 
-    protected static boolean validateUser(JsonNode payload) {
+    private boolean validateUser(JsonNode payload) {
         if(!validatePayload(payload, N_PARAMS_CREATE_USER))
             return false;
 
@@ -107,7 +108,7 @@ public class UserController extends Controller {
         return true;
     }
 
-    private static boolean validatePayload(JsonNode payload, int nParams){
+    private boolean validatePayload(JsonNode payload, int nParams){
         ObjectNode nullLogin = Json.newObject();
         if (payload == null)
             return false;
@@ -118,46 +119,19 @@ public class UserController extends Controller {
         return true;
     }
 
-    protected static  boolean isRegistered(String key) {
+    private boolean isRegistered(String key) {
         User user;
-
-        user = searchUserByUsername(key);
+        user = users.searchUserByUsername(key);
         if (user != null)
             return true;
 
-        user = searchUserByEmail(key);
+        user = users.searchUserByEmail(key);
         if (user != null)
             return  true;
-
         return false;
     }
 
-    protected static User searchUserByUsername(String username){
-        for (User u : users) {
-            String name = u.getUsername();
-            if(name.equals(username))
-                return u;
-        }
-        User nullUser = null;
-        return nullUser;
-    }
 
-    protected static User searchUserByEmail(String email){
-        for (User u : users) {
-            String name = u.getEmail();
-            if(name.equals(email))
-                return u;
-        }
-        User nullUser = null;
-        return nullUser;
-    }
-
-    protected static User searchUser(String email, String password){
-        User user = searchUserByEmail(email);
-        if(user.getPassword().equals(password))
-            return user;
-        return user;
-    }
 
 
 }

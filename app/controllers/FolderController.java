@@ -1,5 +1,8 @@
 package controllers;
 
+import DAO.DataBase;
+import DAO.tables.FolderTable;
+import DAO.tables.UserTable;
 import models.Folder;
 import models.User;
 import play.libs.Json;
@@ -12,10 +15,14 @@ import static mylib.MyResults.conflict;
 
 public class FolderController extends Controller {
 
+    private DataBase db = DataBase.getDataBase();
+    private UserTable users = db.getUsers();
+    private FolderTable folders = db.getFolders();
+
     public Result getFolder(String username, int id) {
-        User user = controllers.UserController.searchUserByUsername(username);
+        User user = users.searchUserByUsername(username);
         if (user != null) {
-            Folder folder = searchFolder(user.getRoot(), id);
+            Folder folder = folders.searchFolder(user.getRoot(), id);
             if (folder == null)
                 return notFound("404");
             return ok(Json.toJson(folder));
@@ -24,7 +31,7 @@ public class FolderController extends Controller {
     }
 
     public Result getRoot(String username) {
-        User user = controllers.UserController.searchUserByUsername(username);
+        User user = users.searchUserByUsername(username);
         if (user != null) {
             return ok(Json.toJson(user.getRoot()));
         }
@@ -32,9 +39,9 @@ public class FolderController extends Controller {
     }
 
     public Result postFolder(String username, int id, String name){
-        User user = controllers.UserController.searchUserByUsername(username);
+        User user = users.searchUserByUsername(username);
         if (user != null) {
-            Folder folder = searchFolder(user.getRoot(), id);
+            Folder folder = folders.searchFolder(user.getRoot(), id);
             if (folder == null)
                 return null;
 
@@ -49,35 +56,5 @@ public class FolderController extends Controller {
             return ok(Json.toJson(newFolder));
         }
         return notFound("404");
-    }
-
-    protected static Folder searchFolder(Folder root, int id) {
-        if(root.getId() == id)
-            return  root;
-        else if(root.getInFolder().size() == 0)
-            return null;
-
-        for(Folder f : root.getInFolder()){
-            if(f.getId() == id)
-                return f;
-        }
-
-        Folder auxFolder = null;
-        for(Folder f : root.getInFolder()){
-            auxFolder = searchFolder(f, id);
-            if(auxFolder != null && auxFolder.getId() == id)
-                return auxFolder;
-        }
-
-        /*for(int i = 0; i < root.getInFolder().size(); i++){
-            if(root.getInFolder().get(i).getId() == id)
-                return root.getInFolder().get(i);
-        }*/
-
-        /*Folder auxFolder = null;
-        for(int i = 0; i < root.getInFolder().size(); i++){
-            auxFolder = searchFolder(root.getInFolder().get(i), id);
-        }*/
-        return auxFolder;
     }
 }
