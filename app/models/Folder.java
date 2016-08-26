@@ -7,7 +7,7 @@ public class Folder {
     private String name;
     private List<Folder> inFolder;
     private int id;
-    private List<Archive> files;
+    private List<File> files;
     private int count = 0;
 
     public Folder(String name){
@@ -37,11 +37,11 @@ public class Folder {
         this.inFolder = inFolder;
     }
 
-    public List<Archive> getFiles() {
+    public List<File> getFiles() {
         return files;
     }
 
-    public void setFiles(List<Archive> files) {
+    public void setFiles(List<File> files) {
         this.files = files;
     }
 }

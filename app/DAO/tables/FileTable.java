@@ -1,14 +1,14 @@
 package DAO.tables;
 
-import models.Archive;
+import models.File;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ArchiveTable {
-    private List<Archive> files;
+public class FileTable {
+    private List<File> files;
 
-    public ArchiveTable(){
+    public FileTable(){
         files = new ArrayList();
     }
 }

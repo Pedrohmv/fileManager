@@ -1,6 +1,6 @@
 package DAO;
 
-import DAO.tables.ArchiveTable;
+import DAO.tables.FileTable;
 import DAO.tables.FolderTable;
 import DAO.tables.UserTable;
 
@@ -8,12 +8,12 @@ public class DataBase {
     private static DataBase dataBase;
     private UserTable users;
     private FolderTable folders;
-    private ArchiveTable files;
+    private FileTable files;
 
     private DataBase(){
         users = new UserTable();
         folders = new FolderTable();
-        files = new ArchiveTable();
+        files = new FileTable();
     }
 
     public static DataBase getDataBase(){
@@ -30,7 +30,7 @@ public class DataBase {
         return this.folders;
     }
 
-    public ArchiveTable getFiles(){
+    public FileTable getFiles(){
         return this.files;
     }
 }

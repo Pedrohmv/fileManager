@@ -4,7 +4,7 @@ import DAO.DataBase;
 import DAO.tables.FolderTable;
 import DAO.tables.UserTable;
 import com.fasterxml.jackson.databind.JsonNode;
-import models.Archive;
+import models.File;
 import models.Folder;
 import models.User;
 import play.libs.Json;
@@ -18,7 +18,7 @@ import static play.mvc.Results.notFound;
 import static play.mvc.Results.ok;
 
 
-public class ArchiveController {
+public class FileController {
 
     private DataBase db = DataBase.getDataBase();
     private UserTable users = db.getUsers();
@@ -35,14 +35,14 @@ public class ArchiveController {
             if (folder == null)
                 return null;
 
-            Archive newArchive = new Archive(title, content);
-            List<Archive> files = folder.getFiles();
-            for(Archive a : files)
+            File newFile = new File(title, content);
+            List<File> files = folder.getFiles();
+            for(File a : files)
                 if(a.getName().equals(title))
                     return conflict("409");
 
-            folder.getFiles().add(newArchive);
-            return ok(Json.toJson(newArchive));
+            folder.getFiles().add(newFile);
+            return ok(Json.toJson(newFile));
         }
         return notFound("404");
     }

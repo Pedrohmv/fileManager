@@ -1,19 +1,19 @@
 package models;
 
-public class Archive {
+public class File {
     private String name;
     private String content;
     private int id;
     private String url;
 
 
-    public Archive(String name){
+    public File(String name){
         this.name = name;
         this.content = "";
         this.id = System.identityHashCode(this);
     }
 
-    public Archive(String name, String content){
+    public File(String name, String content){
         this.name = name;
         this.content = content;
         this.id = System.identityHashCode(this);
