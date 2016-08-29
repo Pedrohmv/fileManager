@@ -12,6 +12,7 @@ public class User {
     private String password;
     private Folder root;
     private List<Share> shareArea;
+    private List<Connection> connections;
 
     public User(String username, String email, String password){
         this.username = username;
@@ -19,6 +20,7 @@ public class User {
         this.password = password;
         this.root = new Folder("Root");
         this.shareArea = new ArrayList();
+        this.connections = new ArrayList();
     }
     public String getUsername() {
         return username;
