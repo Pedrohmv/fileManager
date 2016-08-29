@@ -2,18 +2,23 @@ package models;
 
 import DAO.DataBase;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class User {
     private DataBase dataBase = DataBase.getDataBase();
     private String username;
     private String email;
     private String password;
     private Folder root;
+    private List<Share> shareArea;
 
     public User(String username, String email, String password){
         this.username = username;
         this.email = email;
         this.password = password;
         this.root = new Folder("Root");
+        this.shareArea = new ArrayList();
     }
     public String getUsername() {
         return username;

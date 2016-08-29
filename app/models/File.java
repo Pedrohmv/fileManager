@@ -5,12 +5,14 @@ public class File {
     private String content;
     private int id;
     private String url;
+    private Share shared;
 
 
     public File(String name){
         this.name = name;
         this.content = "";
         this.id = System.identityHashCode(this);
+        this.shared = new Share();
     }
 
     public File(String name, String content){
@@ -45,5 +47,9 @@ public class File {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public Share getShared() {
+        return shared;
     }
 }

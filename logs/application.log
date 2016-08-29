@@ -1,3 +1,12 @@
-2016-08-26 14:11:57,967 [INFO] from play.core.server.NettyServer in pool-6-thread-7 - Listening for HTTP on /0:0:0:0:0:0:0:0:9000
-2016-08-26 14:12:30,892 [INFO] from application in ForkJoinPool-1-worker-1 - ApplicationTimer demo: Starting application at 2016-08-26T17:12:30.891Z
-2016-08-26 14:12:31,552 [INFO] from play.api.Play in ForkJoinPool-1-worker-1 - Application started (Dev)
+2016-08-26 14:28:48,877 [INFO] from play.core.server.NettyServer in pool-6-thread-5 - Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+2016-08-26 14:28:53,521 [INFO] from application in ForkJoinPool-1-worker-1 - ApplicationTimer demo: Starting application at 2016-08-26T17:28:53.520Z
+2016-08-26 14:28:53,769 [INFO] from play.api.Play in ForkJoinPool-1-worker-1 - Application started (Dev)
+2016-08-26 15:59:30,605 [INFO] from application in application-akka.actor.default-dispatcher-48 - ApplicationTimer demo: Stopping application at 2016-08-26T18:59:30.605Z after 5437s.
+2016-08-26 15:59:31,065 [INFO] from application in application-akka.actor.default-dispatcher-48 - ApplicationTimer demo: Starting application at 2016-08-26T18:59:31.065Z
+2016-08-26 15:59:31,411 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-48 - Application started (Dev)
+2016-08-26 16:02:01,369 [INFO] from application in application-akka.actor.default-dispatcher-12 - ApplicationTimer demo: Stopping application at 2016-08-26T19:02:01.369Z after 150s.
+2016-08-26 16:02:01,598 [INFO] from application in application-akka.actor.default-dispatcher-12 - ApplicationTimer demo: Starting application at 2016-08-26T19:02:01.598Z
+2016-08-26 16:02:01,741 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-12 - Application started (Dev)
+2016-08-26 16:05:51,453 [INFO] from application in application-akka.actor.default-dispatcher-4 - ApplicationTimer demo: Stopping application at 2016-08-26T19:05:51.453Z after 230s.
+2016-08-26 16:05:51,670 [INFO] from application in application-akka.actor.default-dispatcher-4 - ApplicationTimer demo: Starting application at 2016-08-26T19:05:51.670Z
+2016-08-26 16:05:51,742 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-4 - Application started (Dev)
