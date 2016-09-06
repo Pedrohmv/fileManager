@@ -20,7 +20,7 @@ POST    /api/users/:username/root/:id/archive               controllers.FileCont
 GET     /api/users/:username/file/:id                       controllers.FileController.getFile(username: String, id: Integer)
 
 #Share
-GET /api/users/:username/root/share/:id/:friend                     controllers.ShareController.postShare(username: String, id: Integer, friend: String)
+GET /api/users/:username/file/:id/share/:friend                     controllers.ShareController.postShare(username: String, id: Integer, friend: String)
 
 
 

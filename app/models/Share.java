@@ -2,12 +2,12 @@ package models;
 
 public class Share {
     private int id;
-    private User user;
+    private String friend;
     private File file;
 
-    public Share(User user, File file){
+    public Share(String friend, File file){
         this.id = System.identityHashCode(this);
-        this.user = user;
+        this.friend = friend;
         this.file = file;
     }
 
@@ -16,8 +16,8 @@ public class Share {
         return id;
     }
 
-    public User getUser() {
-        return user;
+    public String getFriend() {
+        return friend;
     }
 
     public File getFile() {

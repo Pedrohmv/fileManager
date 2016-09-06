@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/vhugo/apps/fileManager/conf/routes
-// @DATE:Tue Sep 06 10:32:23 BRT 2016
+// @DATE:Tue Sep 06 11:14:44 BRT 2016
 
 package router
 
@@ -66,7 +66,7 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/users/""" + "$" + """username<[^/]+>/root/""" + "$" + """id<[^/]+>/folder/""" + "$" + """name<[^/]+>""", """controllers.FolderController.postFolder(username:String, id:Integer, name:String)"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/users/""" + "$" + """username<[^/]+>/root/""" + "$" + """id<[^/]+>/archive""", """controllers.FileController.postArchive(username:String, id:Integer)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/users/""" + "$" + """username<[^/]+>/file/""" + "$" + """id<[^/]+>""", """controllers.FileController.getFile(username:String, id:Integer)"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/users/""" + "$" + """username<[^/]+>/root/share/""" + "$" + """id<[^/]+>/""" + "$" + """friend<[^/]+>""", """controllers.ShareController.postShare(username:String, id:Integer, friend:String)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/users/""" + "$" + """username<[^/]+>/file/""" + "$" + """id<[^/]+>/share/""" + "$" + """friend<[^/]+>""", """controllers.ShareController.postShare(username:String, id:Integer, friend:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     ("""GET""", this.prefix, """controllers.Assets.at(path:String = "/public/html", file:String = "index.html")"""),
     Nil
@@ -266,7 +266,7 @@ User""",
 
   // @LINE:23
   private[this] lazy val controllers_ShareController_postShare11_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/users/"), DynamicPart("username", """[^/]+""",true), StaticPart("/root/share/"), DynamicPart("id", """[^/]+""",true), StaticPart("/"), DynamicPart("friend", """[^/]+""",true)))
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/users/"), DynamicPart("username", """[^/]+""",true), StaticPart("/file/"), DynamicPart("id", """[^/]+""",true), StaticPart("/share/"), DynamicPart("friend", """[^/]+""",true)))
   )
   private[this] lazy val controllers_ShareController_postShare11_invoker = createInvoker(
     ShareController_0.postShare(fakeValue[String], fakeValue[Integer], fakeValue[String]),
@@ -277,7 +277,7 @@ User""",
       Seq(classOf[String], classOf[Integer], classOf[String]),
       "GET",
       """Share""",
-      this.prefix + """api/users/""" + "$" + """username<[^/]+>/root/share/""" + "$" + """id<[^/]+>/""" + "$" + """friend<[^/]+>"""
+      this.prefix + """api/users/""" + "$" + """username<[^/]+>/file/""" + "$" + """id<[^/]+>/share/""" + "$" + """friend<[^/]+>"""
     )
   )
 

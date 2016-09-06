@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/vhugo/apps/fileManager/conf/routes
-// @DATE:Tue Sep 06 10:32:23 BRT 2016
+// @DATE:Tue Sep 06 11:14:44 BRT 2016
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -198,7 +198,7 @@ package controllers.javascript {
       "controllers.ShareController.postShare",
       """
         function(username0,id1,friend2) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "api/users/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("username", encodeURIComponent(username0)) + "/root/share/" + (""" + implicitly[PathBindable[Integer]].javascriptUnbind + """)("id", id1) + "/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("friend", encodeURIComponent(friend2))})
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "api/users/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("username", encodeURIComponent(username0)) + "/file/" + (""" + implicitly[PathBindable[Integer]].javascriptUnbind + """)("id", id1) + "/share/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("friend", encodeURIComponent(friend2))})
         }
       """
     )

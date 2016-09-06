@@ -3,24 +3,24 @@ package models;
 
 public class Connection {
     private int id;
-    private User user1;
-    private User user2;
+    private String user;
+    private String friend;
 
-    public Connection(User user1, User user2){
+    public Connection(String user, String friend){
         this.id = System.identityHashCode(this);
-        this.user1 = user1;
-        this.user2 = user2;
+        this.user = user;
+        this.friend = friend;
     }
 
     public int getId() {
         return id;
     }
 
-    public User getUser1() {
-        return user1;
+    public String getUser() {
+        return user;
     }
 
-    public User getUser2() {
-        return user2;
+    public String getFriend() {
+        return friend;
     }
 }
