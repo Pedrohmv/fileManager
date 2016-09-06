@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/vhugo/apps/fileManager/conf/routes
-// @DATE:Fri Aug 26 14:11:59 BRT 2016
+// @DATE:Tue Sep 06 10:32:23 BRT 2016
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -15,27 +15,7 @@ import _root_.play.libs.F
 package controllers.javascript {
   import ReverseRouteContext.empty
 
-  // @LINE:17
-  class ReverseFileController(_prefix: => String) {
-
-    def _defaultPrefix: String = {
-      if (_prefix.endsWith("/")) "" else "/"
-    }
-
-  
-    // @LINE:17
-    def postArchive: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.FileController.postArchive",
-      """
-        function(username0,id1) {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "api/users/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("username", encodeURIComponent(username0)) + "/root/" + (""" + implicitly[PathBindable[Integer]].javascriptUnbind + """)("id", id1) + "/archive"})
-        }
-      """
-    )
-  
-  }
-
-  // @LINE:24
+  // @LINE:29
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -43,7 +23,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:25
+    // @LINE:30
     def at: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.at",
       """
@@ -53,7 +33,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:24
+    // @LINE:29
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
@@ -135,6 +115,36 @@ package controllers.javascript {
   
   }
 
+  // @LINE:19
+  class ReverseFileController(_prefix: => String) {
+
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:20
+    def getFile: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.FileController.getFile",
+      """
+        function(username0,id1) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "api/users/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("username", encodeURIComponent(username0)) + "/file/" + (""" + implicitly[PathBindable[Integer]].javascriptUnbind + """)("id", id1)})
+        }
+      """
+    )
+  
+    // @LINE:19
+    def postArchive: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.FileController.postArchive",
+      """
+        function(username0,id1) {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "api/users/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("username", encodeURIComponent(username0)) + "/root/" + (""" + implicitly[PathBindable[Integer]].javascriptUnbind + """)("id", id1) + "/archive"})
+        }
+      """
+    )
+  
+  }
+
   // @LINE:14
   class ReverseFolderController(_prefix: => String) {
 
@@ -169,6 +179,26 @@ package controllers.javascript {
       """
         function(username0) {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "api/users/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("username", encodeURIComponent(username0)) + "/root"})
+        }
+      """
+    )
+  
+  }
+
+  // @LINE:23
+  class ReverseShareController(_prefix: => String) {
+
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:23
+    def postShare: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.ShareController.postShare",
+      """
+        function(username0,id1,friend2) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "api/users/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("username", encodeURIComponent(username0)) + "/root/share/" + (""" + implicitly[PathBindable[Integer]].javascriptUnbind + """)("id", id1) + "/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("friend", encodeURIComponent(friend2))})
         }
       """
     )

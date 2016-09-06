@@ -1,6 +1,7 @@
 package controllers;
 
 import DAO.DataBase;
+import DAO.tables.FileTable;
 import DAO.tables.FolderTable;
 import DAO.tables.UserTable;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -23,6 +24,7 @@ public class FileController {
     private DataBase db = DataBase.getDataBase();
     private UserTable users = db.getUsers();
     private FolderTable folders = db.getFolders();
+    private FileTable files = db.getFiles();
 
     public Result postArchive(String username, int id){
         JsonNode payload = request().body().asJson();
@@ -44,6 +46,16 @@ public class FileController {
             folder.getFiles().add(newFile);
             return ok(Json.toJson(newFile));
         }
+        return notFound("404");
+    }
+
+    public Result getFile(String username, int id){
+        User user = users.searchUserByUsername(username);
+        Folder root = user.getRoot();
+        File file = files.getFile(user.getRoot(), id);
+
+        if(file != null)
+            return ok(Json.toJson(file));
         return notFound("404");
     }
 }

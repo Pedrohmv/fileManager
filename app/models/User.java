@@ -49,4 +49,12 @@ public class User {
     public Folder getRoot() {
         return root;
     }
+
+    public List<Share> getShareArea() {
+        return shareArea;
+    }
+
+    public List<Connection> getConnections() {
+        return connections;
+    }
 }

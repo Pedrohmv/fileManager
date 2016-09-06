@@ -14,8 +14,13 @@ POST    /api/auth                                           controllers.UserCont
 GET     /api/users/:username/root/:id                       controllers.FolderController.getFolder(username: String, id: Integer)
 GET     /api/users/:username/root                           controllers.FolderController.getRoot(username: String)
 GET     /api/users/:username/root/:id/folder/:name          controllers.FolderController.postFolder(username: String, id: Integer, name: String)
-POST    /api/users/:username/root/:id/archive               controllers.FileController.postArchive(username: String, id: Integer)
 
+#File
+POST    /api/users/:username/root/:id/archive               controllers.FileController.postArchive(username: String, id: Integer)
+GET     /api/users/:username/file/:id                       controllers.FileController.getFile(username: String, id: Integer)
+
+#Share
+GET /api/users/:username/root/share/:id/:friend                     controllers.ShareController.postShare(username: String, id: Integer, friend: String)
 
 
 
