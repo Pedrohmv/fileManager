@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/vhugo/apps/fileManager/conf/routes
-// @DATE:Tue Sep 06 11:14:44 BRT 2016
+// @DATE:Thu Sep 08 14:35:27 BRT 2016
 
 package router
 
@@ -24,7 +24,7 @@ class Routes(
   FileController_4: controllers.FileController,
   // @LINE:23
   ShareController_0: controllers.ShareController,
-  // @LINE:29
+  // @LINE:30
   Assets_3: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -39,7 +39,7 @@ class Routes(
     FileController_4: controllers.FileController,
     // @LINE:23
     ShareController_0: controllers.ShareController,
-    // @LINE:29
+    // @LINE:30
     Assets_3: controllers.Assets
   ) = this(errorHandler, UserController_1, FolderController_2, FileController_4, ShareController_0, Assets_3, "/")
 
@@ -66,6 +66,8 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/users/""" + "$" + """username<[^/]+>/root/""" + "$" + """id<[^/]+>/folder/""" + "$" + """name<[^/]+>""", """controllers.FolderController.postFolder(username:String, id:Integer, name:String)"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/users/""" + "$" + """username<[^/]+>/root/""" + "$" + """id<[^/]+>/archive""", """controllers.FileController.postArchive(username:String, id:Integer)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/users/""" + "$" + """username<[^/]+>/file/""" + "$" + """id<[^/]+>""", """controllers.FileController.getFile(username:String, id:Integer)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/users/""" + "$" + """username<[^/]+>/shared""", """controllers.ShareController.getShared(username:String)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/users/""" + "$" + """username<[^/]+>/myshare""", """controllers.ShareController.getMyShared(username:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/users/""" + "$" + """username<[^/]+>/file/""" + "$" + """id<[^/]+>/share/""" + "$" + """friend<[^/]+>""", """controllers.ShareController.postShare(username:String, id:Integer, friend:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     ("""GET""", this.prefix, """controllers.Assets.at(path:String = "/public/html", file:String = "index.html")"""),
@@ -265,10 +267,44 @@ User""",
   )
 
   // @LINE:23
-  private[this] lazy val controllers_ShareController_postShare11_route = Route("GET",
+  private[this] lazy val controllers_ShareController_getShared11_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/users/"), DynamicPart("username", """[^/]+""",true), StaticPart("/shared")))
+  )
+  private[this] lazy val controllers_ShareController_getShared11_invoker = createInvoker(
+    ShareController_0.getShared(fakeValue[String]),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.ShareController",
+      "getShared",
+      Seq(classOf[String]),
+      "GET",
+      """Share""",
+      this.prefix + """api/users/""" + "$" + """username<[^/]+>/shared"""
+    )
+  )
+
+  // @LINE:24
+  private[this] lazy val controllers_ShareController_getMyShared12_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/users/"), DynamicPart("username", """[^/]+""",true), StaticPart("/myshare")))
+  )
+  private[this] lazy val controllers_ShareController_getMyShared12_invoker = createInvoker(
+    ShareController_0.getMyShared(fakeValue[String]),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.ShareController",
+      "getMyShared",
+      Seq(classOf[String]),
+      "GET",
+      """""",
+      this.prefix + """api/users/""" + "$" + """username<[^/]+>/myshare"""
+    )
+  )
+
+  // @LINE:25
+  private[this] lazy val controllers_ShareController_postShare13_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/users/"), DynamicPart("username", """[^/]+""",true), StaticPart("/file/"), DynamicPart("id", """[^/]+""",true), StaticPart("/share/"), DynamicPart("friend", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_ShareController_postShare11_invoker = createInvoker(
+  private[this] lazy val controllers_ShareController_postShare13_invoker = createInvoker(
     ShareController_0.postShare(fakeValue[String], fakeValue[Integer], fakeValue[String]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -276,16 +312,16 @@ User""",
       "postShare",
       Seq(classOf[String], classOf[Integer], classOf[String]),
       "GET",
-      """Share""",
+      """""",
       this.prefix + """api/users/""" + "$" + """username<[^/]+>/file/""" + "$" + """id<[^/]+>/share/""" + "$" + """friend<[^/]+>"""
     )
   )
 
-  // @LINE:29
-  private[this] lazy val controllers_Assets_versioned12_route = Route("GET",
+  // @LINE:30
+  private[this] lazy val controllers_Assets_versioned14_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned12_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_versioned14_invoker = createInvoker(
     Assets_3.versioned(fakeValue[String], fakeValue[Asset]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -298,11 +334,11 @@ User""",
     )
   )
 
-  // @LINE:30
-  private[this] lazy val controllers_Assets_at13_route = Route("GET",
+  // @LINE:31
+  private[this] lazy val controllers_Assets_at15_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix)))
   )
-  private[this] lazy val controllers_Assets_at13_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_at15_invoker = createInvoker(
     Assets_3.at(fakeValue[String], fakeValue[String]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -385,21 +421,33 @@ User""",
       }
   
     // @LINE:23
-    case controllers_ShareController_postShare11_route(params) =>
-      call(params.fromPath[String]("username", None), params.fromPath[Integer]("id", None), params.fromPath[String]("friend", None)) { (username, id, friend) =>
-        controllers_ShareController_postShare11_invoker.call(ShareController_0.postShare(username, id, friend))
+    case controllers_ShareController_getShared11_route(params) =>
+      call(params.fromPath[String]("username", None)) { (username) =>
+        controllers_ShareController_getShared11_invoker.call(ShareController_0.getShared(username))
       }
   
-    // @LINE:29
-    case controllers_Assets_versioned12_route(params) =>
-      call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned12_invoker.call(Assets_3.versioned(path, file))
+    // @LINE:24
+    case controllers_ShareController_getMyShared12_route(params) =>
+      call(params.fromPath[String]("username", None)) { (username) =>
+        controllers_ShareController_getMyShared12_invoker.call(ShareController_0.getMyShared(username))
+      }
+  
+    // @LINE:25
+    case controllers_ShareController_postShare13_route(params) =>
+      call(params.fromPath[String]("username", None), params.fromPath[Integer]("id", None), params.fromPath[String]("friend", None)) { (username, id, friend) =>
+        controllers_ShareController_postShare13_invoker.call(ShareController_0.postShare(username, id, friend))
       }
   
     // @LINE:30
-    case controllers_Assets_at13_route(params) =>
+    case controllers_Assets_versioned14_route(params) =>
+      call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
+        controllers_Assets_versioned14_invoker.call(Assets_3.versioned(path, file))
+      }
+  
+    // @LINE:31
+    case controllers_Assets_at15_route(params) =>
       call(Param[String]("path", Right("/public/html")), Param[String]("file", Right("index.html"))) { (path, file) =>
-        controllers_Assets_at13_invoker.call(Assets_3.at(path, file))
+        controllers_Assets_at15_invoker.call(Assets_3.at(path, file))
       }
   }
 }
