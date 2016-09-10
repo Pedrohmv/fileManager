@@ -55,6 +55,15 @@ angular.module("filemanager").controller("home", function($scope, $http, $window
         });
     }
 
+    $scope.editFile = function(file) {
+        var username = $scope.userSession.username;
+        uri = "/api/users/" + username + "/file/" + $scope.currentFile.id;
+        $http.post(uri, file).success(function (data){
+            $scope.createFileModal = false;
+            updateData();
+        });
+    }
+
     $scope.changeFolder = function(id){
         stackAccess.push(id);
         var username = $scope.userSession.username;

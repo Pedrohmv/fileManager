@@ -20,7 +20,7 @@ angular.module("filemanager").controller("main", function($scope, $http, $window
 
         });
     }
-    
+
     $scope.login = function(user){
         $http.post("/api/login", user).success(function (data){
             localStorage.setItem("user", JSON.stringify(data));

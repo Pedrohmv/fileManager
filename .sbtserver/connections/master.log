@@ -1,57 +1,36 @@
-New log file opened at Tue Jul 26 23:02:09 BRT 2016 by 7754@pedro-Vostro-3550
-Taking next connection to: 36121
-New client attempting to connect on port: 42361-36121
-  Address = /127.0.1.1:36121
-This client on port 42361 has uuid b81f66ef-b5ee-4e52-8f75-27f97d8ee576 configName activator humanReadableName Activator protocolVersion 3 featureTags Vector()
-Connected Clients: activator-b81f66ef-b5ee-4e52-8f75-27f97d8ee576
-Taking next connection to: 36121
-New client attempting to connect on port: 42362-36121
-  Address = /127.0.1.1:36121
-Handshake exception on socket: 42362
+New log file opened at Fri Sep 09 21:13:23 GFT 2016 by 28088@ThalesPC
+Taking next connection to: 63014
+New client attempting to connect on port: 63015-63014
+  Address = /192.168.56.1:63014
+This client on port 63015 has uuid ea2f6f9a-283e-4cff-beae-5a7b85bf67ea configName activator humanReadableName Activator protocolVersion 3 featureTags Vector()
+Connected Clients: activator-ea2f6f9a-283e-4cff-beae-5a7b85bf67ea
+Taking next connection to: 63014
+New client attempting to connect on port: 63038-63014
+  Address = /192.168.56.1:63014
+Handshake exception on socket: 63038
 sbt.impl.ipc.HandshakeException: Unable to perform handshake
 	at sbt.impl.ipc.Peer.handshake(IPC.scala:46)
 	at sbt.impl.ipc.MultiClientServer.<init>(IPC.scala:150)
 	at sbt.server.SbtServerSocketHandler$$anon$1.run(SbtServerSocketHandler.scala:43)
-Caused by: java.io.EOFException
-	at java.io.DataInputStream.readInt(DataInputStream.java:392)
+Caused by: java.net.SocketException: Software caused connection abort: recv failed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.read(SocketInputStream.java:150)
+	at java.net.SocketInputStream.read(SocketInputStream.java:121)
+	at java.io.BufferedInputStream.fill(BufferedInputStream.java:246)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:265)
+	at java.io.DataInputStream.readInt(DataInputStream.java:387)
 	at sbt.impl.ipc.Peer.receive(IPC.scala:95)
 	at sbt.impl.ipc.Peer.handshake(IPC.scala:49)
 	... 2 more
-Taking next connection to: 36121
-New client attempting to connect on port: 42363-36121
-  Address = /127.0.1.1:36121
-This client on port 42363 has uuid 63062bfa-e1d5-4195-9932-951cba6c1837 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
-Connected Clients: activator-b81f66ef-b5ee-4e52-8f75-27f97d8ee576, play-fork-run-63062bfa-e1d5-4195-9932-951cba6c1837
-Taking next connection to: 36121
+Taking next connection to: 63014
+New client attempting to connect on port: 63039-63014
+  Address = /192.168.56.1:63014
+This client on port 63039 has uuid e0218eb4-9b2a-4d5c-89bb-a467c6a96686 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: activator-ea2f6f9a-283e-4cff-beae-5a7b85bf67ea, play-fork-run-e0218eb4-9b2a-4d5c-89bb-a467c6a96686
+Taking next connection to: 63014
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 36121
+Taking next connection to: 63014
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 36121
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 36121
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 36121
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 36121
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 36121
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 36121
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 36121
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 36121
-Server socket closed java.net.SocketException: Socket closed
-Server socket thread exiting.
-2 clients open, will close them...
-All client sockets have been closed.
-Closing the 7754@pedro-Vostro-3550 logs at Tue Jul 26 23:30:38 BRT 2016, goodbye.
+Taking next connection to: 63014

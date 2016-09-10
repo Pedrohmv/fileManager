@@ -1,11 +1,16 @@
-<div class="file-show">
+<div class="file-edit">
 <div class="card-file">
 	<div class="header">
-		<h3> {{currentFile.name}}</h3>
+		<h3>
+		<input class="form-control" type="text" ng-model="currentFile.name" ng-value="currentFile.name"/>
+		</h3>
 	</div>
 	<div class="inner">
-		<p> {{currentFile.content}}</p>
+		<p>
+		<input class="form-control" type="text" ng-model="currentFile.content" ng-value="currentFile.content"/>
+		</p>
 	</div>
 </div>
-<button class="btn btn-danger btn-block btn-file"  ng-click="closeFileView()">Close</button>
+<button class="btn btn-success btn-block btn-file btn-file-view" ng-click="editFile(currentFile)">Save</button>
+<button class="btn btn-danger btn-block btn-file" ng-click="closeFileView()">Close</button>
 </div>

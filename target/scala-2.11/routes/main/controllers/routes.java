@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/vhugo/apps/fileManager/conf/routes
-// @DATE:Thu Sep 08 14:35:27 BRT 2016
+// @SOURCE:C:/Users/Thales/Documents/FileManager/fileManager/conf/routes
+// @DATE:Fri Sep 09 21:11:47 GFT 2016
 
 package controllers;
 
