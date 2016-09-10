@@ -1,18 +1,12 @@
-<div class="file-view">
-<button class="btn btn-danger btn-block btn-file"  ng-click="closeFileView()">Fechar</button>
+<div class="file-show">
 <div class="card-file">
 	<div class="header">
-		<h3> {{currentFolderName + "/" + currentFile.name}}</h3>
+		<h3> {{currentFile.name}}</h3>
 	</div>
 	<div class="inner">
-		<form class="form-signin">
-			<div class="custom-modal-content">
-				<h5>Title</h5>
-				<input class="form-control" type="text" placeholder="Title" value="{{currentFile.name}}" disabled="false" />
-				<h5>Content</h5>
-				<input class="form-control" type="text-area" placeholder="Content" value="{{currentFile.content}}" disabled="false" />
-			</div>
-		</form>
+		<p> {{currentFile.content}}</p>
 	</div>
 </div>
+<button class="btn btn-danger  btn-block  btn-file btn-file-view"  ng-click="closeFileView()">Close</button>
+<button class="btn btn-primary btn-block  btn-file btn-file-edit"  ng-click="closeFileView()">Edit</button>
 </div>

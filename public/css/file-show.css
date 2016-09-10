@@ -1,0 +1,28 @@
+.file-show{
+	position: relative;
+	margin: auto 20% 100px 20%;
+}
+
+
+div.inner {
+	background-color: #E6E6E6;
+	border-radius: 10px;
+    padding: 20px;
+    font-family: arial;
+	font-size: larger;
+	text-align: justify;
+}
+
+.btn-file{
+	position: absolute;
+	margin-top: 5px;
+	width: 100px;
+}
+
+.btn-file-view{
+	right: 0px;
+}
+
+.btn-file-edit{
+	right: 110px;
+}
