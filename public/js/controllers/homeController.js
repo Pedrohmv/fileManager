@@ -3,7 +3,7 @@ angular.module("filemanager").controller("home", function($scope, $http, $window
     $scope.createFolderModal = false;
     $scope.createFileModal = false;
     $scope.previousFileShow = true;
-    $scope.fileView = false;
+    $scope.fileShow = false;
     $scope.editView = false;
     var stackAccess = [];
     $scope.currentFolderName = "/Root";
@@ -21,20 +21,17 @@ angular.module("filemanager").controller("home", function($scope, $http, $window
         $scope.editView = false;
     }
 
-    $scope.editFileWindow = function(){
-        $scope.editView = true;
-        $scope.createFileModal = false;
-    }
-
+    
     $scope.closeFileWindow = function(){
         $scope.createFileModal = false;
         $scope.editView = false;
     }
 
     $scope.closeFileView = function(){
-        $scope.fileView = false;
-        console.log($scope.fileView)
+        $scope.fileShow = false;
     }
+
+    
 
 
     $scope.createFolder = function(name){
@@ -83,7 +80,7 @@ angular.module("filemanager").controller("home", function($scope, $http, $window
             }
         }
          
-         $scope.fileView = true;
+         $scope.fileShow = true;
         console.log($scope.currentFile);
     }
 
@@ -94,7 +91,7 @@ angular.module("filemanager").controller("home", function($scope, $http, $window
                 $scope.currentFile = files[i];
             }
         }
-         $scope.fileView = true;
+         $scope.fileShow = true;
         console.log($scope.currentFile);
     }
 

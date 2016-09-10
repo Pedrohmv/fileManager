@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:C:/Users/Thales/Documents/FileManager/fileManager/conf/routes
-// @DATE:Fri Sep 09 21:11:47 GFT 2016
+// @SOURCE:/home/vhugo/apps/fileManager/conf/routes
+// @DATE:Sat Sep 10 11:11:46 BRT 2016
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
