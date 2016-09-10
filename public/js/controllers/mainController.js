@@ -2,6 +2,7 @@ angular.module("filemanager").controller("main", function($scope, $http, $window
     $scope.logado = false;
     $scope.userSession = localStorage.getItem("user");
     $scope.userSession = JSON.parse($scope.userSession);
+    
 
     var isLogado = function(){
         if($scope.userSession == null)

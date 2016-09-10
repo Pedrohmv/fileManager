@@ -4,6 +4,7 @@ angular.module("filemanager").controller("home", function($scope, $http, $window
     $scope.createFileModal = false;
     $scope.previousFileShow = true;
     $scope.fileView = false;
+    $scope.editView = false;
     var stackAccess = [];
     $scope.currentFolderName = "/Root";
 
@@ -17,10 +18,17 @@ angular.module("filemanager").controller("home", function($scope, $http, $window
 
     $scope.openFileWindow = function(){
         $scope.createFileModal = true;
+        $scope.editView = false;
+    }
+
+    $scope.editFileWindow = function(){
+        $scope.editView = true;
+        $scope.createFileModal = false;
     }
 
     $scope.closeFileWindow = function(){
         $scope.createFileModal = false;
+        $scope.editView = false;
     }
 
     $scope.closeFileView = function(){
@@ -65,7 +73,18 @@ angular.module("filemanager").controller("home", function($scope, $http, $window
                 $scope.currentFile = files[i];
             }
         }
-       // $window.location.href = "/#/file";
+         
+         $scope.fileView = true;
+        console.log($scope.currentFile);
+    }
+
+    $scope.changeSharedFile = function(id){
+        var files = $scope.fileShared;
+        for(i in files){
+            if(files[i].id == id){
+                $scope.currentFile = files[i];
+            }
+        }
          $scope.fileView = true;
         console.log($scope.currentFile);
     }
@@ -94,14 +113,23 @@ angular.module("filemanager").controller("home", function($scope, $http, $window
 
     var updateData = function(){
         var username = $scope.userSession.username;
+        getSharedFile();
         if (stackAccess.length == 0)
             uri = "/api/users/" + username + "/root";
         else
             uri = "/api/users/" + username + "/root/" + stackAccess[stackAccess.length -1];
         $http.get(uri).success(function (data){
              $scope.root = data;
-             $scope.currentFolder = data;
-             
+             $scope.currentFolder = data;           
+        });
+    }
+
+    var getSharedFile = function(){
+        var username = $scope.userSession.username;
+        uri = "/api/users/" + username + "/shared";
+        $http.get(uri).success(function (data){
+            $scope.fileShared = data;
+            $scope.currentFolder = data;
         });
     }
 
@@ -112,8 +140,6 @@ angular.module("filemanager").controller("home", function($scope, $http, $window
             $scope.currentFolderName = folder.name;   
         }
     }
-
-
     updateData();    
     
 });
