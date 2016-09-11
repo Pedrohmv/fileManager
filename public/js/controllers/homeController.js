@@ -32,8 +32,6 @@ angular.module("filemanager").controller("home", function($scope, $http, $window
     }
 
     
-
-
     $scope.createFolder = function(name){
         var username = $scope.userSession.username
         uri = "/api/users/" + username + "/root/" + $scope.currentFolder.id + "/folder/" + name;

@@ -1,0 +1,12 @@
+<div class="file-show">
+<div class="card-file">
+	<div class="header">
+		<h3>Share {{currentFile.name}}</h3>
+	</div>
+	<div class="inner">
+		<input class="form-control" type="text" ng-model="friend" placeholder="Friend Username"/>
+	</div>
+</div>
+<button class="btn btn-warning  btn-block  btn-file btn-file-view"  ng-click="cancelShare()">Cancel</button>
+<button class="btn btn-success btn-block  btn-file btn-file-edit"  ng-click="shareFile(friend)">Share</button>
+</div>
