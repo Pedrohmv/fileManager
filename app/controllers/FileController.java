@@ -58,4 +58,18 @@ public class FileController {
             return ok(Json.toJson(file));
         return notFound("404");
     }
+
+    public Result putFile(String username, int id){
+        JsonNode payload = request().body().asJson();
+        String title = payload.get("name").asText();
+        String content = payload.get("content").asText();
+
+        User user = users.searchUserByUsername(username);
+        File file = files.getFile(user.getRoot(), id);
+
+        file.setName(title);
+        file.setContent(content);
+
+        return ok(Json.toJson(file));
+    }
 }

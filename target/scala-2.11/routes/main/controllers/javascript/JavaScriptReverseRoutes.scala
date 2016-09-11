@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/vhugo/apps/fileManager/conf/routes
-// @DATE:Sat Sep 10 11:11:46 BRT 2016
+// @DATE:Sun Sep 11 11:34:11 BRT 2016
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -15,7 +15,7 @@ import _root_.play.libs.F
 package controllers.javascript {
   import ReverseRouteContext.empty
 
-  // @LINE:30
+  // @LINE:31
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -23,7 +23,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:31
+    // @LINE:32
     def at: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.at",
       """
@@ -33,7 +33,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:30
+    // @LINE:31
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
@@ -124,6 +124,16 @@ package controllers.javascript {
 
   
     // @LINE:20
+    def putFile: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.FileController.putFile",
+      """
+        function(username0,id1) {
+          return _wA({method:"PUT", url:"""" + _prefix + { _defaultPrefix } + """" + "api/users/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("username", encodeURIComponent(username0)) + "/file/" + (""" + implicitly[PathBindable[Integer]].javascriptUnbind + """)("id", id1)})
+        }
+      """
+    )
+  
+    // @LINE:21
     def getFile: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.FileController.getFile",
       """
@@ -185,7 +195,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:23
+  // @LINE:24
   class ReverseShareController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -193,7 +203,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:25
+    // @LINE:26
     def postShare: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.ShareController.postShare",
       """
@@ -203,7 +213,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:24
+    // @LINE:25
     def getMyShared: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.ShareController.getMyShared",
       """
@@ -213,7 +223,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:23
+    // @LINE:24
     def getShared: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.ShareController.getShared",
       """

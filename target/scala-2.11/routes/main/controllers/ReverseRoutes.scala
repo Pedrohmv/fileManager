@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/vhugo/apps/fileManager/conf/routes
-// @DATE:Sat Sep 10 11:11:46 BRT 2016
+// @DATE:Sun Sep 11 11:34:11 BRT 2016
 
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
 import play.core.routing.{ HandlerDef, ReverseRouteContext, queryString, dynamicString }
@@ -13,20 +13,20 @@ import _root_.play.libs.F
 // @LINE:6
 package controllers {
 
-  // @LINE:30
+  // @LINE:31
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:31
+    // @LINE:32
     def at(): Call = {
       implicit val _rrc = new ReverseRouteContext(Map(("path", "/public/html"), ("file", "index.html")))
       Call("GET", _prefix)
     }
   
-    // @LINE:30
+    // @LINE:31
     def versioned(file:Asset): Call = {
       implicit val _rrc = new ReverseRouteContext(Map(("path", "/public")))
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[Asset]].unbind("file", file))
@@ -87,6 +87,12 @@ package controllers {
 
   
     // @LINE:20
+    def putFile(username:String, id:Integer): Call = {
+      import ReverseRouteContext.empty
+      Call("PUT", _prefix + { _defaultPrefix } + "api/users/" + implicitly[PathBindable[String]].unbind("username", dynamicString(username)) + "/file/" + implicitly[PathBindable[Integer]].unbind("id", id))
+    }
+  
+    // @LINE:21
     def getFile(username:String, id:Integer): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "api/users/" + implicitly[PathBindable[String]].unbind("username", dynamicString(username)) + "/file/" + implicitly[PathBindable[Integer]].unbind("id", id))
@@ -127,26 +133,26 @@ package controllers {
   
   }
 
-  // @LINE:23
+  // @LINE:24
   class ReverseShareController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:25
+    // @LINE:26
     def postShare(username:String, id:Integer, friend:String): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "api/users/" + implicitly[PathBindable[String]].unbind("username", dynamicString(username)) + "/file/" + implicitly[PathBindable[Integer]].unbind("id", id) + "/share/" + implicitly[PathBindable[String]].unbind("friend", dynamicString(friend)))
     }
   
-    // @LINE:24
+    // @LINE:25
     def getMyShared(username:String): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "api/users/" + implicitly[PathBindable[String]].unbind("username", dynamicString(username)) + "/myshare")
     }
   
-    // @LINE:23
+    // @LINE:24
     def getShared(username:String): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "api/users/" + implicitly[PathBindable[String]].unbind("username", dynamicString(username)) + "/shared")

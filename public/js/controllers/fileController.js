@@ -21,7 +21,7 @@ angular.module("filemanager").controller("file", function($scope, $http, $window
         
     }
 
-    $scope.cancelEdit = function(){
+    $scope.cancel = function(){
         $scope.fileView = true;
         $scope.fileEdit = false;
         $scope.fileShare = false;
@@ -29,8 +29,7 @@ angular.module("filemanager").controller("file", function($scope, $http, $window
 
 
     $scope.close = function(){
-        $scope.fileEdit = false;
-        $scope.fileView = true;
+        $scope.cancel();
         $scope.closeFileView();
     }
 
@@ -39,7 +38,17 @@ angular.module("filemanager").controller("file", function($scope, $http, $window
         uri = "/api/users/" + username + "/file/" + $scope.currentFile.id + "/share/" + friend;
                 $http.get(uri).success(function (data){
                      $scope.createFolderModal = false;
-                     updateData();
+                     $scope.updateData();
+                     $scope.close();  
+        });
+    }
+
+    $scope.editFile = function(file){
+        var username = $scope.userSession.username
+        uri = "/api/users/" + username + "/file/" + $scope.currentFile.id;
+                $http.put(uri, file).success(function (data){
+                     $scope.createFolderModal = false;
+                     $scope.updateData();
                      $scope.close();  
         });
     }
