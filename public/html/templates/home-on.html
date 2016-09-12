@@ -1,5 +1,5 @@
 <div class="home-on" ng-controller="home">
-<div ng-show="!fileShow">
+<div ng-show="!fileShow&&!folderShow">
 	<div ng-include="'/assets/html/templates/createFolder.html'"></div>
 	<div ng-include="'/assets/html/templates/createFile.html'"></div>
 	<div ng-include="'/assets/html/templates/menu-folder.html'"></div>
@@ -7,7 +7,9 @@
 	<tr ng-repeat="folder in currentFolder.inFolder">
 		<td>
 			<img class="folder" src="/assets/images/home-logo.png" />
-			<a href="/#/" ng-click="changeFolder(folder.id)">{{folder.name}}</a>
+
+			<a href="/#/" ng-show="!renameShow" ng-click="changeFolder(folder.id)">{{folder.name}}</a>
+			<a class="btn  btn-link btn-rename" ng-show="previousFileShow" ng-click="showRename(folder)"> Rename </a>
 		</td>
 	</tr>
 	<tr ng-repeat="file in currentFolder.files">
@@ -29,6 +31,7 @@
 	</tr>
 	</table>
 </div>
-	<div ng-include="'/assets/html/file.html'" ng-show="fileShow"></div>
+	<div ng-include="'/assets/html/file.html'" 	 ng-show="fileShow"></div>
+	<div ng-include="'/assets/html/folder.html'" ng-show="folderShow"></div>
 </div>
 

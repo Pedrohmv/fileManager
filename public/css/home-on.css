@@ -5,6 +5,10 @@
 	background: #fff;
 }
 
+.btn-rename{
+	position: absolute;
+	right: 0px;
+}
 
 span.file-view{
 	width: 300px;

@@ -5,6 +5,7 @@ angular.module("filemanager").controller("home", function($scope, $http, $window
     $scope.previousFileShow = true;
     $scope.fileShow = false;
     $scope.editView = false;
+    $scope.folderShow = false;
     var stackAccess = [];
     $scope.currentFolderName = "/Root";
 
@@ -14,6 +15,15 @@ angular.module("filemanager").controller("home", function($scope, $http, $window
 
     $scope.closeFolderWindow = function(){
         $scope.createFolderModal = false;
+    }
+
+    $scope.closeEditFolderView = function(){
+        $scope.folderShow = false;
+    }
+
+    $scope.showRename = function(folder){
+        $scope.folderShow = !$scope.folderShow;
+        $scope.folderEdit = folder;
     }
 
     $scope.openFileWindow = function(){
@@ -64,6 +74,15 @@ angular.module("filemanager").controller("home", function($scope, $http, $window
         var username = $scope.userSession.username;
         uri = "/api/users/" + username + "/root/" + stackAccess[stackAccess.length -1];
          $http.get(uri).success(function (data){
+             $scope.updateData();
+             $scope.currentFolderName = $scope.currentFolderName + "/" + data.name ;
+        }); 
+
+    }
+
+    $scope.renameFolder = function(name){
+        uri = "/api/users/" + username + "/root/" + $scope.currentFolder.id;
+        $http.put(uri, name).success(function (data){
              $scope.updateData();
              $scope.currentFolderName = $scope.currentFolderName + "/" + data.name ;
         }); 

@@ -3,6 +3,7 @@ package controllers;
 import DAO.DataBase;
 import DAO.tables.FolderTable;
 import DAO.tables.UserTable;
+import com.fasterxml.jackson.databind.JsonNode;
 import models.Folder;
 import models.User;
 import play.libs.Json;
@@ -56,5 +57,16 @@ public class FolderController extends Controller {
             return ok(Json.toJson(newFolder));
         }
         return notFound("404");
+    }
+
+    public Result putFolder(String username, int id){
+        JsonNode payload = request().body().asJson();
+        String name = payload.get("name").asText();
+
+        User user = users.searchUserByUsername(username);
+        Folder folder = folders.searchFolder(user.getRoot(), id);
+        folder.setName(name);
+
+        return ok(Json.toJson(folder));
     }
 }
