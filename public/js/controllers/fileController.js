@@ -36,20 +36,23 @@ angular.module("filemanager").controller("file", function($scope, $http, $window
     $scope.shareFile = function(friend){
         var username = $scope.userSession.username
         uri = "/api/users/" + username + "/file/" + $scope.currentFile.id + "/share/" + friend;
-                $http.get(uri).success(function (data){
-                     $scope.createFolderModal = false;
-                     $scope.updateData();
-                     $scope.close();  
+        $http.get(uri).success(function (data){
+            $scope.createFolderModal = false;
+            $scope.updateData();
+            $scope.close();  
         });
     }
 
-    $scope.editFile = function(file){
-        var username = $scope.userSession.username
+    $scope.editFile = function(newFile){
+        var username = $scope.userSession.username;
         uri = "/api/users/" + username + "/file/" + $scope.currentFile.id;
-                $http.put(uri, file).success(function (data){
-                     $scope.createFolderModal = false;
-                     $scope.updateData();
-                     $scope.close();  
+        console.log(uri);
+        console.log(newFile);
+        $http.put(uri, newFile).success(function (data){
+             $scope.createFolderModal = false;
+             $scope.updateData();
+             $scope.close();
+             newFile = null;  
         });
     }
 

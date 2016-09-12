@@ -1,11 +1,11 @@
-<div ng-controller="folder">
+<div>
 <div class="file-show">
 	<div class="card-file">
 		<div class="header">
 			<h3>{{folderEdit.name}}</h3>
 		</div>
 		<div class="inner">
-			<input class="form-control" type="text" ng-model="folder.name" placeholder="{{folderEdit.name}}"/>
+			<input class="form-control" type="text" ng-model="folder.name" ng-value="folderEdit.name" autocomplete="off"/>
 		</div>
 	</div>
 		<button class="btn btn-warning  btn-block  btn-file btn-file-view"  ng-click="closeEditFolderView()">Cancel</button>

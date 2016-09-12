@@ -1,16 +1,20 @@
-<div class="file-show">
+<div class="file-show" ng-control>
 <div class="card-file">
 	<div class="header">
 		<h3>
-		<input class="form-control" type="text" ng-model="file.name" ng-value="currentFile.name"/>
+		<input class="form-control" type="text" ng-model="newFile.title" ng-value="currentFile.name"/>
 		</h3>
 	</div>
 	<div class="inner">
+		<select class="form-control"name="repeatSelect" id="repeatSelect" ng-model="newFile.typeof">
+			<option ng-repeat="option in typeOfFile" value="{{option}}">{{option}}</option>
+		</select>
 		<p>
-		<input class="form-control" type="text" ng-model="file.content" ng-value="currentFile.content"/>
+		<input class="form-control" type="text" ng-model="newFile.content" ng-value="currentFile.content"/>
 		</p>
+		
 	</div>
 </div>
 <button class="btn btn-warning  btn-block  btn-file btn-file-view"  ng-click="cancel()">Cancel</button>
-<button class="btn btn-success btn-block  btn-file btn-file-edit"  ng-click="editFile(file)">Save</button>
+<button class="btn btn-success btn-block  btn-file btn-file-edit"  ng-click="editFile(newFile)">Save</button>
 </div>

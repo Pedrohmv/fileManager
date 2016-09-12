@@ -7,8 +7,11 @@
 <div class="inner">
 <form class="form-signin">
 <div class="custom-modal-content">
-<input class="form-control" type="text" placeholder="Title" ng-model="file.title"/>
-<input class="form-control" type="text-area" placeholder="Content" ng-model="file.content"/>
+<input  class="form-control" type="text" placeholder="Title" ng-model="file.title"/>
+<input  class="form-control" type="text-area" placeholder="Content" ng-model="file.content"/>
+<select class="form-control" xname="repeatSelect" id="repeatSelect" ng-model="file.typeof" name="Selecione">
+	<option ng-repeat="option in typeOfFile" value="{{option}}">{{option}}</option>
+</select>
 <button class="btn-login btn btn-success btn-block" ng-disabled="!file.title || !file.content" ng-click="createFile(file)">Adicionar</button>
 </div>
 </form>

@@ -6,6 +6,7 @@ angular.module("filemanager").controller("home", function($scope, $http, $window
     $scope.fileShow = false;
     $scope.editView = false;
     $scope.folderShow = false;
+    $scope.typeOfFile = ["txt", "md"];
     var stackAccess = [];
     $scope.currentFolderName = "/Root";
 
@@ -144,11 +145,11 @@ angular.module("filemanager").controller("home", function($scope, $http, $window
         $http.get(uri).success(function (data){
              $scope.root = data;
              $scope.currentFolder = data;
-             
+             getSharedFile();           
 
         });
 
-        getSharedFile();
+        
     }
 
     var getSharedFile = function(){

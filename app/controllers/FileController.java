@@ -30,6 +30,7 @@ public class FileController {
         JsonNode payload = request().body().asJson();
         String title = payload.get("title").asText();
         String content = payload.get("content").asText();
+        String typeOf = payload.get("typeof").asText();
 
         User user = users.searchUserByUsername(username);
         if (user != null) {
@@ -37,7 +38,7 @@ public class FileController {
             if (folder == null)
                 return null;
 
-            File newFile = new File(title, content);
+            File newFile = new File(title, typeOf, content);
             List<File> files = folder.getFiles();
             for(File a : files)
                 if(a.getName().equals(title))
@@ -60,15 +61,17 @@ public class FileController {
     }
 
     public Result putFile(String username, int id){
-        JsonNode payload = request().body().asJson();
-        String title = payload.get("name").asText();
-        String content = payload.get("content").asText();
-
         User user = users.searchUserByUsername(username);
         File file = files.getFile(user.getRoot(), id);
 
+        JsonNode payload = request().body().asJson();
+        String title = payload.get("title").asText();
+        String content = payload.get("content").asText();
+        String typeOf = payload.get("typeof").asText();
+
         file.setName(title);
         file.setContent(content);
+        file.setTypeOf(typeOf);
 
         return ok(Json.toJson(file));
     }

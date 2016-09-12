@@ -3,19 +3,22 @@ package models;
 public class File {
     private String name;
     private String content;
+    private String typeOf;
     private int id;
     private String url;
 
 
-    public File(String name){
+    public File(String name, String typeOf){
         this.name = name;
         this.content = "";
+        this.typeOf = typeOf;
         this.id = System.identityHashCode(this);
     }
 
-    public File(String name, String content){
+    public File(String name,String typeOf, String content){
         this.name = name;
         this.content = content;
+        this.typeOf = typeOf;
         this.id = System.identityHashCode(this);
     }
 
@@ -45,5 +48,13 @@ public class File {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getTypeOf() {
+        return typeOf;
+    }
+
+    public void setTypeOf(String typeOf) {
+        this.typeOf = typeOf;
     }
 }
