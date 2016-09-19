@@ -2,6 +2,8 @@ angular.module("filemanager").controller("file", function($scope, $http, $window
     $scope.fileView = true;
     $scope.fileEdit = false;
     $scope.fileShare = false;
+    $scope.sharedAsEdit = false;
+    $scope.sharedAsReading = false;
 
     $scope.editFileView = function(){
         $scope.fileEdit = true;
@@ -33,7 +35,7 @@ angular.module("filemanager").controller("file", function($scope, $http, $window
         $scope.closeFileView();
     }
 
-    $scope.shareFile = function(friend){
+    $scope.shareFile = function(friend, shareOption){
         var username = $scope.userSession.username
         uri = "/api/users/" + username + "/file/" + $scope.currentFile.id + "/share/" + friend;
         $http.get(uri).success(function (data){

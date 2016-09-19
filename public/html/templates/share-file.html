@@ -7,6 +7,10 @@
 		<input class="form-control" type="text" ng-model="friend" placeholder="Friend Username"/>
 	</div>
 </div>
+<form class="form-signin">
+	<input type="radio" name="share-option" ng-model="shareOption"> Compartilhar para leitura
+	<input type="radio" name="share-option" ng-model="shareOption"> Compartilhar para edição
+</form>
 <button class="btn btn-warning  btn-block  btn-file btn-file-view"  ng-click="cancel()">Cancel</button>
-<button class="btn btn-success btn-block  btn-file btn-file-edit"  ng-click="shareFile(friend)">Share</button>
+<button class="btn btn-success btn-block  btn-file btn-file-edit"  ng-click="shareFile(friend, shareOption)">Share</button>
 </div>
