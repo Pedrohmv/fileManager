@@ -2,6 +2,7 @@ package DAO;
 
 import DAO.tables.FileTable;
 import DAO.tables.FolderTable;
+import DAO.tables.TokenTable;
 import DAO.tables.UserTable;
 
 public class DataBase {
@@ -9,11 +10,13 @@ public class DataBase {
     private UserTable users;
     private FolderTable folders;
     private FileTable files;
+    private TokenTable tokens;
 
     private DataBase(){
         users = new UserTable();
         folders = new FolderTable();
         files = new FileTable();
+        tokens = new TokenTable();
     }
 
     public static DataBase getDataBase(){
@@ -32,5 +35,9 @@ public class DataBase {
 
     public FileTable getFiles(){
         return this.files;
+    }
+
+    public TokenTable getTokens(){
+        return this.tokens;
     }
 }

@@ -1,9 +1,12 @@
 package controllers;
 
+
 import DAO.DataBase;
+import DAO.tables.TokenTable;
 import DAO.tables.UserTable;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import models.Token;
 import models.User;
 import play.libs.Json;
 import play.mvc.Controller;
@@ -18,6 +21,7 @@ public class UserController extends Controller {
 
     private DataBase db = DataBase.getDataBase();
     private UserTable users = db.getUsers();
+    private TokenTable tokens = db.getTokens();
     private User userLogin;
     private final int N_PARAMS_CREATE_USER = 3;
     private final int N_PARAMS_LOGIN = 2;
@@ -27,6 +31,53 @@ public class UserController extends Controller {
     public Result getUsers() {
         return ok(Json.toJson(users.getAll()));
     }
+    public Result getUsersNode() {
+        return ok(users.getUsersNode());
+    }
+
+    public Result getUserNode(String username) {
+        return ok(users.searchUserNode(username));
+    }
+
+    public Result postUserNode(String username) {
+        JsonNode payload = request().body().asJson();
+
+        if(!validateUser(payload))
+            return badRequest("400");
+
+        String name = payload.get("username").asText();
+        String email = payload.get("email").asText();
+        String password = payload.get("password").asText();
+
+        if  (isRegistered(name) || isRegistered(email))
+            return conflict("209");
+
+        User newUser = new User(name,email,password);
+        users.saveUser(Json.toJson(newUser));
+        return ok(users.searchUserNode(username));
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public Result getUser(String username) {
         User user = users.searchUserByUsername(username);
@@ -48,7 +99,8 @@ public class UserController extends Controller {
         if  (isRegistered(name) || isRegistered(email))
             return conflict("209");
 
-        users.add(new User(name,email,password));
+        User newUser = new User(name,email,password);
+        users.add(newUser);
         return created("201");
     }
 
@@ -60,8 +112,10 @@ public class UserController extends Controller {
         String email = payload.get("email").textValue();
         String password = payload.get("password").textValue();
         userLogin = users.searchUser(email, password);
+        Token token = new Token(userLogin);
+        tokens.add(token);
 
-        return ok(Json.toJson(userLogin));
+        return ok(Json.toJson(token));
     }
 
     public Result logout(){
@@ -72,10 +126,13 @@ public class UserController extends Controller {
 
     public Result auth(){
         JsonNode payload = request().body().asJson();
-        if(!validateLogin(payload))
-            return ok("false");
-        else
+        int token = payload.get("token").asInt();
+        Token userSession = tokens.getToken(token);
+
+        if(userSession != null)
             return ok("true");
+        else
+            return ok("false");
     }
 
     private boolean validateLogin(JsonNode payload){

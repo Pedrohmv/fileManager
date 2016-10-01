@@ -4,7 +4,9 @@
 #---------------------------------- API --------------------------------------------------
 #User
 GET     /api/users                                          controllers.UserController.getUsers
+GET     /api/usersNode                                      controllers.UserController.getUsersNode
 GET     /api/users/:username                                controllers.UserController.getUser(username: String)
+GET     /api/usersNode/:username                            controllers.UserController.getUserNode(username: String)
 POST    /api/user                                           controllers.UserController.postUser
 POST    /api/login                                          controllers.UserController.login
 POST    /api/logout                                         controllers.UserController.logout
