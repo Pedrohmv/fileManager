@@ -22,68 +22,24 @@ public class UserController extends Controller {
     private DataBase db = DataBase.getDataBase();
     private UserTable users = db.getUsers();
     private TokenTable tokens = db.getTokens();
-    private User userLogin;
     private final int N_PARAMS_CREATE_USER = 3;
     private final int N_PARAMS_LOGIN = 2;
     private final Pattern VALID_EMAIL_ADDRESS_REGEX = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
 
-
-    public Result getUsers() {
-        return ok(Json.toJson(users.getAll()));
-    }
-    public Result getUsersNode() {
-        return ok(users.getUsersNode());
+    public Result getAll() {
+        return ok(users.getAll());
     }
 
-    public Result getUserNode(String username) {
-        return ok(users.searchUserNode(username));
+    public Result remove(String username){
+        users.remove(username);
+        return ok();
     }
 
-    public Result postUserNode(String username) {
-        JsonNode payload = request().body().asJson();
-
-        if(!validateUser(payload))
-            return badRequest("400");
-
-        String name = payload.get("username").asText();
-        String email = payload.get("email").asText();
-        String password = payload.get("password").asText();
-
-        if  (isRegistered(name) || isRegistered(email))
-            return conflict("209");
-
-        User newUser = new User(name,email,password);
-        users.saveUser(Json.toJson(newUser));
-        return ok(users.searchUserNode(username));
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    public Result getUser(String username) {
-        User user = users.searchUserByUsername(username);
-        if (user == null)
+    public Result get(String username) {
+        JsonNode user = users.get(username);
+        if (user.get("username") == null)
             return notFound("404");
-        return ok(Json.toJson(user));
+        return ok(user);
     }
 
     public Result postUser(){
@@ -100,7 +56,7 @@ public class UserController extends Controller {
             return conflict("209");
 
         User newUser = new User(name,email,password);
-        users.add(newUser);
+        users.add(Json.toJson(newUser));
         return created("201");
     }
 
@@ -111,17 +67,15 @@ public class UserController extends Controller {
 
         String email = payload.get("email").textValue();
         String password = payload.get("password").textValue();
-        userLogin = users.searchUser(email, password);
-        Token token = new Token(userLogin);
+        JsonNode user = users.get(email);
+
+        if(!user.get("password").equals(password))
+            return forbidden("403");
+
+        Token token = new Token(user);
         tokens.add(token);
 
         return ok(Json.toJson(token));
-    }
-
-    public Result logout(){
-        User nullUser = null;
-        userLogin = nullUser;
-        return ok("200");
     }
 
     public Result auth(){
@@ -177,18 +131,10 @@ public class UserController extends Controller {
     }
 
     private boolean isRegistered(String key) {
-        User user;
-        user = users.searchUserByUsername(key);
-        if (user != null)
-            return true;
-
-        user = users.searchUserByEmail(key);
-        if (user != null)
-            return  true;
-        return false;
+        JsonNode user;
+        user = users.get(key);
+        if (user.get("username").asText().equals("null"))
+            return false;
+        return true;
     }
-
-
-
-
 }

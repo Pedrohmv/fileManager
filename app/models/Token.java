@@ -1,5 +1,7 @@
 package models;
 
+import com.fasterxml.jackson.databind.JsonNode;
+
 import java.util.Calendar;
 
 public class Token {
@@ -7,7 +9,7 @@ public class Token {
     private int token;
     private UserSession userSession;
 
-    public Token(User user){
+    public Token(JsonNode user){
         this.creation = Calendar.getInstance().getTimeInMillis();
         this.token = System.identityHashCode(this);
         this.userSession = new UserSession(user);

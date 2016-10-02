@@ -1,16 +1,18 @@
 package models;
 
 import DAO.DataBase;
+import DAO.tables.FolderTable;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class User {
     private DataBase dataBase = DataBase.getDataBase();
+    private FolderTable folders = dataBase.getFolders();
     private String username;
     private String email;
     private String password;
-    private Folder root;
+    private int root;
     private List<Share> shareArea;
     private List<Connection> connections;
 
@@ -18,7 +20,7 @@ public class User {
         this.username = username;
         this.email = email;
         this.password = password;
-        this.root = new Folder("Root");
+        this.root = folders.createRoot();
         this.shareArea = new ArrayList();
         this.connections = new ArrayList();
     }
@@ -46,7 +48,7 @@ public class User {
         this.password = password;
     }
 
-    public Folder getRoot() {
+    public int getRoot() {
         return root;
     }
 

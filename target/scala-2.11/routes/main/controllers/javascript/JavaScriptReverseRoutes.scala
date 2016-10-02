@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/vhugo/apps/fileManager/conf/routes
-// @DATE:Sat Oct 01 14:24:00 BRT 2016
+// @DATE:Sun Oct 02 09:35:40 BRT 2016
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -15,7 +15,7 @@ import _root_.play.libs.F
 package controllers.javascript {
   import ReverseRouteContext.empty
 
-  // @LINE:34
+  // @LINE:32
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -23,7 +23,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:35
+    // @LINE:33
     def at: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.at",
       """
@@ -33,7 +33,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:34
+    // @LINE:32
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
@@ -53,7 +53,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:13
+    // @LINE:11
     def auth: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.auth",
       """
@@ -63,29 +63,19 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:9
-    def getUserNode: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.UserController.getUserNode",
+    // @LINE:8
+    def remove: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.UserController.remove",
       """
         function(username0) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "api/usersNode/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("username", encodeURIComponent(username0))})
-        }
-      """
-    )
-  
-    // @LINE:7
-    def getUsersNode: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.UserController.getUsersNode",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "api/usersNode"})
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "api/users/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("username", encodeURIComponent(username0)) + "/remove"})
         }
       """
     )
   
     // @LINE:6
-    def getUsers: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.UserController.getUsers",
+    def getAll: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.UserController.getAll",
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "api/users"})
@@ -93,27 +83,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:8
-    def getUser: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.UserController.getUser",
-      """
-        function(username0) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "api/users/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("username", encodeURIComponent(username0))})
-        }
-      """
-    )
-  
-    // @LINE:12
-    def logout: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.UserController.logout",
-      """
-        function() {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "api/logout"})
-        }
-      """
-    )
-  
-    // @LINE:10
+    // @LINE:9
     def postUser: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.postUser",
       """
@@ -123,7 +93,17 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:11
+    // @LINE:7
+    def get: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.UserController.get",
+      """
+        function(username0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "api/users/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("username", encodeURIComponent(username0))})
+        }
+      """
+    )
+  
+    // @LINE:10
     def login: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.login",
       """
@@ -135,7 +115,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:22
+  // @LINE:20
   class ReverseFileController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -143,7 +123,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:23
+    // @LINE:21
     def putFile: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.FileController.putFile",
       """
@@ -153,7 +133,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:24
+    // @LINE:22
     def getFile: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.FileController.getFile",
       """
@@ -163,7 +143,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:22
+    // @LINE:20
     def postArchive: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.FileController.postArchive",
       """
@@ -175,7 +155,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:16
+  // @LINE:14
   class ReverseFolderController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -183,7 +163,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:16
+    // @LINE:14
     def getFolder: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.FolderController.getFolder",
       """
@@ -193,7 +173,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:18
+    // @LINE:16
     def postFolder: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.FolderController.postFolder",
       """
@@ -203,7 +183,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:19
+    // @LINE:17
     def putFolder: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.FolderController.putFolder",
       """
@@ -213,7 +193,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:17
+    // @LINE:15
     def getRoot: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.FolderController.getRoot",
       """
@@ -225,7 +205,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:27
+  // @LINE:25
   class ReverseShareController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -233,7 +213,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:29
+    // @LINE:27
     def postShare: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.ShareController.postShare",
       """
@@ -243,7 +223,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:28
+    // @LINE:26
     def getMyShared: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.ShareController.getMyShared",
       """
@@ -253,7 +233,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:27
+    // @LINE:25
     def getShared: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.ShareController.getShared",
       """

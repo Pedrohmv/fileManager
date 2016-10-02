@@ -2,14 +2,37 @@
 [debug] [naha] Initial source changes: 
 [debug] [naha] 	removed:Set()
 [debug] [naha] 	added: Set()
-[debug] [naha] 	modified: Set()
+[debug] [naha] 	modified: Set(/home/vhugo/apps/fileManager/app/DAO/tables/FolderTable.java)
 [debug] [naha] Invalidated products: Set()
 [debug] [naha] External API changes: API Changes: Set()
 [debug] [naha] Modified binary dependencies: Set()
-[debug] [naha] Initial directly invalidated sources: Set()
+[debug] [naha] Initial directly invalidated sources: Set(/home/vhugo/apps/fileManager/app/DAO/tables/FolderTable.java)
 [debug] [naha] 
 [debug] [naha] Sources indirectly invalidated by:
 [debug] [naha] 	product: Set()
 [debug] [naha] 	binary dep: Set()
 [debug] [naha] 	external source: Set()
-[debug] All initially invalidated sources: Set()
+[debug] All initially invalidated sources: Set(/home/vhugo/apps/fileManager/app/DAO/tables/FolderTable.java)
+[info] Compiling 1 Java source to /home/vhugo/apps/fileManager/target/scala-2.11/classes...
+[debug] Attempting to call com.sun.tools.javac.api.JavacTool@6b5462b4 directly...
+[error] /home/vhugo/apps/fileManager/app/DAO/tables/FolderTable.java:41: <identifier> expected
+[error]         parentFolder.
+[error] /home/vhugo/apps/fileManager/app/DAO/tables/FolderTable.java:41: not a statement
+[error]         parentFolder.
+[error] /home/vhugo/apps/fileManager/app/DAO/tables/FolderTable.java:45: illegal start of expression
+[error]     public Folder searchFolder(Folder root, int id) {
+[error] /home/vhugo/apps/fileManager/app/DAO/tables/FolderTable.java:45: ';' expected
+[error]     public Folder searchFolder(Folder root, int id) {
+[error] /home/vhugo/apps/fileManager/app/DAO/tables/FolderTable.java:45: ')' expected
+[error]     public Folder searchFolder(Folder root, int id) {
+[error] /home/vhugo/apps/fileManager/app/DAO/tables/FolderTable.java:45: illegal start of expression
+[error]     public Folder searchFolder(Folder root, int id) {
+[error] /home/vhugo/apps/fileManager/app/DAO/tables/FolderTable.java:45: ';' expected
+[error]     public Folder searchFolder(Folder root, int id) {
+[error] /home/vhugo/apps/fileManager/app/DAO/tables/FolderTable.java:45: not a statement
+[error]     public Folder searchFolder(Folder root, int id) {
+[error] /home/vhugo/apps/fileManager/app/DAO/tables/FolderTable.java:45: ';' expected
+[error]     public Folder searchFolder(Folder root, int id) {
+[error] /home/vhugo/apps/fileManager/app/DAO/tables/FolderTable.java:65: reached end of file while parsing
+[error] }
+[error] (compile:compileIncremental) javac returned nonzero exit code

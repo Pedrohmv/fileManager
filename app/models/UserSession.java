@@ -1,21 +1,21 @@
 package models;
 
-import java.util.List;
+import com.fasterxml.jackson.databind.JsonNode;
 
 
 public class UserSession {
     private String username;
     private String email;
-    private Folder root;
-    private List<Share> shareArea;
-    private List<Connection> connections;
+    private int root;
+    private JsonNode shareArea;
+    private JsonNode connections;
 
-    public UserSession(User user){
-        this.username = user.getUsername();
-        this.email = user.getEmail();
-        this.root = user.getRoot();
-        this.shareArea = user.getShareArea();
-        this.connections = user.getConnections();
+    public UserSession(JsonNode user){
+        this.username = user.get("username").asText();
+        this.email = user.get("email").asText();
+        this.root = user.get("root").asInt();
+        this.shareArea = user.get("shareArea");
+        this.connections = user.get("connections");
     }
 
     public String getUsername() {
@@ -26,15 +26,15 @@ public class UserSession {
         return email;
     }
 
-    public Folder getRoot() {
+    public int getRoot() {
         return root;
     }
 
-    public List<Share> getShareArea() {
+    public JsonNode getShareArea() {
         return shareArea;
     }
 
-    public List<Connection> getConnections() {
+    public JsonNode getConnections() {
         return connections;
     }
 }
