@@ -26,9 +26,6 @@ GET     /api/users/:username/shared                         controllers.ShareCon
 GET     /api/users/:username/myshare                        controllers.ShareController.getMyShared(username: String)
 GET     /api/users/:username/file/:id/share/:friend         controllers.ShareController.postShare(username: String, id: Integer, friend: String)
 
-#Trash
-GET     /api/users/:username/trash                         controllers.TrashController.getTrash(username: String)
-
 
 
 
