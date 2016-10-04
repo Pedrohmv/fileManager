@@ -6,6 +6,7 @@ angular.module("filemanager").controller("home", function($scope, $http, $window
     $scope.fileShow = false;
     $scope.editView = false;
     $scope.folderShow = false;
+    $scope.trashShow = false;
     $scope.typeOfFile = ["txt", "md"];
     var stackAccess = [];
     $scope.currentFolderName = "/Root";
@@ -40,6 +41,10 @@ angular.module("filemanager").controller("home", function($scope, $http, $window
 
     $scope.closeFileView = function(){
         $scope.fileShow = false;
+    }
+
+    $scope.openTrashView = function(){
+        $scope.trashShow = true;
     }
 
     
